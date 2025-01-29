@@ -1,3 +1,24 @@
+// Crear el puntero
+const cursor = document.createElement("div");
+cursor.classList.add("custom-cursor");
+document.body.appendChild(cursor);
+
+// Actualiza la posición del puntero
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+    cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+});
+
+// Efecto de aumento en los elementos interactivos
+document.querySelectorAll("a, button").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
+    });
+    el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+    });
+});
+
 // Función para cargar archivos HTML y añadirlos a un elemento
 function loadHTML(file, elementId) {
     fetch(file)
@@ -61,3 +82,9 @@ buttons.forEach(button => {
         this.classList.add('active');
     });
 });
+
+AOS.init({
+    duration: 1200,  // Duración de la animación
+    delay: 200,      // Retraso en milisegundos
+});
+

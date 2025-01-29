@@ -11,6 +11,25 @@ body {
   font-size: 1.5rem;
   color: #333;
   background-color: #E0E5EC;
+  cursor: none; /* Eliminar el cursor predeterminado */
+}
+
+/* Aplica al puntero personalizado */
+.custom-cursor {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.1s ease;
+}
+
+.custom-cursor.active {
+  width: 32px;
+  height: 32px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
 }
 
 h1 {
