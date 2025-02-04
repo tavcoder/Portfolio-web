@@ -5,32 +5,35 @@ html {
   font-size: 10px;
 }
 
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
 body {
   width: 100%;
   height: auto; //Para que la altura de adapte al contenido
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: $text-color;
-  background-color: $primary-bg;
-  cursor: none; /* Eliminar el cursor predeterminado */
-}
-/* Aplica al puntero personalizado */
 
-.custom-cursor {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: #e0e0e0;
-  border-radius: 50%;
-  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
-  pointer-events: none;
-  transition: all 0.1s ease;
-}
+  background: linear-gradient(270deg, $highlight-color2, #beb1fb);
+  background-size: 800% 800%;
+  -webkit-animation: backgroundAnimation 10s ease infinite;
+  -moz-animation: backgroundAnimation 10s ease infinite;
+  animation: backgroundAnimation 10s ease infinite;
+  transition: .10s ease-in-out;
 
-.custom-cursor.active {
-  width: 32px;
-  height: 32px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
 }
 
 
@@ -96,11 +99,13 @@ h1 {
     .user-info__links {
       margin-top: 1.5rem;
       @include flex-box($direction: row, $justify: start, $align-items: center, $gap: 1rem);
+      color: $highlight-color2;
     }
 
     .user-info__name {
-      font-size: 1.5rem;
-      color: $text-color;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $highlight-color2;
     }
 
     .user-info__email {
@@ -217,9 +222,15 @@ h1 {
 
   .page__title {
     color: $text-color;
+    opacity: 0.7;
+
+    .title__name {
+      font-family: "Nunito", serif;
+    }
 
     span {
       color: $accent-color2;
+      font-family: "Nunito", serif;
     }
   }
 
@@ -351,7 +362,7 @@ h1 {
       left: 2px;
       top: 0;
       bottom: 0;
-      background: linear-gradient(to bottom, $highlight-color, #94b6a6);
+      background: linear-gradient(to bottom, $highlight-color, $highlight-color2);
       border-radius: 15px;
       box-shadow: 2px 5px 20px #c1c6ce, -0.5px -0.5px 2px #ffffff;
       transition: 0.4s;
@@ -432,20 +443,30 @@ h1 {
   font-size: 1rem;
 }
 
+.item__img{
+  width: 100%;
+  height: 100%;
+  border-radius: 0 3rem 0 0;
+}
+
 .item__text {
   font-size: 1rem;
   margin-top: 1rem;
 }
 
 .projects__skill {
-  @include flex-box(row, center, end, $gap: 0.5rem);
+  @include flex-box ($direction: row, $justify: center, $align-items: center, $gap: 0.5rem);
   margin-top: 3rem;
-  @include press-shadow();
 }
 
 .skill__item {
+  @include flex-box ($direction: row, $justify: center, $align-items: center, $gap: 0.5rem);
   font-size: 1.5rem;
-
+  text-align: center;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100%;
+  @include card-style($bg-color: #e8e8e8);
 }
 
 /* Studies Section */
@@ -486,10 +507,12 @@ h1 {
 
 .studies__institution {
   font-style: italic;
-  color: #aaa;
+  color: $highlight-color2;
+  font-family: "Nunito", serif;
 }
 
 .studies__date {
+  min-width: 3rem;
   color: $accent-color2;
   margin-bottom: 0.8 rem;
   font-weight: 500;
@@ -507,4 +530,3 @@ footer {
   text-align: center;
   font-size: 1rem;
 }
-
