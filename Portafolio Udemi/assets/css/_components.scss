@@ -1,0 +1,307 @@
+/* Component styles */
+
+/* Hero Section */
+.content__page {
+  @include flex-box(column, center, center);
+  padding: 5rem;
+  min-height: 100%;
+
+  .page__text {
+    max-width: 50%;
+    padding: 2rem 0 2rem 0;
+  }
+
+  .page__title {
+    color: $text-color;
+    opacity: 0.7;
+
+    .title__name {
+      font-family: "Nunito", serif;
+    }
+
+    span {
+      color: $accent-color2;
+      font-family: "Nunito", serif;
+    }
+  }
+
+  .page__btn {
+    @include flex-box(row, start, $gap: 4rem);
+    margin-top: 3rem;
+
+    .btn__email {
+      @include primary-button($accent-color2);
+    }
+
+    .btn__cv {
+      @include primary-button();
+    }
+  }
+}
+
+/* Skills Section */
+.content__skills {
+  height: 100%;
+  min-height: 100%;
+
+  display: grid;
+  grid-template-areas: "text skills";
+  grid-template-columns: 60% 40%;
+}
+
+.skills__textContent {
+  grid-area: text;
+
+  @include flex-box(column, start, start, $gap: 1rem);
+  text-align: start;
+}
+
+.textContent__title {
+  margin: 1.8rem 0;
+  color: $highlight-color2;
+}
+
+.textContent__subtitle {
+  font-size: medium;
+  color: $accent-color2;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+
+.textContent__container {
+  @include flex-box(row, start, start, $gap: 1rem);
+  flex-wrap: wrap;
+}
+
+.textContent__skills {
+  @include flex-box(row, $gap: 0.5rem);
+
+  .textContent__iconCircle {
+    @include flex-box(column, center, center);
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100%;
+    background: #e8e8e8;
+    box-shadow: inset 3px 3px 5px #c5c5c5,
+      inset -3px -3px 5px #ffffff;
+  }
+
+  .textContent__iconCircle .fas {
+    font-size: 1rem;
+    color: $accent-color2;
+  }
+}
+
+.skills__container {
+  grid-area: skills;
+  @include flex-box(column, $gap: 2rem);
+
+  .container__group {
+    @include flex-box(row, $gap: 2rem);
+    flex-wrap: wrap;
+  }
+
+  .container__tech {
+    padding: 0.5rem;
+  }
+
+  .container__tech i {
+    font-size: 2rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Switch */
+  .skills__switch {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    height: 20px;
+
+    .switch__input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .skills__slider {
+      @include press-shadow();
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+      width: 160px;
+      border-radius: 34px;
+      transition: 0.4s;
+      z-index: 2;
+    }
+
+    .skills__slider::before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 80px;
+      left: 2px;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, $highlight-color, $highlight-color2);
+      border-radius: 15px;
+      box-shadow: 2px 5px 20px #c1c6ce, -0.5px -0.5px 2px #ffffff;
+      transition: 0.4s;
+      z-index: 2;
+    }
+
+    input:checked+.skills__slider::before {
+      transform: translateX(80px);
+    }
+
+    .skills__label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      opacity: 70%;
+      margin: 0.1rem 0 0 9rem;
+      z-index: 1;
+      transition: transform 0.4s;
+    }
+
+    input:checked+.skills__slider .skills__label {
+      transform: translateX(-8rem);
+    }
+  }
+}
+
+/* Projects Section */
+.projects__container {
+  @include flex-box($direction: row, $justify: center, $align-items: center, $gap: 2rem);
+}
+
+.projects__item {
+  background-color: transparent;
+  padding: 20px;
+  width: 30rem;
+  height: 40rem;
+  perspective: 1000px;
+}
+
+.item__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  @include card-style();
+  background-color: $secundary-bg;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.projects__item:hover .item__inner {
+  transform: rotateY(180deg);
+}
+
+.item__front,
+.item__back {
+  @include card-style();
+  position: absolute;
+  @include flex-box($direction: column, $justify: center);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.item__back {
+  transform: rotateY(180deg);
+}
+
+.item__title {
+  font-size: 1rem;
+}
+
+.item__img{
+  width: 100%;
+  height: 100%;
+  border-radius: 0 3rem 0 0;
+}
+
+.item__text {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.projects__skill {
+  @include flex-box ($direction: row, $justify: center, $align-items: center, $gap: 0.5rem);
+  margin-top: 3rem;
+}
+
+.skill__item {
+  @include flex-box ($direction: row, $justify: center, $align-items: center, $gap: 0.5rem);
+  font-size: 1.5rem;
+  text-align: center;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100%;
+  @include card-style($bg-color: #e8e8e8);
+}
+
+/* Studies Section */
+.content__studies {
+  @include flex-box(row, $justify: start, $align-items: end);
+  width: 90%;
+  height: 100%;
+  min-height: 100%;
+}
+
+.studies__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  @include flex-box($justify: start, $align-items: end);
+  gap: 30px;
+}
+
+.studies__item {
+  @include flex-box($direction: row, $justify: start, $align-items: start, $gap: 7rem);
+  position: relative;
+  padding-left: 2.5rem;
+  font-size: 1rem;
+}
+
+.studies__content {
+  max-width: 600rem;
+}
+
+.studies__title {
+  font-weight: bold;
+  color: $accent-color2;
+}
+
+.studies__institution {
+  font-style: italic;
+  color: $highlight-color2;
+  font-family: "Nunito", serif;
+}
+
+.studies__date {
+  min-width: 3rem;
+  color: $accent-color2;
+  margin-bottom: 0.8 rem;
+  font-weight: 500;
+}
+
+.studies__description {
+  line-height: 1.6;
+  color: $text-color;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 1rem;
+}

@@ -1,0 +1,165 @@
+/* Layout styles */
+.layout {
+  position: relative;
+  min-width: 1290px;
+  width: 75%;
+  height: 85vh;
+  min-height: 85vh;
+  margin: 5vh auto;
+  border-radius: 20px;
+
+  display: grid;
+  grid-template-areas: "aside content";
+  grid-template-columns: 20% 80%;
+
+  @include card-style($primary-bg);
+}
+
+/* Sidebar */
+.layout__aside {
+  grid-area: aside;
+  height: 85vh;
+  min-height: 85vh;
+  border-radius: 2rem 0 0 2rem;
+  overflow: auto;
+  overflow-x: hidden;
+  @include box-style();
+
+  .aside__user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 85%;
+    min-width: 20rem;
+  }
+
+  .user-info__general {
+    margin-top: 2rem;
+    text-align: center;
+
+    .user-info__container-image {
+      position: relative;
+      display: inline-block;
+      width: 12rem;
+      margin-top: 1rem;
+      border: 1px solid $white-shadow;
+      border-radius: 20rem;
+      overflow: hidden;
+      @include up-shadow();
+
+      .user-info__image {
+        width: 100%;
+        box-shadow: $inner-shadow;
+      }
+    }
+
+    .user-info__links {
+      margin-top: 1.5rem;
+      @include flex-box($direction: row, $justify: start, $align-items: center, $gap: 1rem);
+      color: $highlight-color2;
+    }
+
+    .user-info__name {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $highlight-color2;
+    }
+
+    .user-info__email {
+      opacity: 60%;
+      font-size: 1.3rem;
+    }
+  }
+
+  .aside__menu {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    @include flex-box($gap: 0.5rem);
+
+    .menu__link {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      @include secondary-button();
+    }
+  }
+
+  .aside__buttons {
+    margin-top: 3rem;
+    @include flex-box(center, $gap: 10rem);
+
+    .buttons__switch {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      display: inline-block;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .switch__slider {
+        cursor: pointer;
+        @include up-shadow();
+        border-radius: 50px;
+        width: 100%;
+        height: 100%;
+        transition: background-color 0.3s;
+
+        .switch__slider-face {
+          @include flex-box(row, $gap: 0.2rem);
+          position: absolute;
+          left: 4.5px;
+          top: 4.5px;
+          width: 25px;
+          height: 20px;
+          background-color: white-shadow;
+          @include press-shadow();
+          border-radius: 50px;
+          transition: 0.3s;
+
+          .switch__slider-eyeRight,
+          .switch__slider-eyeLeft {
+            width: 5px;
+            height: 5px;
+            background-color: $accent-color2;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+
+            &.switch__slider-eyeLeft {
+              margin-right: 3px;
+            }
+          }
+        }
+
+        input:checked+& {
+          background-color: $highlight-color2;
+
+          .switch__slider-face {
+            transform: translateX(25px);
+          }
+
+          .switch__slider-eyeRight,
+          .switch__slider-eyeLeft {
+            background-color: transparent;
+            border: solid 0.05rem $text-color;
+            border-top: transparent;
+          }
+        }
+      }
+    }
+
+    .buttons__language {
+      @include deep__box($color: $accent-color2);
+    }
+  }
+}
+
+.layout__content {
+  grid-area: content;
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}

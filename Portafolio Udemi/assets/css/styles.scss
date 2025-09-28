@@ -1,9 +1,11 @@
 @use 'variables.scss' as *;
 
-/*Estilos generales*/
-html {
-  font-size: 10px;
-}
+// Import partials
+@forward 'base';
+@forward 'layout';
+@forward 'components';
+@forward 'animations';
+@forward 'responsive';
 
 @keyframes backgroundAnimation {
   0% {
