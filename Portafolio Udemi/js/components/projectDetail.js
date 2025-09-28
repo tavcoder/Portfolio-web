@@ -1,7 +1,7 @@
 export function renderProjectItem(project, index) {
-  const aosEffect = index === 0 ? 'data-aos="fade-left" data-aos-duration="1000"' : index === 2 ? 'data-aos="fade-right" data-aos-duration="1000"' : '';
+  const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
   return `
-    <div class="projects__item" ${aosEffect}>
+    <div class="projects__item ${animationClass}">
       <div class="item__inner">
         <div class="item__front">
           <h4 class="item__title">${project.title}</h4>
