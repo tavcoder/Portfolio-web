@@ -1,0 +1,29 @@
+export function renderProjectItem(project, index) {
+  const aosEffect = index === 0 ? 'data-aos="fade-left" data-aos-duration="1000"' : index === 2 ? 'data-aos="fade-right" data-aos-duration="1000"' : '';
+  return `
+    <div class="projects__item" ${aosEffect}>
+      <div class="item__inner">
+        <div class="item__front">
+          <h4 class="item__title">${project.title}</h4>
+          <img src="${project.image}" alt="imagen proyecto">
+          <div class="projects__skill">
+            ${project.technologies.map(tech => {
+              if (tech === 'PHP') return '<div class="skill__item"><i class="fab fa-php"></i></div>';
+              if (tech === 'Database') return '<div class="skill__item"><i class="fa fa-database"></i></div>';
+              if (tech === 'POO') return '<div class="skill__item"><p>POO</p></div>';
+              if (tech === 'MVC') return '<div class="skill__item"><p>MVC</p></div>';
+              if (tech === 'Laravel') return '<div class="skill__item"><i class="fab fa-laravel"></i></div>';
+              if (tech === 'Bootstrap') return '<div class="skill__item"><i class="fab fa-bootstrap"></i></div>';
+              if (tech === 'CSS') return '<div class="skill__item"><i class="fab fa-css3-alt"></i></div>';
+              if (tech === 'HTML') return '<div class="skill__item"><i class="fab fa-html5"></i></div>';
+              return `<div class="skill__item"><p>${tech}</p></div>`;
+            }).join('')}
+          </div>
+        </div>
+        <div class="item__back">
+          <p class="item__text">${project.description}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}

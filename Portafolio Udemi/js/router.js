@@ -11,11 +11,11 @@ const routes = {
     'studies': renderStudies
 };
 
-export function navigateTo(route) {
+export async function navigateTo(route) {
     const renderFunction = routes[route];
     if (renderFunction) {
         const content = document.getElementById('content__page');
-        content.innerHTML = renderFunction();
+        content.innerHTML = await renderFunction();
         // Reinitialize AOS for new content
         AOS.refresh();
         // Update active menu
@@ -30,7 +30,7 @@ export function navigateTo(route) {
             }, 0);
         }
     } else {
-        navigateTo('');
+        await navigateTo('');
     }
     // Update URL hash
     window.location.hash = route;
