@@ -1,15 +1,31 @@
-$primary-bg: #E0E5EC; // Color gris para fondo general, color de fondo para los input y botones
-$secundary-bg: #cfcaea; // Color amarillo claro para las tarjetas del skill
-$accent-color: #f7c548; // Color amarillo para títulos y cta
-$accent-color2: #5e4ac7; // Color azul oscuro para letras del nav y cta.
-$text-color: #333; //Color gris oscuro de letra del footer, y del body
-$text-color2: rgb(255, 253, 253); //Color de la letra de cta
-$highlight-color: #cfcaea; //Color verde claro del slider
-$highlight-color2: #6f57e9; //Color verde oscuro del slider
+$primary-bg: #F5F5F5; // Off-White/Very Light Grey for the general background
+/* CSS Custom Properties for theming */
+:root {
+  --primary-bg: #E0E5EC;
+  --secundary-bg: #F0DDE2;
+  --accent-color: #F47F9B;
+  --accent-color2: #555555;
+  --text-color: #333333;
+  --text-color2: #FFFFFF;
+  --highlight-color: #D1ECEF;
+  --highlight-color2: #E96E8A;
+  --shadow-light: #E0E0E0;
+  --shadow-dark: #C0C0C0;
+  --white-shadow: #FFFFFF;
+}
 
-$shadow-light: #c1c6ce;
-$shadow-dark: #9da1a7;
-$white-shadow: #ffffff;
+/* SCSS Variables */
+$primary-bg: var(--primary-bg);
+$secundary-bg: var(--secundary-bg);
+$accent-color: var(--accent-color);
+$accent-color2: var(--accent-color2);
+$text-color: var(--text-color);
+$text-color2: var(--text-color2);
+$highlight-color: var(--highlight-color);
+$highlight-color2: var(--highlight-color2);
+$shadow-light: var(--shadow-light);
+$shadow-dark: var(--shadow-dark);
+$white-shadow: var(--white-shadow);
 
 $inner-shadow: inset 10px 10px 10px $shadow-light, inset -10px -10px 10px $white-shadow;
 
@@ -77,7 +93,7 @@ $inner-shadow: inset 10px 10px 10px $shadow-light, inset -10px -10px 10px $white
         -0.5px -0.5px 2px $white-shadow;
 }
 
-@mixin primary-button($bg-color: $accent-color, $text-color:$text-color2) {
+@mixin primary-button($bg-color: $accent-color, $text-color: $text-color2) {
     padding: 10px 20px;
     background-color: $bg-color;
     color: $text-color;
@@ -119,5 +135,18 @@ $inner-shadow: inset 10px 10px 10px $shadow-light, inset -10px -10px 10px $white
     &:active {
         @include primary-button(#EBE6E2, $text-color);
         /* Aplicado en el clic momentáneo */
+    }
+}
+
+// Breakpoints for responsive design
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large: 1200px;
+
+// Mixin for mobile-first responsive design
+@mixin respond-above($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
     }
 }

@@ -16,8 +16,8 @@ export async function navigateTo(route) {
     if (renderFunction) {
         const content = document.getElementById('content__page');
         content.innerHTML = await renderFunction();
-        // Reinitialize AOS for new content
-        AOS.refresh();
+        // Observe animations for new content
+        observeAnimations();
         // Update active menu
         updateActiveMenu(route);
         // If skills, set up toggle
@@ -66,4 +66,24 @@ function toggleTechnologies() {
         backend.classList.add('hidden');
         labelText.textContent = 'Frontend';
     }
+}
+
+// Intersection Observer for animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+function observeAnimations() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  animatedElements.forEach(el => observer.observe(el));
 }

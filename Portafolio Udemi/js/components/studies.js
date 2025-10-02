@@ -3,7 +3,7 @@ export function renderStudies() {
         <section class="content__page content__studies">
             <ul class="studies__list">
 
-                <li class="studies__item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-1000">
                     <p class="studies__date">Diciembre 2024</p>
                     <div class="studies__content">
                         <h3 class="studies__title">SEO y posicionamiento web para Desarrolladores web. <span
@@ -16,7 +16,7 @@ export function renderStudies() {
                     </div>
                 </li>
 
-                <li class="studies__item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
+                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-800">
                     <p class="studies__date">2021-2024</p>
                     <div class="studies__content">
                         <h3 class="studies__title">Técnico en Gestión y desarrollo de proyectos Web. <span
@@ -30,7 +30,7 @@ export function renderStudies() {
                     </div>
                 </li>
 
-                <li class="studies__item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-600">
                     <p class="studies__date">2019-2020</p>
                     <div class="studies__content">
                         <h3 class="studies__title">UX design Challenge <span class="studies__institution">UXERSCHOOL</span>
@@ -43,7 +43,7 @@ export function renderStudies() {
                     </div>
                 </li>
 
-                <li class="studies__item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-400">
                     <p class="studies__date">2019-2020</p>
                     <div class="studies__content">
                         <h3 class="studies__title">Web Design, Wireframes to prototype <span
@@ -57,7 +57,7 @@ export function renderStudies() {
                     </div>
                 </li>
 
-                <li class="studies__item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-200">
                     <p class="studies__date">2012-2017</p>
                     <div class="studies__content">
                         <h3 class="studies__title">Grado en Diseño <span class="studies__institution">Universidad de La Habana.
@@ -70,7 +70,7 @@ export function renderStudies() {
                     </div>
                 </li>
 
-                <li class="studies__item" data-aos="zoom-in" data-aos-duration="1000" >
+                <li class="studies__item animate-on-scroll animate-zoom-in">
                     <p class="studies__date">2007-2009</p>
                     <div class="studies__content">
                         <h3 class="studies__title">Bachiller, Técnico Medio en Informática. <span

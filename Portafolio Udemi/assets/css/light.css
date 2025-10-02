@@ -1,4 +1,4 @@
-/* CSS Custom Properties for theming */
+/* Light theme variables */
 :root {
   --primary-bg: #E0E5EC;
   --secundary-bg: #F0DDE2;
@@ -12,5 +12,3 @@
   --shadow-dark: #C0C0C0;
   --white-shadow: #FFFFFF;
 }
-
-/* SCSS Variables *//*# sourceMappingURL=variables.css.map */

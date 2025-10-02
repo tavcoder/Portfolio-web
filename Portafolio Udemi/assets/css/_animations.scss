@@ -55,51 +55,71 @@
 }
 
 // Animation classes
-.animate-fade-left {
+.animate-on-scroll {
   opacity: 0;
-  animation: fadeInLeft 1s ease forwards;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.animate-on-scroll.animate {
+  opacity: 1;
+}
+
+.animate-fade-left {
+  transform: translateX(-50px);
+}
+
+.animate-fade-left.animate {
+  transform: translateX(0);
 }
 
 .animate-fade-right {
-  opacity: 0;
-  animation: fadeInRight 1s ease forwards;
+  transform: translateX(50px);
+}
+
+.animate-fade-right.animate {
+  transform: translateX(0);
 }
 
 .animate-fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
+  // no transform
 }
 
 .animate-zoom-in {
-  opacity: 0;
-  animation: zoomIn 1s ease forwards;
+  transform: scale(0.8);
+}
+
+.animate-zoom-in.animate {
+  transform: scale(1);
 }
 
 .animate-zoom-in-up {
-  opacity: 0;
-  animation: zoomInUp 1s ease forwards;
+  transform: scale(0.8) translateY(20px);
+}
+
+.animate-zoom-in-up.animate {
+  transform: scale(1) translateY(0);
 }
 
 .animate-delay-200 {
-  animation-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .animate-delay-300 {
-  animation-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .animate-delay-400 {
-  animation-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .animate-delay-600 {
-  animation-delay: 0.6s;
+  transition-delay: 0.6s;
 }
 
 .animate-delay-800 {
-  animation-delay: 0.8s;
+  transition-delay: 0.8s;
 }
 
 .animate-delay-1000 {
-  animation-delay: 1s;
+  transition-delay: 1s;
 }
