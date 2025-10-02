@@ -1,3 +1,5 @@
+@use 'variables.scss' as *;
+
 /* Component styles */
 
 /* Hero Section */
@@ -15,7 +17,7 @@
     color: $text-color;
     opacity: 0.7;
 
-    .title__name {
+    .page__title__name {
       font-family: "Nunito", serif;
     }
 
@@ -44,39 +46,37 @@
   height: 100%;
   min-height: 100%;
 
-  display: grid;
-  grid-template-areas: "text skills";
-  grid-template-columns: 60% 40%;
+  display: flex;
+  flex-direction: column;
 }
 
 .skills__textContent {
-  grid-area: text;
-
   @include flex-box(column, start, start, $gap: 1rem);
   text-align: start;
+  width: 100%;
 }
 
-.textContent__title {
+.skills__textContent__title {
   margin: 1.8rem 0;
   color: $highlight-color2;
 }
 
-.textContent__subtitle {
+.skills__textContent__subtitle {
   font-size: medium;
   color: $accent-color2;
   font-weight: 500;
   margin-top: 3rem;
 }
 
-.textContent__container {
+.skills__textContent__container {
   @include flex-box(row, start, start, $gap: 1rem);
   flex-wrap: wrap;
 }
 
-.textContent__skills {
+.skills__textContent__skills {
   @include flex-box(row, $gap: 0.5rem);
 
-  .textContent__iconCircle {
+  .skills__textContent__iconCircle {
     @include flex-box(column, center, center);
     height: 1.5rem;
     width: 1.5rem;
@@ -86,26 +86,46 @@
       inset -3px -3px 5px #ffffff;
   }
 
-  .textContent__iconCircle .fas {
+  .skills__textContent__iconCircle .fas {
     font-size: 1rem;
     color: $accent-color2;
   }
 }
 
 .skills__container {
-  grid-area: skills;
   @include flex-box(column, $gap: 2rem);
+  width: 100%;
 
-  .container__group {
+  .skills__container__title {
+    margin: 1.8rem 0;
+    color: $highlight-color2;
+  }
+
+@media (max-width: 768px) {
+  .skills__container__group {
     @include flex-box(row, $gap: 2rem);
     flex-wrap: wrap;
   }
 
-  .container__tech {
+  .skills__container__tech {
     padding: 0.5rem;
   }
 
-  .container__tech i {
+  .skills__container__tech i {
+    font-size: 2rem;
+  }
+}
+
+  .skills__container__group {
+    @include flex-box(row, $gap: 2rem);
+    flex-wrap: wrap;
+  }
+
+  .skills__container__tech {
+    padding: 0.5rem;
+  }
+
+  .skills__container__tech i {
     font-size: 2rem;
   }
 
@@ -176,7 +196,7 @@
 
 /* Projects Section */
 .projects__container {
-  @include flex-box($direction: row, $justify: center, $align-items: center, $gap: 2rem);
+  @include flex-box($direction: column, $justify: center, $align-items: center, $gap: 2rem);
 }
 
 .projects__item {

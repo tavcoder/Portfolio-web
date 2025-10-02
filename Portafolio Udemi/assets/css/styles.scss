@@ -43,21 +43,25 @@ h1 {
   font-size: 2.5rem;
 }
 
-/*Estructura principal*/
-.layout {
-  position: relative;
-  min-width: 1290px;
-  width: 75%;
-  height: 85vh;
-  min-height: 85vh;
-  margin: 5vh auto;
-  border-radius: 20px;
 
-  display: grid;
-  grid-template-areas: "aside content";
-  grid-template-columns: 20% 80%;
 
-  @include card-style($primary-bg);
+/*Barra lateral*/
+.layout__aside {
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  border-radius: 1rem 1rem 0 0;
+  overflow: auto;
+  overflow-x: hidden;
+  @include box-style();
+}
+
+.layout__content {
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 /*Barra lateral*/

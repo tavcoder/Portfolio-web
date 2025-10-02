@@ -1,12 +1,20 @@
+@use 'variables.scss' as *;
+
 /* Responsive styles */
 
 @media (max-width: 768px) {
   .layout {
-    flex-direction: column;
+    position: relative;
     width: 95%;
-    min-width: auto;
     height: auto;
     min-height: auto;
+    margin: 5vh auto;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include card-style($primary-bg);
   }
 
   .layout__aside {
