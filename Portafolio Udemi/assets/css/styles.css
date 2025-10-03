@@ -39,8 +39,6 @@ body {
   color: var(--text-color);
   background: linear-gradient(270deg, var(--highlight-color2), #beb1fb);
   background-size: 800% 800%;
-  -webkit-animation: backgroundAnimation 10s ease infinite;
-  -moz-animation: backgroundAnimation 10s ease infinite;
   animation: backgroundAnimation 10s ease infinite;
   transition: 0.1s ease-in-out;
   overflow: hidden;
@@ -161,12 +159,10 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 2px 2px 5px var(--shadow-light), -2px -2px 5px var(--white-shadow), 0.5px 0.5px 2px var(--shadow-dark), -0.5px -0.5px 2px var(--white-shadow);
+  /* Aplicado en el clic momentáneo */
 }
 .layout__aside .aside__menu .menu__link:active:hover {
   box-shadow: rgb(193, 198, 206) 2px 2px 2px inset, rgb(255, 255, 255) -2px -2px 5px inset, rgb(193, 198, 206) 0.5px 0.5px 5px inset, rgb(255, 255, 255) -0.5px -0.5px 3px inset;
-}
-.layout__aside .aside__menu .menu__link:active {
-  /* Aplicado en el clic momentáneo */
 }
 .layout__aside .aside__buttons {
   margin-top: 3rem;
@@ -384,6 +380,7 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   align-items: center;
   gap: 2rem;
   width: 100%;
+  /* Switch */
 }
 .skills__container .skills__container__title {
   margin: 1.8rem 0;
@@ -421,9 +418,6 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 }
 .skills__container .hidden {
   display: none;
-}
-.skills__container {
-  /* Switch */
 }
 .skills__container .skills__switch {
   position: relative;
@@ -531,10 +525,7 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   gap: 0;
   width: 100%;
   height: 100%;
-  padding: 20px;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 1rem;
 }
 
 .item__back {
@@ -575,9 +566,6 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   text-align: center;
   height: 4.5rem;
   width: 4.5rem;
-  border-radius: 100%;
-  background: #e8e8e8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Studies Section */
@@ -834,8 +822,6 @@ body {
   color: var(--text-color);
   background: linear-gradient(270deg, var(--highlight-color2), #beb1fb);
   background-size: 800% 800%;
-  -webkit-animation: backgroundAnimation 10s ease infinite;
-  -moz-animation: backgroundAnimation 10s ease infinite;
   animation: backgroundAnimation 10s ease infinite;
   transition: 0.1s ease-in-out;
   overflow: hidden;
@@ -961,12 +947,10 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 2px 2px 5px var(--shadow-light), -2px -2px 5px var(--white-shadow), 0.5px 0.5px 2px var(--shadow-dark), -0.5px -0.5px 2px var(--white-shadow);
+  /* Aplicado en el clic momentáneo */
 }
 .layout__aside .aside__menu .menu__link:active:hover {
   box-shadow: rgb(193, 198, 206) 2px 2px 2px inset, rgb(255, 255, 255) -2px -2px 5px inset, rgb(193, 198, 206) 0.5px 0.5px 5px inset, rgb(255, 255, 255) -0.5px -0.5px 3px inset;
-}
-.layout__aside .aside__menu .menu__link:active {
-  /* Aplicado en el clic momentáneo */
 }
 .layout__aside .aside__buttons {
   margin-top: 3rem;
@@ -1184,6 +1168,7 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  /* Switch */
 }
 .skills__container .container__group {
   display: flex;
@@ -1201,9 +1186,6 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 }
 .skills__container .hidden {
   display: none;
-}
-.skills__container {
-  /* Switch */
 }
 .skills__container .skills__switch {
   position: relative;
@@ -1266,19 +1248,27 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 }
 
 .projects__container {
+  margin-top: 8rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0;
 }
 
 .projects__item {
   background-color: transparent;
-  padding: 20px;
-  width: 30rem;
-  height: 40rem;
+  width: 70rem;
+  height: 70rem;
+}
+
+.item__container {
   perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
 }
 
 .item__card {
@@ -1309,8 +1299,6 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   gap: 0;
   width: 100%;
   height: 100%;
-  padding: 20px;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 1rem;
 }
@@ -1320,7 +1308,7 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 }
 
 .item__title {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .item__img {
@@ -1332,6 +1320,9 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 .item__text {
   font-size: 1rem;
   margin-top: 1rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 30rem;
 }
 
 .projects__skill {
@@ -1339,8 +1330,8 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 3rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .skill__item {
@@ -1349,13 +1340,11 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  height: 4.5rem;
-  width: 4.5rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 100%;
-  background: #e8e8e8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Studies Section */
@@ -1427,6 +1416,4 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 footer {
   text-align: center;
   font-size: 1rem;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

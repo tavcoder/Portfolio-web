@@ -1,7 +1,7 @@
 [
   {
     "id": "obi-tienda",
-    "title": "Obi tienda online",
+    "title": "SuperMe",
     "description": "Aplicación web para gestionar y personalizar tu experiencia de compra en una tienda online. Explora los productos más populares, tus artículos favoritos, el historial de tus compras recientes y detalles específicos de cada producto. Crea y guarda nuevas listas de deseos recomendadas basadas en tus intereses y compras anteriores.",
     "github": "https://github.com/tania/obi-tienda",
     "demo": "https://taniaarteaga.dev/obi-tienda",
