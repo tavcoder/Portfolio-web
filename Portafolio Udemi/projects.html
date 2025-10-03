@@ -1,149 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Tania Arteaga</title>
+<div id="projects-container" class="projects__container">
+    <!-- Projects will be loaded dynamically -->
+</div>
 
-    <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link id="theme-stylesheet" rel="stylesheet" href="assets/css/light.css">
-
-    <!-- Enlace para Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="layout">
-        <!-- Sidebar (info del usuario)-->
-        <aside class="layout__aside">
-            <section class="aside__user-info">
-                <!--Información general usuario-->
-                <div class="user-info__general">
-                    <div class="user-info__container-image">
-                        <a href="index.html">
-                            <img class="user-info__image" src="assets/img/profile.jpg" alt="Profile Picture">
-                        </a>
+<script>
+    function renderProjectItem(project, index) {
+        const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
+        return `
+        <div class="projects__item ${animationClass}">
+            <div class="item__container">
+                <div class="item__inner">
+                    <div class="item__front">
+                        <img class="item__img" src="${project.frontImage}" alt="${project.title} front image">
                     </div>
-
-                    <div class="user-info__links">
-                        <h2 class="user-info__name">Tania Arteaga</h2>
-                        <a href="https://www.linkedin.com/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
+                    <div class="item__back">
+                        <img class="item__img" src="${project.backImage}" alt="${project.title} back image">
                     </div>
-                    <p class="user-info__email">tarteagadesign@gmail.com</p>
                 </div>
-
-                <!--Menú de navegación-->
-                <nav class="aside__menu">
-                    <ul class="menu__list">
-                        <li class="menu__option">
-                            <a class="menu__link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="menu__option">
-                            <a class="menu__link" href="skills.html">Sobre mí</a>
-                        </li>
-                        <li class="menu__option">
-                            <a class="menu__link active" href="projects.html">Proyectos</a>
-                        </li>
-                        <li class="menu__option">
-                            <a class="menu__link" href="studies.html">Estudios</a>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
-
-            <div class="aside__buttons">
-                <div class="buttons__switch">
-                    <input type="checkbox" id="toggleTheme" />
-                    <label for="toggleTheme" class="switch__slider">
-                        <div class="switch__slider-face">
-                            <div class="switch__slider-eyeLeft"></div>
-                            <div class="switch__slider-eyeRight"></div>
-                        </div>
-                    </label>
-                </div>
-                <button class="buttons__language">Es</button>
-            </div>
-        </aside>
-
-        <!-- Contenido principal -->
-        <main class="layout__content">
-            <div id="projects-container" class="projects__container">
-                <!-- Projects will be loaded dynamically -->
-            </div>
-        </main>
-    </div>
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Tania Arteaga. Loosely designed in Figma and coded in Visual Studio Code by yours truly.</p>
-    </footer>
-    <script type="module" src="js/main.js"></script>
-    <script src="js/utils/theme.js"></script>
-    <script>
-        function renderProjectItem(project, index) {
-            const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
-            return `
-            <div class="projects__item ${animationClass}">
-                <div class="item__container">
-                    <div class="item__inner">
-                        <div class="item__front">
-                            <img class="item__img" src="${project.frontImage}" alt="${project.title} front image">
-                        </div>
-                        <div class="item__back">
-                            <img class="item__img" src="${project.backImage}" alt="${project.title} back image">
-                        </div>
-                    </div>
-                    <div class="item__details">
-                        <h4 class="item__title">${project.title}</h4>
-                        <p class="item__text">${project.description}</p>
-                        <div class="projects__skill">
-                            ${project.technologies.map(tech => {
-                if (tech === 'PHP') return '<div class="skill__item"><i class="fab fa-php"></i></div>';
-                if (tech === 'Database') return '<div class="skill__item"><i class="fa fa-database"></i></div>';
-                if (tech === 'POO') return '<div class="skill__item"><p>POO</p></div>';
-                if (tech === 'MVC') return '<div class="skill__item"><p>MVC</p></div>';
-                if (tech === 'Laravel') return '<div class="skill__item"><i class="fab fa-laravel"></i></div>';
-                if (tech === 'Bootstrap') return '<div class="skill__item"><i class="fab fa-bootstrap"></i></div>';
-                if (tech === 'CSS') return '<div class="skill__item"><i class="fab fa-css3-alt"></i></div>';
-                if (tech === 'HTML') return '<div class="skill__item"><i class="fab fa-html5"></i></div>';
-                return `<div class="skill__item"><p>${tech}</p></div>`;
-            }).join('')}
-                        </div>
+                <div class="item__details">
+                    <h4 class="item__title">${project.title}</h4>
+                    <p class="item__text">${project.description}</p>
+                    <div class="projects__skill">
+                        ${project.technologies.map(tech => {
+            if (tech === 'PHP') return '<div class="skill__item"><i class="fab fa-php"></i></div>';
+            if (tech === 'Database') return '<div class="skill__item"><i class="fa fa-database"></i></div>';
+            if (tech === 'POO') return '<div class="skill__item"><p>POO</p></div>';
+            if (tech === 'MVC') return '<div class="skill__item"><p>MVC</p></div>';
+            if (tech === 'Laravel') return '<div class="skill__item"><i class="fab fa-laravel"></i></div>';
+            if (tech === 'Bootstrap') return '<div class="skill__item"><i class="fab fa-bootstrap"></i></div>';
+            if (tech === 'CSS') return '<div class="skill__item"><i class="fab fa-css3-alt"></i></div>';
+            if (tech === 'HTML') return '<div class="skill__item"><i class="fab fa-html5"></i></div>';
+            return `<div class="skill__item"><p>${tech}</p></div>`;
+        }).join('')}
                     </div>
                 </div>
             </div>
-        `;
+        </div>
+    `;
+    }
+
+    async function loadProjects() {
+        try {
+            const response = await fetch('data/projects.json');
+            const projects = await response.json();
+            const container = document.getElementById('projects-container');
+            container.innerHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
+            // Trigger animations for loaded content
+            setTimeout(() => {
+                const animatedElements = container.querySelectorAll('[class*="animate-"]');
+                animatedElements.forEach(el => {
+                    el.classList.add('animate');
+                });
+            }, 100);
+        } catch (error) {
+            console.error('Error loading projects:', error);
+            document.getElementById('projects-container').innerHTML = '<p>Error loading projects.</p>';
         }
+    }
 
-        async function loadProjects() {
-            try {
-                const response = await fetch('data/projects.json');
-                const projects = await response.json();
-                const container = document.getElementById('projects-container');
-                container.innerHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
-                // Trigger animations for loaded content
-                setTimeout(() => {
-                    const animatedElements = container.querySelectorAll('[class*="animate-"]');
-                    animatedElements.forEach(el => {
-                        el.classList.add('animate');
-                    });
-                }, 100);
-            } catch (error) {
-                console.error('Error loading projects:', error);
-                document.getElementById('projects-container').innerHTML = '<p>Error loading projects.</p>';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', loadProjects);
-    </script>
-</body>
-</html>
+    document.addEventListener('DOMContentLoaded', loadProjects);
+</script>
