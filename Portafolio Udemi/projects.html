@@ -1,8 +1,41 @@
 <div id="projects-container" class="projects__container">
-    <!-- Projects will be loaded dynamically -->
+    <!-- Projects will be loaded statically -->
 </div>
 
 <script>
+    const projects = [
+        {
+            id: "obi-tienda",
+            title: "Obi tienda online",
+            description: "Aplicación web para gestionar y personalizar tu experiencia de compra en una tienda online. Explora los productos más populares, tus artículos favoritos, el historial de tus compras recientes y detalles específicos de cada producto. Crea y guarda nuevas listas de deseos recomendadas basadas en tus intereses y compras anteriores.",
+            github: "https://github.com/tania/obi-tienda",
+            demo: "https://taniaarteaga.dev/obi-tienda",
+            frontImage: "assets/img/imgPlaceholder.jpg",
+            backImage: "assets/img/imgPlaceholder.jpg",
+            technologies: ["PHP", "Database", "POO", "MVC"]
+        },
+        {
+            id: "cuidarnos",
+            title: "Cuidarnos, red social",
+            description: "Aplicación web para conectarse y apoyarse entre cuidadores de personas dependientes. Comparte experiencias, consejos y recursos útiles para el cuidado diario. Visualiza las historias y consejos más populares, las publicaciones más interactivas y las interacciones recientes entre los miembros. Crea y guarda grupos de apoyo personalizados basados en tus intereses y necesidades, y accede a recursos especializados adaptados para el cuidado de personas dependientes. Conéctate con otros cuidadores, comparte información valiosa y encuentra apoyo emocional en una red dedicada a mejorar la calidad de vida de quienes cuidan.",
+            github: "https://github.com/tania/cuidarnos",
+            demo: "https://taniaarteaga.dev/cuidarnos",
+            frontImage: "assets/img/imgPlaceholder.jpg",
+            backImage: "assets/img/imgPlaceholder.jpg",
+            technologies: ["Laravel", "Database", "POO", "MVC"]
+        },
+        {
+            id: "calendario-trabajo",
+            title: "Calendario de trabajo automático",
+            description: "Visualiza tu calendario de turnos, asignaciones de trabajo y horarios más recientes. Consulta los detalles de cada turno, como la duración, el empleado asignado y cualquier nota adicional. Crea y guarda nuevos turnos automáticamente basados en tus configuraciones previas, optimizando las asignaciones de acuerdo a la disponibilidad de los empleados. Adapta y personaliza tu calendario según las necesidades de tu equipo, y más.",
+            github: "https://github.com/tania/calendario-trabajo",
+            demo: "https://taniaarteaga.dev/calendario-trabajo",
+            frontImage: "assets/img/imgPlaceholder.jpg",
+            backImage: "assets/img/imgPlaceholder.jpg",
+            technologies: ["Bootstrap", "PHP", "CSS", "HTML"]
+        }
+    ];
+
     function renderProjectItem(project, index) {
         const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
         return `
@@ -38,23 +71,16 @@
     `;
     }
 
-    async function loadProjects() {
-        try {
-            const response = await fetch('data/projects.json');
-            const projects = await response.json();
-            const container = document.getElementById('projects-container');
-            container.innerHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
-            // Trigger animations for loaded content
-            setTimeout(() => {
-                const animatedElements = container.querySelectorAll('[class*="animate-"]');
-                animatedElements.forEach(el => {
-                    el.classList.add('animate');
-                });
-            }, 100);
-        } catch (error) {
-            console.error('Error loading projects:', error);
-            document.getElementById('projects-container').innerHTML = '<p>Error loading projects.</p>';
-        }
+    function loadProjects() {
+        const container = document.getElementById('projects-container');
+        container.innerHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
+        // Trigger animations for loaded content
+        setTimeout(() => {
+            const animatedElements = container.querySelectorAll('[class*="animate-"]');
+            animatedElements.forEach(el => {
+                el.classList.add('animate');
+            });
+        }, 100);
     }
 
     document.addEventListener('DOMContentLoaded', loadProjects);
