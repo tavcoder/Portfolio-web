@@ -208,11 +208,12 @@
 
   .item__container {
     display: flex;
+    flex-direction: row-reverse;
     gap: 2rem;
     align-items: center;
   }
 
-  .item__inner {
+  .item__card {
     position: relative;
     width: 30rem;
     height: 20rem;
@@ -223,7 +224,7 @@
     transform-style: preserve-3d;
   }
 
-  &:hover .item__inner {
+  &:hover .item__card {
     transform: rotateY(180deg);
   }
 
