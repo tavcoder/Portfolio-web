@@ -202,24 +202,35 @@
 .projects__item {
   background-color: transparent;
   padding: 20px;
-  width: 30rem;
-  height: 40rem;
-  perspective: 1000px;
-}
-
-.item__inner {
-  position: relative;
   width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  @include card-style();
-  background-color: $secundary-bg;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
+  max-width: 60rem;
+  perspective: 1000px;
 
-.projects__item:hover .item__inner {
-  transform: rotateY(180deg);
+  .item__container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .item__inner {
+    position: relative;
+    width: 30rem;
+    height: 20rem;
+    border-radius: 1rem;
+    @include card-style();
+    background-color: $secundary-bg;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  &:hover .item__inner {
+    transform: rotateY(180deg);
+  }
+
+  .item__details {
+    flex: 1;
+    text-align: left;
+  }
 }
 
 .item__front,
