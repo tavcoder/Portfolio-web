@@ -1,0 +1,152 @@
+$primary-bg: #F5F5F5; // Off-White/Very Light Grey for the general background
+/* CSS Custom Properties for theming */
+:root {
+  --primary-bg: #E0E5EC;
+  --secundary-bg: #F0DDE2;
+  --accent-color: #F47F9B;
+  --accent-color2: #555555;
+  --text-color: #333333;
+  --text-color2: #FFFFFF;
+  --highlight-color: #D1ECEF;
+  --highlight-color2: #E96E8A;
+  --shadow-light: #E0E0E0;
+  --shadow-dark: #C0C0C0;
+  --white-shadow: #FFFFFF;
+}
+
+/* SCSS Variables */
+$primary-bg: var(--primary-bg);
+$secundary-bg: var(--secundary-bg);
+$accent-color: var(--accent-color);
+$accent-color2: var(--accent-color2);
+$text-color: var(--text-color);
+$text-color2: var(--text-color2);
+$highlight-color: var(--highlight-color);
+$highlight-color2: var(--highlight-color2);
+$shadow-light: var(--shadow-light);
+$shadow-dark: var(--shadow-dark);
+$white-shadow: var(--white-shadow);
+
+$inner-shadow: inset 10px 10px 10px $shadow-light, inset -10px -10px 10px $white-shadow;
+
+@mixin flex-box ($direction: column, $justify: center, $align-items: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+@mixin box-style($bg-color: $primary-bg, $shadow-light: $shadow-light, $white-shadow: $white-shadow, $shadow-dark: $shadow-dark, $outline-color: $shadow-light) {
+    background-color: $bg-color;
+    box-shadow: 2px 2px 2px $shadow-light, -2px -2px 2px $white-shadow, 1px 1px 70px $shadow-dark;
+    outline: $outline-color;
+}
+
+@mixin inset-box-shadow($shadow-color: rgba(#9da1a7, 0.4), $inset-color: rgba(#9da1a7, 0.25), $white-shadow: rgba(255, 255, 255, 0.9)) {
+    box-shadow:
+        /* Sombra externa hacia arriba a la izquierda */
+        -10px -10px 30px $white-shadow,
+
+        /* Sombra externa hacia abajo a la derecha */
+        10px 10px 30px $shadow-color,
+        /* 40% de opacidad por defecto */
+
+        /* Sombra interna desde arriba a la izquierda (hundido) */
+        inset -10px -10px 30px $inset-color,
+        /* 25% de opacidad por defecto */
+
+        /* Sombra interna desde abajo a la derecha */
+        inset 10px 10px 30px $white-shadow;
+}
+
+
+@mixin deep__box($bg-color: $primary-bg, $color: $text-color) {
+    background: $bg-color;
+    $color: $color;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+    padding: 8px 10px;
+    @include press-shadow();
+}
+
+@mixin card-style($bg-color: $secundary-bg, $box-shadow-color: rgba(0, 0, 0, 0.1)) {
+    background: $bg-color;
+    box-shadow: 0 4px 8px $box-shadow-color;
+}
+
+@mixin press-shadow {
+    box-shadow:
+        rgb(193, 198, 206) 2px 2px 2px inset,
+        rgb(255, 255, 255) -2px -2px 5px inset,
+        rgb(193, 198, 206) 0.5px 0.5px 5px inset,
+        rgb(255, 255, 255) -0.5px -0.5px 3px inset;
+}
+
+@mixin up-shadow {
+    box-shadow:
+        2px 2px 5px $shadow-light,
+        -2px -2px 5px $white-shadow,
+        0.5px 0.5px 2px $shadow-dark,
+        -0.5px -0.5px 2px $white-shadow;
+}
+
+@mixin primary-button($bg-color: $accent-color, $text-color: $text-color2) {
+    padding: 10px 20px;
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    @include up-shadow();
+
+    &:hover {
+        @include press-shadow();
+    }
+}
+
+// Link del nav
+@mixin secondary-button($bg-color: $primary-bg, $text-color: $text-color) {
+    padding: 10px 20px;
+    background-color: $bg-color;
+    outline: 0.05rem solid $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    @include inset-box-shadow();
+    /* Estilo inicial (botón sin presionar) */
+
+    &:hover {
+        @include up-shadow();
+        /* Estilo cuando el botón está en hover */
+    }
+
+    &.active {
+        @include press-shadow();
+        /* Estilo cuando el botón está presionado */
+    }
+
+    &:active {
+        @include primary-button(#EBE6E2, $text-color);
+        /* Aplicado en el clic momentáneo */
+    }
+}
+
+// Breakpoints for responsive design
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large: 1200px;
+
+// Mixin for mobile-first responsive design
+@mixin respond-above($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}

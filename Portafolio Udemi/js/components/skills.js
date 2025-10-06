@@ -1,3 +1,7 @@
+/**
+ * Renders the skills section HTML.
+ * @returns {string} The HTML string for the skills section.
+ */
 export function renderSkills() {
     return `
         <div class="content__skills">

@@ -1113,15 +1113,6 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
   box-shadow: rgb(193, 198, 206) 2px 2px 2px inset, rgb(255, 255, 255) -2px -2px 5px inset, rgb(193, 198, 206) 0.5px 0.5px 5px inset, rgb(255, 255, 255) -0.5px -0.5px 3px inset;
 }
 
-/* Skills Section */
-.content__skills {
-  height: 100%;
-  min-height: 100%;
-  display: grid;
-  grid-template-areas: "text skills";
-  grid-template-columns: 60% 40%;
-}
-
 .skills__textContent {
   grid-area: text;
   display: flex;
@@ -1256,118 +1247,6 @@ input:checked + .layout__aside .aside__buttons .buttons__switch .switch__slider 
 }
 .skills__container .skills__switch input:checked + .skills__slider .skills__label {
   transform: translateX(-8rem);
-}
-
-/* Projects Section */
-.layout__projects {
-  padding: 50px;
-  text-align: center;
-  overflow: auto;
-}
-
-.projects__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.projects__item {
-  background-color: transparent;
-  padding: 20px;
-  width: 30rem;
-  height: 40rem;
-  perspective: 1000px;
-}
-
-.item__card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  background: var(--secundary-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: var(--secundary-bg);
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.projects__item:hover .item__card {
-  transform: rotateY(180deg);
-}
-
-.item__front,
-.item__back {
-  background: var(--secundary-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 1rem;
-}
-
-.item__back {
-  transform: rotateY(180deg);
-}
-
-.item__title {
-  font-size: 1rem;
-}
-
-.item__img {
-  width: 100%;
-  height: 100%;
-  border-radius: 0 3rem 0 0;
-}
-
-.item__text {
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-.projects__skill {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 3rem;
-}
-
-.skill__item {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  text-align: center;
-  height: 4.5rem;
-  width: 4.5rem;
-  border-radius: 100%;
-  background: #e8e8e8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Studies Section */
-.content__studies {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: end;
-  gap: 0;
-  width: 90%;
-  height: 100%;
-  min-height: 100%;
 }
 
 .studies__list {

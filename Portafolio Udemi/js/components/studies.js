@@ -1,3 +1,7 @@
+/**
+ * Renders the studies section HTML.
+ * @returns {string} The HTML string for the studies section.
+ */
 export function renderStudies() {
     return `
         <section class="content__page content__studies">

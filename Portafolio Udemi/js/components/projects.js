@@ -1,5 +1,9 @@
 import { renderProjectItem } from './projectDetail.js';
 
+/**
+ * Array of project objects containing details for each project.
+ * @type {Array<Object>}
+ */
 const projects = [
     {
         id: "obi-tienda",
@@ -36,6 +40,10 @@ const projects = [
     }
 ];
 
+/**
+ * Renders the projects section HTML.
+ * @returns {Promise<string>} The HTML string for the projects section.
+ */
 export async function renderProjects() {
     const projectsHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
 

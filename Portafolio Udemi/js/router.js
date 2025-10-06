@@ -3,6 +3,10 @@ import { renderSkills } from './components/skills.js';
 import { renderStudies } from './components/studies.js';
 import { renderProjects } from './components/projects.js';
 
+/**
+ * Map of routes to their corresponding render functions.
+ * @type {Object<string, Function>}
+ */
 const routes = {
     '': renderHero,
     'hero': renderHero,
@@ -11,6 +15,10 @@ const routes = {
     'studies': renderStudies
 };
 
+/**
+ * Navigates to the specified route, renders the content, and updates the UI.
+ * @param {string} route - The route to navigate to.
+ */
 export async function navigateTo(route) {
     const renderFunction = routes[route];
     if (renderFunction) {
@@ -36,6 +44,10 @@ export async function navigateTo(route) {
     window.location.hash = route;
 }
 
+/**
+ * Updates the active menu link based on the current route.
+ * @param {string} route - The current route.
+ */
 function updateActiveMenu(route) {
     const buttons = document.querySelectorAll('.menu__link');
     buttons.forEach(btn => {
@@ -51,6 +63,9 @@ function updateActiveMenu(route) {
     }
 }
 
+/**
+ * Toggles the display between frontend and backend technologies in the skills section.
+ */
 function toggleTechnologies() {
     const frontend = document.getElementById('frontend');
     const backend = document.getElementById('backend');
@@ -68,12 +83,19 @@ function toggleTechnologies() {
     }
 }
 
-// Intersection Observer for animations
+/**
+ * Options for the Intersection Observer used for animations.
+ * @type {Object}
+ */
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
 };
 
+/**
+ * Intersection Observer instance for triggering animations on scroll.
+ * @type {IntersectionObserver}
+ */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -83,6 +105,9 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
+/**
+ * Observes elements with the 'animate-on-scroll' class for animations.
+ */
 function observeAnimations() {
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   animatedElements.forEach(el => observer.observe(el));

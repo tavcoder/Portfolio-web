@@ -1,3 +1,9 @@
+/**
+ * Renders the HTML for a single project item.
+ * @param {Object} project - The project object containing details.
+ * @param {number} index - The index of the project in the list.
+ * @returns {string} The HTML string for the project item.
+ */
 export function renderProjectItem(project, index) {
   const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
   return `

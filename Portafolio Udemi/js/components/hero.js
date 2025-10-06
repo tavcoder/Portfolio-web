@@ -1,3 +1,7 @@
+/**
+ * Renders the hero section HTML.
+ * @returns {string} The HTML string for the hero section.
+ */
 export function renderHero() {
     return `
         <section class="content__page" id="content__page">
