@@ -1,8 +1,16 @@
-// Selecciona el botón y el enlace de la hoja de estilo
+/**
+ * Button element for toggling the theme.
+ * @type {HTMLElement}
+ */
 const toggleButton = document.getElementById('toggleTheme');
+
+/**
+ * Stylesheet link element for the theme.
+ * @type {HTMLLinkElement}
+ */
 const stylesheet = document.getElementById('theme-stylesheet');
 
-// Escucha el evento 'click' en el botón para cambiar entre ligth.css y dark.css
+// Listen for click event on the button to switch between light.css and dark.css
 toggleButton.addEventListener('click', () => {
   if (stylesheet.getAttribute('href') === 'assets/css/light.css') {
     stylesheet.setAttribute('href', 'assets/css/dark.css');

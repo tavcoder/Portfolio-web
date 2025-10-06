@@ -1,0 +1,14 @@
+/* Dark theme variables */
+:root {
+  --primary-bg: #1a1a1a;
+  --secundary-bg: #2a2a2a;
+  --accent-color: #F47F9B;
+  --accent-color2: #AAAAAA;
+  --text-color: #FFFFFF;
+  --text-color2: #333333;
+  --highlight-color: #3a3a3a;
+  --highlight-color2: #F47F9B;
+  --shadow-light: #2a2a2a;
+  --shadow-dark: #0a0a0a;
+  --white-shadow: #3a3a3a;
+}
