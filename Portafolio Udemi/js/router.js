@@ -17,19 +17,42 @@ const routes = {
 };
 
 /**
- * Navigates to the specified route, renders the content, and updates the UI.
- * @param {string} route - The route to navigate to.
+ * Normaliza una ruta: quita slashes iniciales y finales.
+ * @param {string} route
+ * @returns {string}
  */
-export async function navigateTo(route) {
+function normalizeRoute(route) {
+    if (!route) return '';
+    return route.replace(/^\/+|\/+$/g, ''); // elimina "/" al inicio y final
+}
+
+/**
+ * Navigates to the specified route, renders the content, and updates the UI.
+ * @param {string} rawRoute - The route to navigate to (may include leading slash).
+ */
+export async function navigateTo(rawRoute) {
+    const route = normalizeRoute(rawRoute); // e.g. "project/superm" or "projects"
+
+    // Detectar si la ruta es un proyecto individual: "project/<id>"
+    if (route.startsWith('project/')) {
+        const projectId = route.split('/')[1];
+        const content = document.getElementById('content__page');
+        content.innerHTML = await renderProjectTemplate(projectId);
+        // Actualiza el hash en formato "#/project/superm"
+        window.location.hash = `#/${route}`;
+        // observar animaciones si las hay
+        observeAnimations();
+        return;
+    }
+
+    // rutas normales
     const renderFunction = routes[route];
     if (renderFunction) {
         const content = document.getElementById('content__page');
         content.innerHTML = await renderFunction();
-        // Observe animations for new content
         observeAnimations();
-        // Update active menu
         updateActiveMenu(route);
-        // If skills, set up toggle
+
         if (route === 'skills') {
             setTimeout(() => {
                 const toggleCheckbox = document.getElementById('toggle-tech');
@@ -39,10 +62,13 @@ export async function navigateTo(route) {
             }, 0);
         }
     } else {
+        // si no existe la ruta, ir a la principal
         await navigateTo('');
+        return;
     }
-    // Update URL hash
-    window.location.hash = route;
+
+    // Actualiza el hash de forma consistente "#/route" (si route == '' -> "#/")
+    window.location.hash = route ? `#/${route}` : '#/';
 }
 
 /**
@@ -57,10 +83,9 @@ function updateActiveMenu(route) {
             btn.classList.add('active');
         }
     });
-    // Also set hero as default active if no route
     if (!route) {
         const heroLink = document.querySelector('.menu__link[data-route=""]') || buttons[0];
-        heroLink.classList.add('active');
+        if (heroLink) heroLink.classList.add('active');
     }
 }
 
@@ -73,14 +98,16 @@ function toggleTechnologies() {
     const labelText = document.getElementById('label-text');
     const checkbox = document.getElementById('toggle-tech');
 
+    if (!checkbox) return;
+
     if (checkbox.checked) {
-        frontend.classList.add('hidden');
-        backend.classList.remove('hidden');
-        labelText.textContent = 'Backend';
+        frontend?.classList.add('hidden');
+        backend?.classList.remove('hidden');
+        labelText && (labelText.textContent = 'Backend');
     } else {
-        frontend.classList.remove('hidden');
-        backend.classList.add('hidden');
-        labelText.textContent = 'Frontend';
+        frontend?.classList.remove('hidden');
+        backend?.classList.add('hidden');
+        labelText && (labelText.textContent = 'Frontend');
     }
 }
 
@@ -89,27 +116,41 @@ function toggleTechnologies() {
  * @type {Object}
  */
 const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-/**
- * Intersection Observer instance for triggering animations on scroll.
- * @type {IntersectionObserver}
- */
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-      observer.unobserve(entry.target);
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+        }
+    });
 }, observerOptions);
 
 /**
  * Observes elements with the 'animate-on-scroll' class for animations.
  */
 function observeAnimations() {
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
-  animatedElements.forEach(el => observer.observe(el));
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
 }
+
+/**
+ * Detect hash changes and navigate automatically.
+ * Normalizamos el hash para que sea compatible con navigateTo.
+ */
+window.addEventListener('hashchange', () => {
+    // Remueve "#/" o "#" y pasa el resto (ej: "#/project/superm" -> "project/superm")
+    const raw = window.location.hash.replace(/^#\/?/, '');
+    navigateTo(raw);
+});
+
+/**
+ * Load initial route on page load.
+ */
+window.addEventListener('DOMContentLoaded', () => {
+    const initialRaw = window.location.hash.replace(/^#\/?/, '');
+    navigateTo(initialRaw || '');
+});

@@ -1,12 +1,96 @@
 [
   {
-    "id": "superm",
+    "id": "portfolio",
+    "name": "Portafolio Web",
+    "description": "Portafolio interactivo como SPA, mostrando proyectos, habilidades y estudios de manera moderna, responsiva e interactiva.",
+    "stack": [
+      "🌐 HTML5",
+      "🎨 CSS3",
+      "⚡ JavaScript (ES6+)",
+      "🌀 SPA con routing (router.js)",
+      "💡 Animaciones personalizadas (animations.js)",
+      "🌙 Dark/Light mode toggle (theme.js)",
+      "🖼️ JSON dinámico (projects.json)"
+    ],
+    "features": [
+      "🔹 Navegación SPA sin recarga de página",
+      "🌙 Dark/Light theme toggle",
+      "✨ Animaciones suaves y microinteracciones",
+      "📱 Diseño responsivo móvil y escritorio",
+      "📂 Sección de proyectos interactiva con detalles, stack, imágenes, demo y repositorio",
+      "🚀 Carga dinámica de proyectos con fetch y renderizado en tiempo real"
+    ],
+    "images": [
+      "assets/imgPlaceholder.jpg",
+      "assets/imgPlaceholder.jpg"
+    ],
+    "demo": "https://taniaarteaga.github.io/tania-portfolio",
+    "code": "https://github.com/taniaarteaga/tania-portfolio",
+    "context": {
+      "origen": "Proyecto personal para mostrar mis habilidades como frontend.",
+      "problema": "Permite a reclutadores y clientes conocer mis proyectos y competencias de manera clara e interactiva.",
+      "publico": "Reclutadores, clientes potenciales y profesionales del sector tech."
+    },
+    "development": {
+      "planificacion": "Diseño y planificación con wireframes y UI/UX.",
+      "retos": "Renderizar proyectos dinámicamente manteniendo SPA. Solución: función renderProjectTemplate() + JSON.",
+      "screenshots": "Comparación entre versión inicial HTML estático y SPA interactiva final.",
+      "commits": "Integración de dark mode, animaciones y SPA modularizada."
+    },
+    "learning": {
+      "aprendizajes": "Creación de SPA desde cero, modularizando JS en componentes y utils.",
+      "mejoras": "Agregar backend para contacto o comentarios, soporte multilenguaje, integración con CMS.",
+      "futuras_funcionalidades": "Soporte multilenguaje, CMS para actualizar proyectos dinámicamente."
+    },
+    "extras": [
+      "✨ Animaciones de entrada y hover en proyectos",
+      "🎯 Microinteracciones en botones",
+      "🎥 GIF/video mostrando navegación SPA y toggle dark/light"
+    ]
+  },
+  {
+    "id": "super-m",
     "name": "SuperM – React E-commerce",
     "description": "Una aplicación moderna de e-commerce con React, Vite y Supabase.",
-    "stack": ["React", "Vite", "CSS Modules", "Context API", "TanStack Query", "Supabase"],
-    "features": ["Login de usuarios", "Carrito persistente", "Checkout en varios pasos"],
-    "images": ["assets/superm1.png", "assets/superm2.png"],
+    "stack": [
+      "⚛️ React",
+      "⚡ Vite",
+      "🎨 CSS Modules",
+      "🔗 Context API",
+      "📊 TanStack Query",
+      "🗄️ Supabase"
+    ],
+    "features": [
+      "👤 Login de usuarios",
+      "🛒 Carrito persistente",
+      "💳 Checkout en varios pasos"
+    ],
+    "images": [
+      "assets/superm1.png",
+      "assets/superm2.png"
+    ],
     "demo": "https://superm.vercel.app",
-    "code": "https://github.com/taniaarteaga/superm"
+    "code": "https://github.com/taniaarteaga/superm",
+    "context": {
+      "origen": "Challenge personal para practicar React avanzado y e-commerce.",
+      "problema": "Crear un e-commerce moderno con gestión de usuarios y carrito persistente.",
+      "publico": "Desarrolladores, empleadores y clientes interesados en e-commerce."
+    },
+    "development": {
+      "planificacion": "Estructuración de componentes React, hooks y estado global con Context API.",
+      "retos": "Integración con Supabase y manejo de datos asíncronos con TanStack Query.",
+      "screenshots": "Versión inicial vs final con carrito funcional y checkout multi-step.",
+      "commits": "Añadida funcionalidad de login, carrito persistente y checkout."
+    },
+    "learning": {
+      "aprendizajes": "React avanzado, gestión de estado con Context API y consultas con TanStack Query.",
+      "mejoras": "Agregar tests automatizados y mejoras en UI/UX.",
+      "futuras_funcionalidades": "Sistema de pagos real, panel de administración y filtros avanzados de productos."
+    },
+    "extras": [
+      "✨ Animaciones de botones y transiciones de página",
+      "🎯 Microinteracciones en el carrito",
+      "🎥 Video demostrativo del flujo de compra"
+    ]
   }
 ]
