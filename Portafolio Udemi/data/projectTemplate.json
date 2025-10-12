@@ -1,0 +1,12 @@
+[
+  {
+    "id": "superm",
+    "name": "SuperM – React E-commerce",
+    "description": "Una aplicación moderna de e-commerce con React, Vite y Supabase.",
+    "stack": ["React", "Vite", "CSS Modules", "Context API", "TanStack Query", "Supabase"],
+    "features": ["Login de usuarios", "Carrito persistente", "Checkout en varios pasos"],
+    "images": ["assets/superm1.png", "assets/superm2.png"],
+    "demo": "https://superm.vercel.app",
+    "code": "https://github.com/taniaarteaga/superm"
+  }
+]

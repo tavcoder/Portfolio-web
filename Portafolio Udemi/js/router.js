@@ -1,7 +1,8 @@
 import { renderHero } from './components/hero.js';
 import { renderSkills } from './components/skills.js';
 import { renderStudies } from './components/studies.js';
-import { renderProjects } from './components/projects.js';
+import { renderProjects } from './components/projectsList.js';
+import { renderProjectTemplate } from './components/projectTemplate.js';
 
 /**
  * Map of routes to their corresponding render functions.

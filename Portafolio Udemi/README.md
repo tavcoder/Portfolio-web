@@ -15,7 +15,7 @@ I love exploring new technologies, solving complex problems, and designing inter
 ## Technologies Used
 
 - **HTML5**: Site structure.
-- **CSS3 / SCSS**: Styles and responsive design.
+- **CSS3**: Styles and responsive design.
 - **JavaScript (ES6+)**: Application logic, routing, and interactivity.
 - **Font Awesome**: Icons.
 - **Google Fonts**: Custom fonts.
@@ -26,17 +26,9 @@ I love exploring new technologies, solving complex problems, and designing inter
 Portafolio Udemi/
 ├── assets/
 │   ├── css/
-│   │   ├── styles.css (compiled)
+│   │   ├── styles.css
 │   │   ├── light.css
 │   │   └── dark.css
-│   ├── scss/
-│   │   ├── styles.scss
-│   │   ├── variables.scss
-│   │   ├── _base.scss
-│   │   ├── _layout.scss
-│   │   ├── _components.scss
-│   │   ├── _animations.scss
-│   │   └── _responsive.scss
 │   └── img/
 │       ├── profile.jpg
 │       └── other assets
@@ -76,7 +68,7 @@ Portafolio Udemi/
 
 ## Development
 
-To modify styles, edit the `.scss` files in `assets/scss/` and compile to `assets/css/styles.css` using Sass (e.g., `sass assets/scss/styles.scss assets/css/styles.css`).
+To modify styles, edit `assets/css/styles.css` directly.
 
 Project data is in `data/projects.json` and loaded dynamically.
 
