@@ -1,8 +1,8 @@
 [
   {
     "id": "portfolio",
-    "name": "Portafolio Web",
-    "description": "Portafolio interactivo como SPA, mostrando proyectos, habilidades y estudios de manera moderna, responsiva e interactiva.",
+    "name": "Portafolio Web – SPA Interactivo",
+    "description": "Portafolio interactivo mostrando proyectos, habilidades y estudios de manera moderna, responsiva e interactiva.",
     "stack": [
       "🌐 HTML5",
       "🎨 CSS3",
@@ -21,8 +21,8 @@
       "🚀 Carga dinámica de proyectos con fetch y renderizado en tiempo real"
     ],
     "images": [
-      "assets/imgPlaceholder.jpg",
-      "assets/imgPlaceholder.jpg"
+      "assets/portfolio1.png",
+      "assets/portfolio2.png"
     ],
     "demo": "https://taniaarteaga.github.io/tania-portfolio",
     "code": "https://github.com/taniaarteaga/tania-portfolio",
@@ -51,7 +51,7 @@
   {
     "id": "super-m",
     "name": "SuperM – React E-commerce",
-    "description": "Una aplicación moderna de e-commerce con React, Vite y Supabase.",
+    "description": "Aplicación moderna de e-commerce con React, Vite y Supabase, con carrito, checkout y animaciones.",
     "stack": [
       "⚛️ React",
       "⚡ Vite",
@@ -61,9 +61,11 @@
       "🗄️ Supabase"
     ],
     "features": [
-      "👤 Login de usuarios",
+      "👤 Login y registro de usuarios",
       "🛒 Carrito persistente",
-      "💳 Checkout en varios pasos"
+      "💳 Checkout en varios pasos",
+      "📝 Edición de datos de usuario",
+      "🔍 Filtros y ordenamiento de productos"
     ],
     "images": [
       "assets/superm1.png",
@@ -91,6 +93,57 @@
       "✨ Animaciones de botones y transiciones de página",
       "🎯 Microinteracciones en el carrito",
       "🎥 Video demostrativo del flujo de compra"
+    ]
+  },
+  {
+    "id": "social-app",
+    "name": "Red Social – Full-Stack App",
+    "description": "Aplicación social donde los usuarios pueden registrarse, crear publicaciones, seguir a otros, dar likes y comentar, con React en frontend y Node.js/Express/MongoDB en backend.",
+    "stack": [
+      "⚛️ React",
+      "⚡ Vite",
+      "🛠 Node.js",
+      "📦 Express",
+      "🗄 MongoDB",
+      "🔑 JWT",
+      "🎨 CSS3",
+      "🧩 React Router",
+      "📊 TanStack React Query"
+    ],
+    "features": [
+      "👤 Registro, login y perfil de usuario",
+      "🖼️ Subida de avatar y publicaciones con imágenes",
+      "💬 Comentarios y likes en publicaciones",
+      "📰 Feed de usuarios seguidos",
+      "🔎 Exploración y búsqueda de usuarios",
+      "🛡️ Autenticación JWT y API documentada con Swagger"
+    ],
+    "images": [
+      "assets/social1.png",
+      "assets/social2.png"
+    ],
+    "demo": "https://social-demo.vercel.app",
+    "code": "https://github.com/taniaarteaga/social-media-app",
+    "context": {
+      "origen": "Proyecto full-stack personal para practicar backend con Node.js y frontend con React.",
+      "problema": "Crear una red social funcional con autenticación segura, gestión de publicaciones y feed dinámico.",
+      "publico": "Desarrolladores, empleadores y clientes interesados en proyectos full-stack."
+    },
+    "development": {
+      "planificacion": "Diseño y planificación de rutas, endpoints y componentes React.",
+      "retos": "Manejo de datos asíncronos, autenticación JWT y subida de archivos con Multer.",
+      "screenshots": "Comparación de la versión inicial vs final con feed y publicación funcional.",
+      "commits": "Implementadas funciones de registro, login, CRUD de publicaciones y feed de usuarios."
+    },
+    "learning": {
+      "aprendizajes": "React avanzado, Node.js, Express, MongoDB, JWT y TanStack React Query.",
+      "mejoras": "Optimizar rendimiento del feed, agregar tests y seguridad avanzada.",
+      "futuras_funcionalidades": "Notificaciones en tiempo real, panel de administración, filtros y búsqueda avanzada."
+    },
+    "extras": [
+      "✨ Animaciones de botones y transiciones",
+      "🎯 Microinteracciones en likes y comentarios",
+      "🎥 GIF/video demostrativo del flujo de publicaciones y feed"
     ]
   }
 ]

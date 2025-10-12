@@ -1,8 +1,3 @@
-/**
- * Renders a single project detail page.
- * @param {string} projectId - The ID of the project to render.
- * @returns {Promise<string>} The HTML string for the project detail page.
- */
 export async function renderProjectTemplate(projectId) {
   try {
     const response = await fetch('data/projectTemplate.json');
@@ -17,7 +12,6 @@ export async function renderProjectTemplate(projectId) {
         </div>`;
     }
 
-    // Renderiza las imágenes en un carrusel simple (puedes mejorarlo después)
     const imagesHTML = project.images
       .map(img => `<img src="${img}" alt="${project.name}" class="project__img">`)
       .join('');
@@ -36,9 +30,10 @@ export async function renderProjectTemplate(projectId) {
             </div>
           </div>
         </div>
-          <div class="project__gallery">
-            ${imagesHTML}
-          </div>
+
+        <div class="project__gallery">
+          ${imagesHTML}
+        </div>
 
         <div class="project__stack">
           <h3>Stack Tecnológico</h3>
@@ -54,6 +49,18 @@ export async function renderProjectTemplate(projectId) {
           </ul>
         </div>
 
+        <div class="project__learning">
+          <h3>Aprendizajes y mejoras</h3>
+          <p>${project.learning.aprendizajes}</p>
+          <p>Futuras funcionalidades: ${project.learning.futuras_funcionalidades}</p>
+        </div>
+
+        <div class="project__extras">
+          <h3>Extras</h3>
+          <ul>
+            ${project.extras.map(extra => `<li>${extra}</li>`).join('')}
+          </ul>
+        </div>
       </div>
     `;
   } catch (error) {
