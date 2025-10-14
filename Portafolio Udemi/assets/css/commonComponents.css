@@ -39,10 +39,9 @@
 }
 
 /* Secondary and Primary Buttons in Hero Section */
-.secondaryBtn {
+
+.btn {
   padding: 10px 20px;
-  background-color: var(--accent-color2);
-  color: var(--text-color2);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -50,24 +49,20 @@
   box-shadow: var(--box-shadow-up);
 }
 
-.secondaryBtn:hover {
+.btn:hover {
   box-shadow: var(--box-shadow-press);
 }
 
 .primaryBtn {
-  padding: 10px 20px;
   background-color: var(--accent-color);
   color: var(--text-color2);
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: var(--box-shadow-up);
+}
+.secondaryBtn {
+  background-color: var(--accent-color2);
+  color: var(--text-color2);
 }
 
-.primaryBtn:hover {
-  box-shadow: var(--box-shadow-press);
-}
+
 
 /* Toggle Switch */
 .buttons__switch {

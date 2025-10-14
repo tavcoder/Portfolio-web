@@ -19,9 +19,9 @@ export function renderHero() {
             <div class="page__btn">
                 <a href="mailto:tarteagadesign@gmail.com?subject=Consulta%20sobre%20tu%20portafolio" target="_blank"
                     class="animate-on-scroll animate-zoom-in">
-                    <button class="secondaryBtn">Hablemos</button> </a>
+                    <button class="btn secondaryBtn">Hablemos</button> </a>
                 <a href="assets/cv-tania-arteaga.pdf" target="_blank" class="animate-on-scroll animate-zoom-in animate-delay-300">
-                    <button class="primaryBtn">Ver mi CV</button>
+                    <button class="btn primaryBtn">Ver mi CV</button>
                 </a>
 
 

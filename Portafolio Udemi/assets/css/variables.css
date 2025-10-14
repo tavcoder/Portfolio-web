@@ -1,21 +1,15 @@
  /* CSS Custom Properties for theming */
- :root {
-   --primary-bg: #E0E5EC;
-   /* Color gris para fondo general, color de fondo para los input y botones */
-   --secundary-bg: #cfcaea;
-   /* Color amarillo claro para las tarjetas del skill */
-   --accent-color: #f7c548;
-   /* Color amarillo para títulos y cta */
-   --accent-color2: #5e4ac7;
-   /* Color azul oscuro para letras del nav y cta */
-   --text-color: #333333;
-   /* Color gris oscuro de letra del footer y del body */
-   --text-color2: rgb(255, 253, 253);
-   /* Color de la letra de cta */
-   --highlight-color: #cfcaea;
-   /* Color verde claro del slider */
-   --highlight-color2: #6f57e9;
-   /* Color verde oscuro del slider */
+:root {
+  --primary-bg: #0d1b2a;         /* Fondo principal oscuro azul marino */
+  --secundary-bg: #1b263b;       /* Fondo secundario, ligeramente más claro */
+  --accent-color: #415a77;       /* Azul grisáceo usado en botones o bordes */
+  --accent-color2: #e0e1dd;      /* Gris claro para títulos o detalles */
+  --text-color: #f5f3f4;         /* Texto principal claro */
+  --text-color2: #ffffff;        /* Texto de botones o títulos destacados */
+  --highlight-color: #6d4c41;    /* Marrón café suave (para resaltar elementos) */
+  --highlight-color2: #a67b5b;   /* Marrón claro tipo latte (para hover o acentos) */
+
+
 
    --shadow-light: #c1c6ce;
    --shadow-dark: #9da1a7;
