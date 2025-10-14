@@ -69,7 +69,7 @@ h1 {
   outline: var(--shadow-light);
 }
 
- .aside__user-info {
+.aside__user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,12 +77,12 @@ h1 {
   min-width: 15rem;
 }
 
-.layout__aside .user-info__general {
+.user-info__general {
   margin-top: 2rem;
   text-align: center;
 }
 
-.layout__aside .user-info__general .user-info__container-image {
+.user-info__container-image {
   position: relative;
   display: inline-block;
   width: 12rem;
@@ -93,12 +93,12 @@ h1 {
   box-shadow: var(--box-shadow-up);
 }
 
-.layout__aside .user-info__general .user-info__container-image .user-info__image {
+.user-info__image {
   width: 100%;
   box-shadow: var(--box-shadow-inset);
 }
 
-.layout__aside .user-info__general .user-info__links {
+.user-info__links {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: row;
@@ -108,18 +108,18 @@ h1 {
   color: var(--highlight-color2);
 }
 
-.layout__aside .user-info__general .user-info__name {
+.user-info__name {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--highlight-color2);
 }
 
-.layout__aside .user-info__general .user-info__email {
+.user-info__email {
   opacity: 60%;
   font-size: 1.3rem;
 }
 
-.layout__aside .aside__menu {
+.aside__menu {
   margin-top: 4rem;
   margin-bottom: 2rem;
   display: flex;
@@ -129,7 +129,7 @@ h1 {
   gap: 0.5rem;
 }
 
-.layout__aside .aside__menu .menu__link {
+.menu__link {
   font-size: 1.2rem;
   margin-top: 2rem;
   padding: 10px 20px;
@@ -144,17 +144,17 @@ h1 {
   /* Estilo inicial (botón sin presionar) */
 }
 
-.layout__aside .aside__menu .menu__link:hover {
+.menu__link:hover {
   box-shadow: var(--box-shadow-up);
   /* Estilo cuando el botón está en hover */
 }
 
-.layout__aside .aside__menu .menu__link.active {
+.menu__link.active {
   box-shadow: var(--box-shadow-press);
   /* Estilo cuando el botón está presionado */
 }
 
-.layout__aside .aside__menu .menu__link:active {
+.menu__link:active {
   padding: 10px 20px;
   background-color: var(--menu-link-active-bg);
   color: var(--text-color);
@@ -165,15 +165,11 @@ h1 {
   box-shadow: var(--box-shadow-up);
 }
 
-.layout__aside .aside__menu .menu__link:active:hover {
+.menu__link:active:hover {
   box-shadow: var(--box-shadow-press);
 }
 
-.layout__aside .aside__menu .menu__link:active {
-  /* Aplicado en el clic momentáneo */
-}
-
-.layout__aside .aside__buttons {
+.aside__buttons {
   margin-top: 3rem;
   display: flex;
   flex-direction: center;
@@ -182,20 +178,20 @@ h1 {
   gap: 10rem;
 }
 
-.layout__aside .aside__buttons .buttons__switch {
+.buttons__switch {
   position: relative;
   width: 60px;
   height: 30px;
   display: inline-block;
 }
 
-.layout__aside .aside__buttons .buttons__switch input {
+.buttons__switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.layout__aside .aside__buttons .buttons__switch .switch__slider {
+.switch__slider {
   cursor: pointer;
   box-shadow: var(--box-shadow-up);
   border-radius: 50px;
@@ -204,7 +200,7 @@ h1 {
   transition: background-color 0.3s;
 }
 
-.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-face {
+.switch__slider-face {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -221,8 +217,8 @@ h1 {
   transition: 0.3s;
 }
 
-.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-face .switch__slider-eyeRight,
-.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-face .switch__slider-eyeLeft {
+.switch__slider-eyeRight,
+.switch__slider-eyeLeft {
   width: 5px;
   height: 5px;
   background-color: var(--accent-color2);
@@ -230,27 +226,27 @@ h1 {
   transition: background-color 0.3s;
 }
 
-.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-face .switch__slider-eyeRight.switch__slider-eyeLeft,
-.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-face .switch__slider-eyeLeft.switch__slider-eyeLeft {
+.switch__slider-eyeLeft,
+.switch__slider-eyeLeft {
   margin-right: 3px;
 }
 
-input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider {
+input:checked+.switch__slider {
   background-color: var(--highlight-color2);
 }
 
-input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-face {
+input:checked+.switch__slider-face {
   transform: translateX(25px);
 }
 
-input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-eyeRight,
-input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .switch__slider-eyeLeft {
+input:checked+.switch__slider-eyeRight,
+input:checked+.switch__slider-eyeLeft {
   background-color: transparent;
   border: solid 0.05rem var(--text-color);
   border-top: transparent;
 }
 
-.layout__aside .aside__buttons .buttons__language {
+.buttons__language {
   background: var(--primary-bg);
   border: none;
   border-radius: 0.3rem;
@@ -280,26 +276,26 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   min-height: 100%;
 }
 
-.content__page .page__text {
+.page__text {
   max-width: 50%;
   padding: 2rem 0 2rem 0;
 }
 
-.content__page .page__title {
+.page__title {
   color: var(--text-color);
   opacity: 0.7;
 }
 
-.content__page .page__title .page__title__name {
+.page__title__name {
   font-family: "Nunito", serif;
 }
 
-.content__page .page__title span {
+.page__title span {
   color: var(--accent-color2);
   font-family: "Nunito", serif;
 }
 
-.content__page .page__btn {
+.page__btn {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -308,7 +304,7 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   margin-top: 3rem;
 }
 
-.content__page .page__btn .btn__email {
+.btn__email {
   padding: 10px 20px;
   background-color: var(--accent-color2);
   color: var(--text-color2);
@@ -319,11 +315,11 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   box-shadow: var(--box-shadow-up);
 }
 
-.content__page .page__btn .btn__email:hover {
+.btn__email:hover {
   box-shadow: var(--box-shadow-press);
 }
 
-.content__page .page__btn .btn__cv {
+.btn__cv {
   padding: 10px 20px;
   background-color: var(--accent-color);
   color: var(--text-color2);
@@ -334,7 +330,7 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   box-shadow: var(--box-shadow-up);
 }
 
-.content__page .page__btn .btn__cv:hover {
+.btn__cv:hover {
   box-shadow: var(--box-shadow-press);
 }
 
@@ -385,7 +381,7 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   gap: 0.5rem;
 }
 
-.skills__textContent__skills .skills__textContent__iconCircle {
+.skills__textContent__iconCircle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -398,7 +394,7 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   box-shadow: inset 3px 3px 5px var(--icon-circle-shadow-light), inset -3px -3px 5px var(--icon-circle-shadow-dark);
 }
 
-.skills__textContent__skills .skills__textContent__iconCircle .fas {
+.fas {
   font-size: 1rem;
   color: var(--accent-color2);
 }
@@ -412,13 +408,13 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   width: 100%;
 }
 
-.skills__container .skills__container__title {
+.skills__container__title {
   margin: 1.8rem 0;
   color: var(--highlight-color2);
 }
 
 @media (max-width: 768px) {
-  .skills__container .skills__container__group {
+  .skills__container__group {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -427,16 +423,16 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
     flex-wrap: wrap;
   }
 
-  .skills__container .skills__container__tech {
+  .skills__container__tech {
     padding: 0.5rem;
   }
 
-  .skills__container .skills__container__tech i {
+  .skills__container__tech i {
     font-size: 2rem;
   }
 }
 
-.skills__container .skills__container__group {
+.skills__container__group {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -445,36 +441,36 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   flex-wrap: wrap;
 }
 
-.skills__container .skills__container__tech {
+.skills__container__tech {
   padding: 0.5rem;
 }
 
-.skills__container .skills__container__tech i {
+.skills__container__tech i {
   font-size: 2rem;
 }
 
-.skills__container .hidden {
+.hidden {
   display: none;
 }
 
-.skills__container {
+  {
   /* Switch */
 }
 
-.skills__container .skills__switch {
+.skills__switch {
   position: relative;
   display: inline-block;
   width: 160px;
   height: 20px;
 }
 
-.skills__container .skills__switch .switch__input {
+.switch__input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.skills__container .skills__switch .skills__slider {
+.skills__slider {
   box-shadow: var(--box-shadow-press);
   position: absolute;
   top: 0;
@@ -488,7 +484,7 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   z-index: 2;
 }
 
-.skills__container .skills__switch .skills__slider::before {
+.skills__slider::before {
   position: absolute;
   content: "";
   height: 20px;
@@ -503,11 +499,11 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   z-index: 2;
 }
 
-.skills__container .skills__switch input:checked+.skills__slider::before {
+input:checked+.skills__slider::before {
   transform: translateX(80px);
 }
 
-.skills__container .skills__switch .skills__label {
+.skills__label {
   font-size: 1.2rem;
   font-weight: 700;
   opacity: 70%;
@@ -516,88 +512,97 @@ input:checked+.layout__aside .aside__buttons .buttons__switch .switch__slider .s
   transition: transform 0.4s;
 }
 
-.skills__container .skills__switch input:checked+.skills__slider .skills__label {
+.skills__switch input:checked+.skills__slider .skills__label {
   transform: translateX(-8rem);
 }
 
 /* Projects Section */
 .projects__container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 8rem;
+  gap: 2rem;
+  padding: 4rem;
+  margin-top: 8rem;
 }
 
+/* Tarjeta */
 .projects__item {
-  background-color: transparent;
+  background-color: #fff;
   width: 100%;
-  max-width: 40rem;
+  max-width: 30rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.projects__item .item__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+.projects__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-.item__container {
-  height: 50rem;
-}
-
+/* Imagen superior */
 .item__card {
   position: relative;
   width: 100%;
-  height: 25rem;
-}
-.projects__item .item__details {
-  flex: 1;
-  text-align: left;
-}
-
-.item__title {
-  font-size: 1.5rem;
+  height: 18rem;
+  overflow: hidden;
 }
 
 .item__img {
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
+}
+
+/* Contenido de la tarjeta */
+.item__details {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Título y descripción */
+.item__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.5rem;
 }
 
 .item__text {
-  font-size: 1rem;
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Skills / logos */
+.projects__skill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
   margin-top: 1rem;
 }
 
-.projects__skill {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
 .skill__item {
+  width: 5rem;
+  height: 5rem;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  text-align: center;
-  height: 4.5rem;
-  width: 4.5rem;
-  border-radius: 100%;
 }
 
 .skill__logo {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
   object-fit: contain;
+  opacity: 0.85;
 }
+
 
 /* Studies Section */
 .content__studies {
