@@ -1,0 +1,14 @@
+/* Light theme variables */
+:root {
+  --primary-bg: #E0E5EC;
+  --secundary-bg: #F0DDE2;
+  --accent-color: #F47F9B;
+  --accent-color2: #555555;
+  --text-color: #333333;
+  --text-color2: #FFFFFF;
+  --highlight-color: #D1ECEF;
+  --highlight-color2: #E96E8A;
+  --shadow-light: #E0E0E0;
+  --shadow-dark: #C0C0C0;
+  --white-shadow: #FFFFFF;
+}

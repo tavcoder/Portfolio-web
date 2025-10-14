@@ -1,0 +1,32 @@
+[
+  {
+    "id": "portfolio",
+    "title": "Portfolio",
+    "description": "Interactive Developer Portfolio crafted with vanilla JavaScript and CSS, featuring smooth animations, light/dark mode, and project highlights to present my journey as a frontend web developer.",
+    "github": "https://github.com/tavcoder/Portfolio-web",
+    "demo": "https://tavcoder.github.io/Portfolio-web/Portafolio%20Udemi/",
+    "frontImage": "assets/img/portfolio.png",
+    "backImage": "assets/img/imgPlaceholder.jpg",
+    "technologies": ["JavaScript", "CSS"]
+  },
+  {
+    "id": "super-m",
+    "title": "Super M",
+    "description": "SuperM is a modern e-commerce platform for browsing products, managing a shopping cart, and completing purchases with ease. Built with React and Vite, it delivers a smooth shopping experience with user authentication and a fast, responsive interface.",
+    "github": "https://github.com/tavcoder/SuperM",
+    "demo": "https://supermdemo.netlify.app/",
+    "frontImage": "assets/img/superm.png",
+    "backImage": "assets/img/imgPlaceholder.jpg",
+    "technologies": ["React", "Vite", "Node","Supabase"]
+  },
+  {
+    "id": "social",
+    "title": "Social",
+    "description": " Social Connect is a full-stack social media platform where users can share posts, follow others, like and comment on content, and explore the community. Built with Node.js, Express, MongoDB, React, and Vite, it connects people through seamless interactions and a modern user experience.",
+    "github": "https://github.com/tavcoder/Social",
+    "demo": "https://taniaarteaga.dev/calendario-trabajo",
+    "frontImage": "assets/img/imgPlaceholder.jpg",
+    "backImage": "assets/img/imgPlaceholder.jpg",
+    "technologies": ["React", "Vite", "MongoDb", "Node", "Express"]
+  }
+]

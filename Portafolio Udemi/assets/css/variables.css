@@ -1,1 +1,40 @@
-/*# sourceMappingURL=variables.css.map */
+ /* CSS Custom Properties for theming */
+ :root {
+   --primary-bg: #E0E5EC;
+   /* Color gris para fondo general, color de fondo para los input y botones */
+   --secundary-bg: #cfcaea;
+   /* Color amarillo claro para las tarjetas del skill */
+   --accent-color: #f7c548;
+   /* Color amarillo para títulos y cta */
+   --accent-color2: #5e4ac7;
+   /* Color azul oscuro para letras del nav y cta */
+   --text-color: #333333;
+   /* Color gris oscuro de letra del footer y del body */
+   --text-color2: rgb(255, 253, 253);
+   /* Color de la letra de cta */
+   --highlight-color: #cfcaea;
+   /* Color verde claro del slider */
+   --highlight-color2: #6f57e9;
+   /* Color verde oscuro del slider */
+
+   --shadow-light: #c1c6ce;
+   --shadow-dark: #9da1a7;
+   --white-shadow: #ffffff;
+
+   --box-shadow-main: 2px 2px 2px var(--shadow-light), -2px -2px 2px var(--text-color2), 1px 1px 70px var(--shadow-dark);
+   --box-shadow-inset: inset 10px 10px 10px var(--shadow-light), inset -10px -10px 10px var(--text-color2);
+   --box-shadow-press: rgb(193, 198, 206) 2px 2px 2px inset, rgb(255, 255, 255) -2px -2px 5px inset, rgb(193, 198, 206) 0.5px 0.5px 5px inset, rgb(255, 255, 255) -0.5px -0.5px 3px inset;
+   --box-shadow-up: 2px 2px 5px var(--shadow-light), -2px -2px 5px var(--text-color2), 0.5px 0.5px 2px var(--shadow-dark), -0.5px -0.5px 2px var(--text-color2);
+   --box-shadow-inset-box: -10px -10px 30px rgba(255, 255, 255, 0.9), 10px 10px 30px rgba(157, 161, 167, 0.4), inset -10px -10px 30px rgba(157, 161, 167, 0.25), inset 10px 10px 30px rgba(255, 255, 255, 0.9);
+
+   --background-gradient-secondary: #beb1fb;
+   --menu-link-active-bg: #EBE6E2;
+   --icon-circle-bg: #e8e8e8;
+   --icon-circle-shadow-light: #c5c5c5;
+   --icon-circle-shadow-dark: #ffffff;
+   --switch-slider-shadow-light: #c1c6ce;
+   --switch-slider-shadow-dark: #ffffff;
+ }
+
+ /* SCSS Variables */
+ /*# sourceMappingURL=variables.css.map */
