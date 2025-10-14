@@ -5,7 +5,7 @@ import { navigateTo } from './router.js';
  */
 function initApp() {
     // Set up menu links
-    const menuLinks = document.querySelectorAll('.menu__link');
+    const menuLinks = document.querySelectorAll('.tertiaryBtn');
     menuLinks.forEach(link => {
         link.addEventListener('click', async (e) => {
             e.preventDefault();

@@ -76,7 +76,7 @@ export async function navigateTo(rawRoute) {
  * @param {string} route - The current route.
  */
 function updateActiveMenu(route) {
-    const buttons = document.querySelectorAll('.menu__link');
+    const buttons = document.querySelectorAll('.tertiaryBtn');
     buttons.forEach(btn => {
         btn.classList.remove('active');
         if (btn.getAttribute('data-route') === route) {
@@ -84,7 +84,7 @@ function updateActiveMenu(route) {
         }
     });
     if (!route) {
-        const heroLink = document.querySelector('.menu__link[data-route=""]') || buttons[0];
+        const heroLink = document.querySelector('.tertiaryBtn[data-route=""]') || buttons[0];
         if (heroLink) heroLink.classList.add('active');
     }
 }

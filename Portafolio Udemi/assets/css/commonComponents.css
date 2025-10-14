@@ -1,7 +1,7 @@
 /* Common Components Styles */
 
-/* Menu Links (Buttons in sidebar) */
-.menu__link {
+/* Tertiary Buttons (Menu Links in sidebar) */
+.tertiaryBtn {
   font-size: 1.2rem;
   margin-top: 2rem;
   padding: 10px 20px;
@@ -15,15 +15,15 @@
   box-shadow: var(--box-shadow-inset-box);
 }
 
-.menu__link:hover {
+.tertiaryBtn:hover {
   box-shadow: var(--box-shadow-up);
 }
 
-.menu__link.active {
+.tertiaryBtn.active {
   box-shadow: var(--box-shadow-press);
 }
 
-.menu__link:active {
+.tertiaryBtn:active {
   padding: 10px 20px;
   background-color: var(--menu-link-active-bg);
   color: var(--text-color);
@@ -34,12 +34,12 @@
   box-shadow: var(--box-shadow-up);
 }
 
-.menu__link:active:hover {
+.tertiaryBtn:active:hover {
   box-shadow: var(--box-shadow-press);
 }
 
-/* Buttons in Hero Section */
-.btn__email {
+/* Secondary and Primary Buttons in Hero Section */
+.secondaryBtn {
   padding: 10px 20px;
   background-color: var(--accent-color2);
   color: var(--text-color2);
@@ -50,11 +50,11 @@
   box-shadow: var(--box-shadow-up);
 }
 
-.btn__email:hover {
+.secondaryBtn:hover {
   box-shadow: var(--box-shadow-press);
 }
 
-.btn__cv {
+.primaryBtn {
   padding: 10px 20px;
   background-color: var(--accent-color);
   color: var(--text-color2);
@@ -65,7 +65,7 @@
   box-shadow: var(--box-shadow-up);
 }
 
-.btn__cv:hover {
+.primaryBtn:hover {
   box-shadow: var(--box-shadow-press);
 }
 
