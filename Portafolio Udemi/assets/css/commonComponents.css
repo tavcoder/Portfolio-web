@@ -1,0 +1,149 @@
+/* Common Components Styles */
+
+/* Menu Links (Buttons in sidebar) */
+.menu__link {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background-color: var(--primary-bg);
+  outline: 0.05rem solid var(--primary-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow-inset-box);
+}
+
+.menu__link:hover {
+  box-shadow: var(--box-shadow-up);
+}
+
+.menu__link.active {
+  box-shadow: var(--box-shadow-press);
+}
+
+.menu__link:active {
+  padding: 10px 20px;
+  background-color: var(--menu-link-active-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: var(--box-shadow-up);
+}
+
+.menu__link:active:hover {
+  box-shadow: var(--box-shadow-press);
+}
+
+/* Buttons in Hero Section */
+.btn__email {
+  padding: 10px 20px;
+  background-color: var(--accent-color2);
+  color: var(--text-color2);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: var(--box-shadow-up);
+}
+
+.btn__email:hover {
+  box-shadow: var(--box-shadow-press);
+}
+
+.btn__cv {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color2);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: var(--box-shadow-up);
+}
+
+.btn__cv:hover {
+  box-shadow: var(--box-shadow-press);
+}
+
+/* Toggle Switch */
+.buttons__switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+}
+
+.buttons__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch__slider {
+  cursor: pointer;
+  box-shadow: var(--box-shadow-up);
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+.switch__slider-face {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  position: absolute;
+  left: 4.5px;
+  top: 4.5px;
+  width: 25px;
+  height: 20px;
+  background-color: white-shadow;
+  box-shadow: var(--box-shadow-press);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.switch__slider-eyeRight,
+.switch__slider-eyeLeft {
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent-color2);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.switch__slider-eyeLeft {
+  margin-right: 3px;
+}
+
+input:checked+.switch__slider {
+  background-color: var(--highlight-color2);
+}
+
+input:checked+.switch__slider-face {
+  transform: translateX(25px);
+}
+
+input:checked+.switch__slider-eyeRight,
+input:checked+.switch__slider-eyeLeft {
+  background-color: transparent;
+  border: solid 0.05rem var(--text-color);
+  border-top: transparent;
+}
+
+/* Language Button */
+.buttons__language {
+  background: var(--primary-bg);
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 8px 10px;
+  box-shadow: var(--box-shadow-press);
+}
