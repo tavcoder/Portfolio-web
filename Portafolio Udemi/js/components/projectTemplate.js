@@ -21,26 +21,27 @@ export async function renderProjectTemplate(projectId) {
         <a href="#/projects" class="back__link">← Volver</a>
 
         <div class="project__header">
+         <div class="header__gallery">
+          ${imagesHTML}
+        </div>
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>
             <p class="project__description">${project.description}</p>
-            <div class="project__links">
-              <a href="${project.demo}" target="_blank" class="btn btn--demo">🔗 Demo</a>
-              <a href="${project.code}" target="_blank" class="btn btn--code">💻 Código</a>
+             <div class="project__links">
+              <a href="${project.demo}" target="_blank" class="btn primaryBtn">🔗 Demo</a>
+              <a href="${project.code}" target="_blank" class="btn secondaryBtn">💻 Código</a>
             </div>
           </div>
         </div>
 
-        <div class="project__gallery">
-          ${imagesHTML}
-        </div>
-
-        <div class="project__stack">
-          <h3>Stack Tecnológico</h3>
-          <ul>
-            ${project.stack.map(tech => `<li>${tech}</li>`).join('')}
-          </ul>
-        </div>
+       <div class="project__text"> 
+          <div class="project__left"> 
+            <div class="project__stack">
+               <h3>Stack Tecnológico</h3>
+             <ul>
+              ${project.stack.map(tech => `<li>${tech}</li>`).join('')}
+             </ul>
+            </div>
 
         <div class="project__features">
           <h3>Características</h3>
@@ -48,7 +49,8 @@ export async function renderProjectTemplate(projectId) {
             ${project.features.map(f => `<li>${f}</li>`).join('')}
           </ul>
         </div>
-
+</div>
+ <div class="project__right"> 
         <div class="project__learning">
           <h3>Aprendizajes y mejoras</h3>
           <p>${project.learning.aprendizajes}</p>
@@ -62,6 +64,8 @@ export async function renderProjectTemplate(projectId) {
           </ul>
         </div>
       </div>
+       </div>
+       </div>
     `;
   } catch (error) {
     console.error('Error loading project:', error);
