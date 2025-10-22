@@ -28,7 +28,8 @@ body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: var(--text-color);
-  background: linear-gradient(270deg, var(--highlight-color2), var(--background-gradient-secondary));
+  background: #e8ebf0;
+  /* Gris muy claro o tono pastel */
   background-size: 800% 800%;
   -webkit-animation: backgroundAnimation 10s ease infinite;
   -moz-animation: backgroundAnimation 10s ease infinite;
@@ -52,9 +53,9 @@ h1 {
   border-radius: 20px;
   display: grid;
   grid-template-areas: "aside content";
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 15% 90%;
   background: var(--primary-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Sidebar */
@@ -62,12 +63,16 @@ h1 {
   grid-area: aside;
   height: 85vh;
   min-height: 85vh;
-  border-radius: 2rem 0 0 2rem;
+  border-radius: 2rem;
   overflow: auto;
   overflow-x: hidden;
   background-color: var(--primary-bg);
-  box-shadow: var(--box-shadow-main);
-  outline: var(--shadow-light);
+  box-shadow:
+    8px 8px 16px #c5c9d1,
+    /* sombra oscura abajo a la derecha */
+    -8px -8px 16px #ffffff;
+  /* sombra clara arriba a la izquierda */
+
 }
 
 .aside__user-info {
@@ -127,7 +132,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8rem;
 }
 
 
@@ -156,9 +161,10 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0;
   padding: 5rem;
+  height: 100%;
   min-height: 100%;
+  width: 80%;
 }
 
 .page__text {
@@ -376,28 +382,26 @@ input:checked+.skills__slider::before {
 /* Projects Section */
 .projects__container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 4rem;
-  margin-top: 8rem;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+  width: 80%;
 }
 
 /* Tarjeta */
 .projects__item {
-  background-color: #fff;
-  width: 100%;
-  max-width: 30rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: flex 0.1s linear;
 }
 
 .projects__item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  flex: 2;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* Imagen superior */
@@ -665,8 +669,7 @@ footer {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    background: var(--primary-bg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow-main);
   }
 
   .layout__aside {
