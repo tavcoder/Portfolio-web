@@ -17,7 +17,7 @@ export async function renderProjectTemplate(projectId) {
       .join('');
 
     return `
-      <div class="project__page animate-fade-in">
+      <div class="content__page project__page animate-fade-in">
         <a href="#/projects" class="back__link">← Volver</a>
 
         <div class="project__header">

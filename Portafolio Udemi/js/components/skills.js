@@ -4,7 +4,7 @@
  */
 export function renderSkills() {
     return `
-        <div class="content__skills">
+        <div class="content__page content__skills">
 
             <div class="skills__textContent animate-on-scroll animate-fade-right">
                 <h2 class="skills__textContent__title">Este es mi kit</h2>
