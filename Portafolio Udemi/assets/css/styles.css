@@ -449,7 +449,7 @@ input:checked+.skills__slider::before {
     gap: 5rem;
 }
 
-.back__link{
+.back__link {
     align-self: end;
 }
 
@@ -494,7 +494,7 @@ input:checked+.skills__slider::before {
     height: 100%;
 }
 
-.project__left{
+.project__left {
     margin-top: 18rem;
 }
 
@@ -539,8 +539,7 @@ input:checked+.skills__slider::before {
     padding: 0;
     margin: 0;
     display: flex;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: start;
     align-items: end;
     gap: 0;
@@ -549,17 +548,29 @@ input:checked+.skills__slider::before {
 
 .studies__item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 7rem;
+    gap: 3rem;
     position: relative;
     padding-left: 2.5rem;
     font-size: 1rem;
 }
 
+.studies__icon {
+    border-radius: 50%;
+    background-color: var(--accent-color2);
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    align-content: center;
+}
+
 .studies__content {
     max-width: 600rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .studies__title {

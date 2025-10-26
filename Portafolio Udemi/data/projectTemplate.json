@@ -2,7 +2,7 @@
   {
     "id": "portfolio",
     "name": "Portafolio Web – SPA Interactivo",
-    "description": "Portafolio interactivo mostrando proyectos, habilidades y estudios de manera moderna, responsiva e interactiva.",
+    "description": "Este proyecto nació con una idea clara: crear un espacio donde pudiera mostrar mi trabajo y evolución como desarrolladora, reflejando mi interés por la interacción, animaciones y pequeños detalles. Construido como una SPA desde cero con HTML, CSS y JavaScript modular, implementé routing propio, modo oscuro/claro, animaciones personalizadas y carga dinámica de proyectos desde un JSON. El resultado es un portafolio moderno, fluido y completamente interactivo.",
     "stack": [
       "🌐 HTML5",
       "🎨 CSS3",
@@ -13,12 +13,22 @@
       "🖼️ JSON dinámico (projects.json)"
     ],
     "features": [
-      "🔹 Navegación SPA sin recarga de página",
-      "🌙 Dark/Light theme toggle",
-      "✨ Animaciones suaves y microinteracciones",
-      "📱 Diseño responsivo móvil y escritorio",
-      "📂 Sección de proyectos interactiva con detalles, stack, imágenes, demo y repositorio",
-      "🚀 Carga dinámica de proyectos con fetch y renderizado en tiempo real"
+      {
+        "title": "SPA Interactiva",
+        "demo_gif": "assets/gifs/spa-interactiva.gif"
+      },
+      {
+        "title": "Dark/Light mode",
+        "demo_gif": "assets/gifs/dark-light-mode.gif"
+      },
+      {
+        "title": "Animaciones y microinteracciones",
+        "demo_gif": "assets/gifs/animaciones.gif"
+      },
+      {
+        "title": "Carga dinámica de proyectos",
+        "demo_gif": "assets/gifs/carga-proyectos.gif"
+      }
     ],
     "images": [
       "assets/portfolio1.png",
@@ -26,32 +36,14 @@
     ],
     "demo": "https://taniaarteaga.github.io/tania-portfolio",
     "code": "https://github.com/taniaarteaga/tania-portfolio",
-    "context": {
-      "origen": "Proyecto personal para mostrar mis habilidades como frontend.",
-      "problema": "Permite a reclutadores y clientes conocer mis proyectos y competencias de manera clara e interactiva.",
-      "publico": "Reclutadores, clientes potenciales y profesionales del sector tech."
-    },
-    "development": {
-      "planificacion": "Diseño y planificación con wireframes y UI/UX.",
-      "retos": "Renderizar proyectos dinámicamente manteniendo SPA. Solución: función renderProjectTemplate() + JSON.",
-      "screenshots": "Comparación entre versión inicial HTML estático y SPA interactiva final.",
-      "commits": "Integración de dark mode, animaciones y SPA modularizada."
-    },
-    "learning": {
-      "aprendizajes": "Creación de SPA desde cero, modularizando JS en componentes y utils.",
-      "mejoras": "Agregar backend para contacto o comentarios, soporte multilenguaje, integración con CMS.",
-      "futuras_funcionalidades": "Soporte multilenguaje, CMS para actualizar proyectos dinámicamente."
-    },
-    "extras": [
-      "✨ Animaciones de entrada y hover en proyectos",
-      "🎯 Microinteracciones en botones",
-      "🎥 GIF/video mostrando navegación SPA y toggle dark/light"
-    ]
+    "retos": "Renderizar contenido dinámico sin recargar la página, mantener SPA modularizada y crear un sistema propio de routing. Implementar animaciones suaves y modo oscuro/claro sin afectar la performance.",
+    "aprendizajes": "Modularización de JavaScript, gestión de rutas sin frameworks y arquitectura limpia en un proyecto SPA desde cero.",
+    "futuras_funcionalidades": "Agregar backend para contacto, soporte multilenguaje e integración con CMS para actualizar proyectos dinámicamente."
   },
   {
     "id": "super-m",
     "name": "SuperM – React E-commerce",
-    "description": "Aplicación moderna de e-commerce con React, Vite y Supabase, con carrito, checkout y animaciones.",
+    "description": "SuperM surgió como el proyecto final de mi primer curso de React, pero lo llevé más allá creando un e-commerce moderno con React, Vite y Supabase. Los usuarios pueden registrarse, iniciar sesión, agregar productos al carrito persistente, editar sus datos y usar esos datos para autocompletar el formulario de envío. Implementé Context API, TanStack Query y microinteracciones para mejorar la experiencia, además de checkout simulado y filtros dinámicos de productos.",
     "stack": [
       "⚛️ React",
       "⚡ Vite",
@@ -61,11 +53,30 @@
       "🗄️ Supabase"
     ],
     "features": [
-      "👤 Login y registro de usuarios",
-      "🛒 Carrito persistente",
-      "💳 Checkout en varios pasos",
-      "📝 Edición de datos de usuario",
-      "🔍 Filtros y ordenamiento de productos"
+      {
+        "title": "Carrito persistente",
+        "demo_gif": "assets/gifs/carrito-persistente.gif"
+      },
+      {
+        "title": "Autocompletado del formulario de envío",
+        "demo_gif": "assets/gifs/form-autocompletado.gif"
+      },
+      {
+        "title": "Filtros y ordenamiento",
+        "demo_gif": "assets/gifs/filtros-responsive.gif"
+      },
+      {
+        "title": "Checkout simulado",
+        "demo_gif": "assets/gifs/checkout.gif"
+      },
+      {
+        "title": "Resumen del pedido",
+        "demo_gif": "assets/gifs/resumen-pedido.gif"
+      },
+      {
+        "title": "Notificaciones tipo toast",
+        "demo_gif": "assets/gifs/toast.gif"
+      }
     ],
     "images": [
       "assets/superm1.png",
@@ -73,32 +84,14 @@
     ],
     "demo": "https://superm.vercel.app",
     "code": "https://github.com/taniaarteaga/superm",
-    "context": {
-      "origen": "Challenge personal para practicar React avanzado y e-commerce.",
-      "problema": "Crear un e-commerce moderno con gestión de usuarios y carrito persistente.",
-      "publico": "Desarrolladores, empleadores y clientes interesados en e-commerce."
-    },
-    "development": {
-      "planificacion": "Estructuración de componentes React, hooks y estado global con Context API.",
-      "retos": "Integración con Supabase y manejo de datos asíncronos con TanStack Query.",
-      "screenshots": "Versión inicial vs final con carrito funcional y checkout multi-step.",
-      "commits": "Añadida funcionalidad de login, carrito persistente y checkout."
-    },
-    "learning": {
-      "aprendizajes": "React avanzado, gestión de estado con Context API y consultas con TanStack Query.",
-      "mejoras": "Agregar tests automatizados y mejoras en UI/UX.",
-      "futuras_funcionalidades": "Sistema de pagos real, panel de administración y filtros avanzados de productos."
-    },
-    "extras": [
-      "✨ Animaciones de botones y transiciones de página",
-      "🎯 Microinteracciones en el carrito",
-      "🎥 Video demostrativo del flujo de compra"
-    ]
+    "retos": "El mayor reto fue implementar filtros y ordenamiento de productos. La base de datos del curso no podía modificarse, así que creé una nueva estructura en Supabase con los elementos necesarios. Además, los filtros debían adaptarse al diseño responsive como menú desplegable, y sincronizar correctamente con el estado global y la UI.",
+    "aprendizajes": "Estado global con Context API, consultas asíncronas con TanStack Query, manejo de carrito persistente en localStorage, autocompletado de formularios con datos del usuario, diseño de filtros dinámicos y responsive.",
+    "futuras_funcionalidades": "Integrar sistema de pagos real, panel de administración para productos y mejoras en UI/UX y performance."
   },
   {
     "id": "social-app",
     "name": "Red Social – Full-Stack App",
-    "description": "Aplicación social donde los usuarios pueden registrarse, crear publicaciones, seguir a otros, dar likes y comentar, con React en frontend y Node.js/Express/MongoDB en backend.",
+    "description": "Este proyecto nació de un curso avanzado de React, enfocándome en mejorar el frontend y adaptarlo a necesidades reales. Usé la API del curso, modificando solo lo necesario: añadí endpoints para likes y simulé la eliminación de avatars en frontend. Construí un frontend con React, Vite, React Router y TanStack React Query, y un backend con Node.js, Express y MongoDB Atlas, logrando una red social funcional con publicaciones, comentarios, seguidores y feed dinámico.",
     "stack": [
       "⚛️ React",
       "⚡ Vite",
@@ -111,12 +104,26 @@
       "📊 TanStack React Query"
     ],
     "features": [
-      "👤 Registro, login y perfil de usuario",
-      "🖼️ Subida de avatar y publicaciones con imágenes",
-      "💬 Comentarios y likes en publicaciones",
-      "📰 Feed de usuarios seguidos",
-      "🔎 Exploración y búsqueda de usuarios",
-      "🛡️ Autenticación JWT y API documentada con Swagger"
+      {
+        "title": "Registro y login",
+        "demo_gif": "assets/gifs/registro-login.gif"
+      },
+      {
+        "title": "Feed dinámico de publicaciones",
+        "demo_gif": "assets/gifs/feed.gif"
+      },
+      {
+        "title": "Likes y comentarios",
+        "demo_gif": "assets/gifs/likes-comentarios.gif"
+      },
+      {
+        "title": "Gestión de usuarios y seguidores",
+        "demo_gif": "assets/gifs/usuarios-seguidores.gif"
+      },
+      {
+        "title": "Edición de perfil y avatar",
+        "demo_gif": "assets/gifs/perfil-avatar.gif"
+      }
     ],
     "images": [
       "assets/social1.png",
@@ -124,26 +131,8 @@
     ],
     "demo": "https://social-demo.vercel.app",
     "code": "https://github.com/taniaarteaga/social-media-app",
-    "context": {
-      "origen": "Proyecto full-stack personal para practicar backend con Node.js y frontend con React.",
-      "problema": "Crear una red social funcional con autenticación segura, gestión de publicaciones y feed dinámico.",
-      "publico": "Desarrolladores, empleadores y clientes interesados en proyectos full-stack."
-    },
-    "development": {
-      "planificacion": "Diseño y planificación de rutas, endpoints y componentes React.",
-      "retos": "Manejo de datos asíncronos, autenticación JWT y subida de archivos con Multer.",
-      "screenshots": "Comparación de la versión inicial vs final con feed y publicación funcional.",
-      "commits": "Implementadas funciones de registro, login, CRUD de publicaciones y feed de usuarios."
-    },
-    "learning": {
-      "aprendizajes": "React avanzado, Node.js, Express, MongoDB, JWT y TanStack React Query.",
-      "mejoras": "Optimizar rendimiento del feed, agregar tests y seguridad avanzada.",
-      "futuras_funcionalidades": "Notificaciones en tiempo real, panel de administración, filtros y búsqueda avanzada."
-    },
-    "extras": [
-      "✨ Animaciones de botones y transiciones",
-      "🎯 Microinteracciones en likes y comentarios",
-      "🎥 GIF/video demostrativo del flujo de publicaciones y feed"
-    ]
+    "retos": "Consumir la API del curso en lugar de Supabase, adaptar endpoints para likes, simular eliminación de avatars en frontend, unificar rutas con parámetros opcionales y mantener la aplicación escalable y reactiva con hooks personalizados y React Query.",
+    "aprendizajes": "Trabajo con React Router Outlet, rutas unificadas con parámetros opcionales, Blob URLs, exponer index en dominios para facilitar imports, uso de git stash y cherry-pick, modularización de hooks y componentes, manejo avanzado de estado con React Query.",
+    "futuras_funcionalidades": "Notificaciones en tiempo real, panel de administración, filtros y búsqueda avanzada de usuarios, y mejoras de rendimiento en el feed."
   }
 ]
