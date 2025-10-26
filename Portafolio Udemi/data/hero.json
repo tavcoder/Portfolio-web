@@ -1,0 +1,16 @@
+{
+  "title": "¡Hola! Yo soy Tania - Web Developer",
+  "text": "Paso mis días (y a veces mis noches) transformando ideas en experiencias interactivas. Mi meta es fusionar simplicidad y funcionalidad para ofrecer soluciones visualmente atractivas y fáciles de usar. Cuando no estoy frente a la pantalla, probablemente me encuentres leyendo (no tiene que ser precisamente un buen libro), o descubriendo nuevos rincones de Barcelona.",
+  "buttons": [
+    {
+      "text": "Hablemos",
+      "href": "mailto:tarteagadesign@gmail.com?subject=Consulta%20sobre%20tu%20portafolio",
+      "class": "btn secondaryBtn"
+    },
+    {
+      "text": "Ver mi CV",
+      "href": "assets/cv-tania-arteaga.pdf",
+      "class": "btn primaryBtn"
+    }
+  ]
+}
