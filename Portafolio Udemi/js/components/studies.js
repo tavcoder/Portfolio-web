@@ -1,94 +1,31 @@
 /**
  * Renders the studies section HTML.
- * @returns {string} The HTML string for the studies section.
+ * @returns {Promise<string>} The HTML string for the studies section.
  */
-export function renderStudies() {
-    return `
-        <section class="content__page content__studies">
-            <ul class="studies__list">
+export async function renderStudies() {
+    try {
+        const response = await fetch('data/studies.json');
+        const studies = await response.json();
 
-                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-1000">
-                    <p class="studies__date">Diciembre 2024</p>
-                    <div class="studies__content">
-                        <h3 class="studies__title">SEO y posicionamiento web para Desarrolladores web. <span
-                                class="studies__institution">UDEMI</span></h3>
-                        <p class="studies__description">
-                            Many developers who are "self taught" feel that one of the main disadvantages they face compared
-                            to college educated graduates in computer science is the fact that they don't have knowledge
-                            about algorithms, data structures, and the notorious Big-O Notation.
-                        </p>
-                    </div>
-                </li>
+        const studiesHTML = studies.map((study, index) => `
+            <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-${1000 - index * 200}">
+                <p class="studies__date">${study.date}</p>
+                <div class="studies__content">
+                    <h3 class="studies__title">${study.title} <span class="studies__institution">${study.institution}</span></h3>
+                    <p class="studies__description">${study.description}</p>
+                </div>
+            </li>
+        `).join('');
 
-                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-800">
-                    <p class="studies__date">2021-2024</p>
-                    <div class="studies__content">
-                        <h3 class="studies__title">Técnico en Gestión y desarrollo de proyectos Web. <span
-                                class="studies__institution">Academia de Estudios Avanzados de Informática.(CEPIBASE)</span>
-                        </h3>
-                        <p class="studies__description">
-                            Many developers who are "self taught" feel that one of the main disadvantages they face compared
-                            to college educated graduates in computer science is the fact that they don't have knowledge
-                            about algorithms, data structures, and the notorious Big-O Notation.
-                        </p>
-                    </div>
-                </li>
-
-                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-600">
-                    <p class="studies__date">2019-2020</p>
-                    <div class="studies__content">
-                        <h3 class="studies__title">UX design Challenge <span class="studies__institution">UXERSCHOOL</span>
-                        </h3>
-                        <p class="studies__description">
-                            Many developers who are "self taught" feel that one of the main disadvantages they face compared
-                            to college educated graduates in computer science is the fact that they don't have knowledge
-                            about algorithms, data structures, and the notorious Big-O Notation.
-                        </p>
-                    </div>
-                </li>
-
-                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-400">
-                    <p class="studies__date">2019-2020</p>
-                    <div class="studies__content">
-                        <h3 class="studies__title">Web Design, Wireframes to prototype <span
-                                class="studies__institution">Instituto de las Artes de California (CalArts)</span>
-                        </h3>
-                        <p class="studies__description">
-                            Many developers who are "self taught" feel that one of the main disadvantages they face compared
-                            to college educated graduates in computer science is the fact that they don't have knowledge
-                            about algorithms, data structures, and the notorious Big-O Notation.
-                        </p>
-                    </div>
-                </li>
-
-                <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-200">
-                    <p class="studies__date">2012-2017</p>
-                    <div class="studies__content">
-                        <h3 class="studies__title">Grado en Diseño <span class="studies__institution">Universidad de La Habana.
-                                Cuba.</span></h3>
-                        <p class="studies__description">
-                            Many developers who are "self taught" feel that one of the main disadvantages they face compared
-                            to college educated graduates in computer science is the fact that they don't have knowledge
-                            about algorithms, data structures, and the notorious Big-O Notation.
-                        </p>
-                    </div>
-                </li>
-
-                <li class="studies__item animate-on-scroll animate-zoom-in">
-                    <p class="studies__date">2007-2009</p>
-                    <div class="studies__content">
-                        <h3 class="studies__title">Bachiller, Técnico Medio en Informática. <span
-                                class="studies__institution">Instituto Politécnico Fernando Aguado y Rico. Cuba</span></h3>
-                        <p class="studies__description">
-                            Many developers who are "self taught" feel that one of the main disadvantages they face compared
-                            to college educated graduates in computer science is the fact that they don't have knowledge
-                            about algorithms, data structures, and the notorious Big-O Notation.
-                        </p>
-                    </div>
-                </li>
-            </ul>
-
-
-        </section>
-    `;
+        return `
+            <section class="content__page content__studies">
+                <ul class="studies__list">
+                    ${studiesHTML}
+                </ul>
+            </section>
+        `;
+    } catch (error) {
+        console.error('Error loading studies:', error);
+        return '<section class="content__page content__studies">Error loading studies.</section>';
+    }
 }
