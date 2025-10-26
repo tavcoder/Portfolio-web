@@ -1,0 +1,34 @@
+{
+  "textContent": {
+    "title": "Este es mi kit",
+    "text": "Siempre me he sentido en la encrucijada entre el diseño y la programación, lo que me ha permitido combinar lo mejor de ambos mundos: mi base técnica y mi pasión por crear experiencias de usuario. Me encanta aprender cosas nuevas, ya sea explorando nuevas tecnologías o perfeccionando las prácticas en mi campo.",
+    "programmingToolsTitle": "Herramientas de programación",
+    "designToolsTitle": "Herramientas de diseño"
+  },
+  "programmingTools": [
+    {"icon": "fas fa-check", "text": "Git+Github"},
+    {"icon": "fas fa-check", "text": "PostMan"},
+    {"icon": "fas fa-check", "text": "Wampp"},
+    {"icon": "fas fa-check", "text": "MongoDB"}
+  ],
+  "designTools": [
+    {"icon": "fas fa-check", "text": "Adobe XD"},
+    {"icon": "fas fa-check", "text": "Wireframing"},
+    {"icon": "fas fa-check", "text": "Prototyping"}
+  ],
+  "technologiesTitle": "Lenguajes y Frameworks",
+  "frontend": [
+    {"icon": "fab fa-html5", "name": "HTML"},
+    {"icon": "fab fa-css3-alt", "name": "CSS"},
+    {"icon": "fab fa-sass", "name": "SASS"},
+    {"icon": "fab fa-bootstrap", "name": "Bootstrap"},
+    {"icon": "fas fa-laptop-code", "name": "JQuery UI"}
+  ],
+  "backend": [
+    {"icon": "fab fa-js", "name": "JavaScript"},
+    {"icon": "fab fa-php", "name": "PHP"},
+    {"icon": "fas fa-database", "name": "SQLite"},
+    {"icon": "fas fa-database", "name": "MySQL"},
+    {"icon": "fab fa-laravel", "name": "Laravel"}
+  ]
+}
