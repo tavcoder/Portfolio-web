@@ -11,16 +11,18 @@ export async function renderStudies(language = "es") {
 
         const listItems = studies.map(({ date, stack, title, institution, description, delay }) => `
             <li class="studies__item animate-on-scroll animate-zoom-in${delay ? ` animate-delay-${delay}` : ""}">
-                <p class="studies__date">${date}</p>
+              <div class="timeline__point"> 
+            <p class="studies__date">${date}</p>
                 <div class="studies__icon">
                     ${stack}
                 </div>
-                <div class="studies__content">
+                 </div>
+                <div class="studies__content-block">
                     <h3 class="studies__title">${title} 
                         <span class="studies__institution">${institution}</span>
                     </h3>
-                </div>
                     <p class="studies__description">${description}</p>
+                    </div>
             </li>
         `).join("");
 
