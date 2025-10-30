@@ -16,56 +16,62 @@ export async function renderProjectTemplate(projectId) {
       .map(img => `<img src="${img}" alt="${project.name}" class="project__img">`)
       .join('');
 
+    const stackHTML = project.stack
+      .map(tech => `<li>${tech}</li>`)
+      .join('');
+
+    const featuresHTML = project.features
+      .map(f => `
+        <div class="feature__item">
+          <h4>${f.title}</h4>
+          <img src="${f.demo_gif}" alt="${f.title}" class="feature__gif">
+        </div>
+      `)
+      .join('');
+
     return `
       <div class="content__page project__page animate-fade-in">
         <a href="#/projects" class="back__link">← Volver</a>
 
         <div class="project__header">
-         <div class="header__gallery">
-          ${imagesHTML}
-        </div>
+          <div class="header__gallery">
+            ${imagesHTML}
+          </div>
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>
             <p class="project__description">${project.description}</p>
-             <div class="project__links">
+            <div class="project__links">
               <a href="${project.demo}" target="_blank" class="btn primaryBtn">🔗 Demo</a>
               <a href="${project.code}" target="_blank" class="btn secondaryBtn">💻 Código</a>
             </div>
           </div>
         </div>
 
-       <div class="project__text"> 
-          <div class="project__left"> 
+        <div class="project__content">
+          <div class="project__left">
             <div class="project__stack">
-               <h3>Stack Tecnológico</h3>
-             <ul>
-              ${project.stack.map(tech => `<li>${tech}</li>`).join('')}
-             </ul>
+              <h3>Stack Tecnológico</h3>
+              <ul>${stackHTML}</ul>
             </div>
 
-        <div class="project__features">
-          <h3>Características</h3>
-          <ul>
-            ${project.features.map(f => `<li>${f}</li>`).join('')}
-          </ul>
-        </div>
-</div>
- <div class="project__right"> 
-        <div class="project__learning">
-          <h3>Aprendizajes y mejoras</h3>
-          <p>${project.learning.aprendizajes}</p>
-          <p>Futuras funcionalidades: ${project.learning.futuras_funcionalidades}</p>
-        </div>
+            <div class="project__features">
+              <h3>Características</h3>
+              <div class="features__grid">
+                ${featuresHTML}
+              </div>
+            </div>
+          </div>
 
-        <div class="project__extras">
-          <h3>Extras</h3>
-          <ul>
-            ${project.extras.map(extra => `<li>${extra}</li>`).join('')}
-          </ul>
+          <div class="project__right">
+            <div class="project__learning">
+              <h3>Aprendizajes y mejoras</h3>
+              <p><strong>Retos:</strong> ${project.retos}</p>
+              <p><strong>Aprendizajes:</strong> ${project.aprendizajes}</p>
+              <p><strong>Futuras funcionalidades:</strong> ${project.futuras_funcionalidades}</p>
+            </div>
+          </div>
         </div>
       </div>
-       </div>
-       </div>
     `;
   } catch (error) {
     console.error('Error loading project:', error);

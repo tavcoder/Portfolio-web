@@ -313,9 +313,8 @@ h1 {
     display: none;
 }
 
-    {
-    /* Switch */
-}
+/* Switch */
+
 
 .skills__switch {
     position: relative;
@@ -449,7 +448,7 @@ input:checked+.skills__slider::before {
     gap: 5rem;
 }
 
-.back__link{
+.back__link {
     align-self: end;
 }
 
@@ -494,7 +493,7 @@ input:checked+.skills__slider::before {
     height: 100%;
 }
 
-.project__left{
+.project__left {
     margin-top: 18rem;
 }
 
@@ -536,53 +535,125 @@ input:checked+.skills__slider::before {
 
 .studies__list {
     list-style: none;
-    padding: 0;
+    width: max-content;
+    min-width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+    position: relative;
     margin: 0;
     display: flex;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: start;
     align-items: end;
     gap: 0;
     gap: 30px;
 }
 
-.studies__item {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
-    gap: 7rem;
-    position: relative;
-    padding-left: 2.5rem;
-    font-size: 1rem;
+.studies__list::before {
+    content: '';
+    position: absolute;
+    /* 1. Cambia el posicionamiento horizontal y vertical */
+    top: 0;
+    /* Comienza desde la parte superior */
+    bottom: 0;
+    /* Termina en la parte inferior */
+    left: 50%;
+    /* Centra la línea verticalmente en el contenedor */
+
+    /* 2. Invierte las dimensiones */
+    width: 2px;
+    /* El grosor de la línea ahora es 'width' */
+    height: auto;
+    /* Permite que la altura se estire entre top y bottom */
+
+    /* 3. Ajusta el centrado horizontal para compensar el ancho */
+    transform: translateX(-50%);
+
+    background: #ccc;
+    z-index: 1;
 }
 
-.studies__content {
-    max-width: 60rem;
+.studies__item {
+    /* Define el ancho de cada columna de la línea de tiempo */
+    flex: 0 0 250px;
+    margin: 0 20px;
+    /* Espacio entre las columnas */
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline__point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Ajusta la posición vertical del punto sobre la línea (se usó top: 50% en .studies__list::before) */
+    transform: translateY(-50%);
+}
+
+.timeline__point::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    /* Lo coloca justo sobre la línea */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #777;
+    /* Color del nodo */
+    z-index: 3;
+}
+
+.studies__icon {
+    /* El círculo exterior (el grande) */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    /* Fondo blanco */
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil como en la imagen */
+    /* El contenido de ${stack} debe ser el ícono interno. Si es un SVG o font-awesome, se centrará aquí. */
+}
+
+.studies__content-block {
+    text-align: left;
+    /* El texto dentro del bloque es justificado a la izquierda */
+    padding: 10px;
+    /* Posiciona el bloque de contenido por debajo de la línea */
+    margin-top: 30px;
 }
 
 .studies__title {
-    font-weight: bold;
-    color: var(--accent-color2);
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .studies__institution {
-    font-style: italic;
-    color: var(--highlight-color2);
-    font-family: "Nunito", serif;
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #666;
+    display: block;
+    /* Mueve la institución a una nueva línea si es necesario */
 }
 
 .studies__date {
     min-width: 3rem;
     color: var(--accent-color2);
-    margin-bottom: 0.8 rem;
-    font-weight: 500;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .studies__description {
-    line-height: 1.6;
-    color: var(--text-color);
+    font-size: 0.9em;
+    color: #444;
+    line-height: 1.4;
 }
 
 /* Footer */

@@ -1,31 +1,48 @@
 /**
- * Renders the studies section HTML.
+ * Renders the studies section by fetching the JSON file based on the selected language.
+ * @param {string} language - The current language code (e.g., "es" or "en").
  * @returns {Promise<string>} The HTML string for the studies section.
  */
-export async function renderStudies() {
+export async function renderStudies(language = "es") {
     try {
-        const response = await fetch('data/studies.json');
+        const response = await fetch(`data/studies_${language}.json`);
+        if (!response.ok) throw new Error(`Error al cargar studies_${language}.json`);
         const studies = await response.json();
 
-        const studiesHTML = studies.map((study, index) => `
-            <li class="studies__item animate-on-scroll animate-zoom-in animate-delay-${1000 - index * 200}">
-                <p class="studies__date">${study.date}</p>
-                <div class="studies__content">
-                    <h3 class="studies__title">${study.title} <span class="studies__institution">${study.institution}</span></h3>
-                    <p class="studies__description">${study.description}</p>
+        const listItems = studies.map(({ date, stack, title, institution, description, delay }) => `
+            <li class="studies__item animate-on-scroll animate-zoom-in${delay ? ` animate-delay-${delay}` : ""}">
+              <div class="timeline__point"> 
+            <p class="studies__date">${date}</p>
+                <div class="studies__icon">
+                    ${stack}
                 </div>
+                 </div>
+                <div class="studies__content-block">
+                    <h3 class="studies__title">${title} 
+                        <span class="studies__institution">${institution}</span>
+                    </h3>
+                    <p class="studies__description">${description}</p>
+                    </div>
             </li>
-        `).join('');
+        `).join("");
 
         return `
             <section class="content__page content__studies">
                 <ul class="studies__list">
+<<<<<<< HEAD
                     ${studiesHTML}
+=======
+                    ${listItems}
+>>>>>>> 43cc048e994f5784aa2749c0d8956088d1834ecd
                 </ul>
             </section>
         `;
     } catch (error) {
-        console.error('Error loading studies:', error);
-        return '<section class="content__page content__studies">Error loading studies.</section>';
+        console.error(error);
+        return `
+            <section class="content__page content__studies">
+                <p class="error">No se pudo cargar la información de estudios.</p>
+            </section>
+        `;
     }
 }
