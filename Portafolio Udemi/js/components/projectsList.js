@@ -11,12 +11,12 @@ export async function renderProjects() {
         const projectsHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
 
         return `
-            <div class="content__page projects__container">
+            <div class="content__page content__projects">
                 ${projectsHTML}
             </div>
         `;
     } catch (error) {
         console.error('Error loading projects:', error);
-        return '<div class="projects__container">Error loading projects.</div>';
+        return '<div class="content__projects">Error loading projects.</div>';
     }
 }

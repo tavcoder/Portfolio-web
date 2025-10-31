@@ -6,6 +6,7 @@
 export async function renderSkills(language = 'es') {
     try {
         const response = await fetch(`data/skills_${language}.json`);
+        if (!response.ok) throw new Error(`Error al cargar skills_${language}.json`);
         const skills = await response.json();
 
         const programmingHTML = skills.programmingTools.items
@@ -28,7 +29,7 @@ export async function renderSkills(language = 'es') {
             )
             .join('');
 
-        const frontendHTML = skills.frontend
+        const frontendHTML = skills.tech.frontend.items
             .map(
                 (tech, i) => `
         <div class="skills__container__tech animate-on-scroll animate-zoom-in animate-delay-${200 + i * 200}">
@@ -38,7 +39,7 @@ export async function renderSkills(language = 'es') {
             )
             .join('');
 
-        const backendHTML = skills.backend
+        const backendHTML = skills.tech.backend.items
             .map(
                 (tech) => `
         <div class="skills__container__tech">
@@ -62,7 +63,7 @@ export async function renderSkills(language = 'es') {
         </div>
 
         <div class="skills__container animate-on-scroll animate-fade-left">
-          <h3 class="skills__container__title">Lenguajes y Frameworks</h3>
+          <h3 class="skills__container__title">${skills.tech.title}</h3>
 
           <div id="frontend" class="skills__container__group">${frontendHTML}</div>
           <div id="backend" class="skills__container__group hidden">${backendHTML}</div>

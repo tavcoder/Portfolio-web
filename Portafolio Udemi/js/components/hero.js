@@ -14,7 +14,7 @@ export async function renderHero() {
         `).join('');
 
         return `
-            <section class="content__page" id="content__page">
+            <section class="content__hero">
                 <h1 class="page__title animate-on-scroll animate-fade-right">${hero.title}</h1>
                 <p class="page__text animate-on-scroll animate-fade-left">${hero.text}</p>
                 <div class="page__btn">
@@ -24,6 +24,6 @@ export async function renderHero() {
         `;
     } catch (error) {
         console.error('Error loading hero:', error);
-        return '<section class="content__page" id="content__page">Error loading hero.</section>';
+        return '<section class="content__hero">Error loading hero.</section>';
     }
 }

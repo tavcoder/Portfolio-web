@@ -27,20 +27,16 @@ export async function renderStudies(language = "es") {
         `).join("");
 
         return `
-            <section class="content__page content__studies">
+            <section class="content__studies">
                 <ul class="studies__list">
-<<<<<<< HEAD
-                    ${studiesHTML}
-=======
                     ${listItems}
->>>>>>> 43cc048e994f5784aa2749c0d8956088d1834ecd
                 </ul>
             </section>
         `;
     } catch (error) {
         console.error(error);
         return `
-            <section class="content__page content__studies">
+            <section class="content__studies">
                 <p class="error">No se pudo cargar la información de estudios.</p>
             </section>
         `;
