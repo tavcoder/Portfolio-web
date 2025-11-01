@@ -11,7 +11,7 @@ export async function renderProjects() {
         const projectsHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
 
         return `
-            <div class="content__page content__projects">
+            <div class="content__projects">
                 ${projectsHTML}
             </div>
         `;

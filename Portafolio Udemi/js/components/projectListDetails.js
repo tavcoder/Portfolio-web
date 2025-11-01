@@ -8,13 +8,10 @@ export function renderProjectItem(project, index) {
   const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
 
   return `
-    <div class="projects__item ${animationClass}">
-      <a href="#/project/${project.id}" class="item__container" data-id="${project.id}">
-        <div class="item__card">
-          <img class="item__img" src="${project.frontImage}" alt="${project.title} front image">
-        </div>
-
-        <div class="projects__skill">
+    <div class="projects__card ${animationClass}">
+        <div class="card__item">
+          <img class="card__img" src="${project.frontImage}" alt="${project.title} front image">
+          <div class="projects__skill">
           ${project.technologies.map(tech => {
             if (tech === 'PHP') return '<div class="skill__item"><i class="fab fa-php"></i></div>';
             if (tech === 'Database') return '<div class="skill__item"><i class="fa fa-database"></i></div>';
@@ -33,14 +30,19 @@ export function renderProjectItem(project, index) {
             if (tech === 'SASS') return '<div class="skill__item"><i class="fab fa-sass"></i></div>';
             if (tech === 'JAVA SCRIPT') return '<div class="skill__item"><i class="fab fa-js-square"></i></div>';
             return `<div class="skill__item"><p>${tech}</p></div>`;
-          }).join('')}
+           }).join('')}
         </div>
 
-        <div class="item__details">
-          <h4 class="item__title">${project.title}</h4>
-          <p class="item__text">${project.description}</p>
+        <div class="card__details">
+          <h4 class="card__title">${project.title}</h4>
+          <p class="card__text">${project.description}</p>
         </div>
-      </a>
+        <div class="card__buttons">  
+         <a href="${project.demo}" target="_blank" class="btn primaryBtn">🔗 Demo</a>
+         <a href="${project.github}" target="_blank" class="btn secondaryBtn">💻 Código</a>
+         <a href="#/project/${project.id}" class="btn secondaryBtn" data-id="${project.id}"> Más informacíon </a>
+         </div>
     </div>
+     </div>
   `;
 }
