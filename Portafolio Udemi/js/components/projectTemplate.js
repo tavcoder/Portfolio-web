@@ -20,14 +20,34 @@ export async function renderProjectTemplate(projectId) {
       .map(tech => `<li>${tech}</li>`)
       .join('');
 
-    const featuresHTML = project.features
+    const gifsHTML = project.features
       .map(f => `
-        <div class="feature__item">
-        <img src="${f.demo_gif}" alt="${f.title}" class="feature__gif">
-        <h4>${f.title}</h4>
-        </div>
-      `)
+      <video 
+        class="feature__gif" 
+        src="${f.demo_gif}" 
+        autoplay 
+        loop 
+        muted 
+        playsinline>
+      </video>
+  `)
       .join('');
+    const titlesHTML = project.features
+      .map((f, i) => `
+      <h4 class="feature__title" data-index="${i}">${f.title}</h4>
+  `)
+      .join('');
+
+
+    const featuresHTML = `
+  <div class="features__gifs">
+    ${gifsHTML}
+  </div>
+  <div class="features__titles">
+    ${titlesHTML}
+  </div>
+`;
+
 
     return `
       <div class="project__page animate-fade-in">
@@ -52,7 +72,8 @@ export async function renderProjectTemplate(projectId) {
         </div>
 
         <div class="project__content">
-            <div class="project__features">
+
+           <div class="project__features">
               <h3>Características</h3>
               <div class="features__grid">
                 ${featuresHTML}
@@ -75,3 +96,26 @@ export async function renderProjectTemplate(projectId) {
     return `<div class="project__page">Error cargando los datos del proyecto.</div>`;
   }
 }
+
+export function initFeatureSelector() {
+  const gifs = document.querySelectorAll('.features__gifs .feature__gif');
+  const titles = document.querySelectorAll('.features__titles .feature__title');
+  if (!gifs.length || gifs.length !== titles.length) return;
+
+  let activeIndex = 0;
+  gifs[activeIndex].classList.add('active');
+  titles[activeIndex].classList.add('active');
+
+  titles.forEach((title, i) => {
+    title.addEventListener('click', () => {
+      gifs[activeIndex].classList.remove('active');
+      titles[activeIndex].classList.remove('active');
+
+      gifs[i].classList.add('active');
+      titles[i].classList.add('active');
+
+      activeIndex = i;
+    });
+  });
+}
+

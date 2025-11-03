@@ -55,27 +55,27 @@
     "features": [
       {
         "title": "Carrito persistente",
-        "demo_gif": "assets/gifs/carrito-persistente.gif"
+        "demo_gif": "assets/gifs/toast.mp4"
       },
       {
         "title": "Autocompletado del formulario de envío",
-        "demo_gif": "assets/gifs/form-autocompletado.gif"
+        "demo_gif": "assets/gifs/toast.mp4"
       },
       {
         "title": "Filtros y ordenamiento",
-        "demo_gif": "assets/gifs/filtros-responsive.gif"
+        "demo_gif": "assets/gifs/toast.mp4"
       },
       {
         "title": "Checkout simulado",
-        "demo_gif": "assets/gifs/checkout.gif"
+        "demo_gif": "assets/gifs/toast.mp4"
       },
       {
         "title": "Resumen del pedido",
-        "demo_gif": "assets/gifs/resumen-pedido.gif"
+        "demo_gif": "assets/gifs/toast.mp4"
       },
       {
         "title": "Notificaciones tipo toast",
-        "demo_gif": "assets/gifs/toast.gif"
+        "demo_gif": "assets/gifs/toast.mp4"
       }
     ],
     "images": [

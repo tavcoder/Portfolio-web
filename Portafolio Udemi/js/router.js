@@ -2,7 +2,8 @@ import { renderHero } from './components/hero.js';
 import { renderSkills } from './components/skills.js';
 import { renderStudies } from './components/studies.js';
 import { renderProjects } from './components/projectsList.js';
-import { renderProjectTemplate } from './components/projectTemplate.js';
+import { renderProjectTemplate, initFeatureSelector } from './components/projectTemplate.js';
+
 
 /**
  * Map of routes to their corresponding render functions.
@@ -38,6 +39,7 @@ export async function navigateTo(rawRoute) {
         const projectId = route.split('/')[1];
         const content = document.getElementById('content__page');
         content.innerHTML = await renderProjectTemplate(projectId);
+        initFeatureSelector();
         // Actualiza el hash en formato "#/project/superm"
         window.location.hash = `#/${route}`;
         // observar animaciones si las hay
