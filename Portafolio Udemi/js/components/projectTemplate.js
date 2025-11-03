@@ -23,14 +23,14 @@ export async function renderProjectTemplate(projectId) {
     const featuresHTML = project.features
       .map(f => `
         <div class="feature__item">
-          <h4>${f.title}</h4>
-          <img src="${f.demo_gif}" alt="${f.title}" class="feature__gif">
+        <img src="${f.demo_gif}" alt="${f.title}" class="feature__gif">
+        <h4>${f.title}</h4>
         </div>
       `)
       .join('');
 
     return `
-      <div class="content__page project__page animate-fade-in">
+      <div class="project__page animate-fade-in">
         <a href="#/projects" class="back__link">← Volver</a>
 
         <div class="project__header">
@@ -40,6 +40,10 @@ export async function renderProjectTemplate(projectId) {
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>
             <p class="project__description">${project.description}</p>
+             <div class="project__stack">
+              <h3>Stack Tecnológico</h3>
+              <ul>${stackHTML}</ul>
+            </div>
             <div class="project__links">
               <a href="${project.demo}" target="_blank" class="btn primaryBtn">🔗 Demo</a>
               <a href="${project.code}" target="_blank" class="btn secondaryBtn">💻 Código</a>
@@ -48,23 +52,16 @@ export async function renderProjectTemplate(projectId) {
         </div>
 
         <div class="project__content">
-          <div class="project__left">
-            <div class="project__stack">
-              <h3>Stack Tecnológico</h3>
-              <ul>${stackHTML}</ul>
-            </div>
-
             <div class="project__features">
               <h3>Características</h3>
               <div class="features__grid">
                 ${featuresHTML}
               </div>
             </div>
-          </div>
 
-          <div class="project__right">
-            <div class="project__learning">
-              <h3>Aprendizajes y mejoras</h3>
+          <div class="project__learning">
+          <h3>Aprendizajes y mejoras</h3>
+            <div class="learning__grid">
               <p><strong>Retos:</strong> ${project.retos}</p>
               <p><strong>Aprendizajes:</strong> ${project.aprendizajes}</p>
               <p><strong>Futuras funcionalidades:</strong> ${project.futuras_funcionalidades}</p>
