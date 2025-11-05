@@ -562,22 +562,36 @@ input:checked+.skills__slider::before {
 .project__features {
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
+  margin-top: 5rem;
+
 }
 
-.features__grid{
+.features__grid {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+/* === CONTENEDOR DE FEATURES === */
+.features__showcase {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
 }
 
 .features__gifs {
   position: relative;
   width: 100%;
-  height: 400px;
-  /* ajustá según tus GIFs */
+  height: 380px;
+  border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  background: #000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .feature__gif {
@@ -586,78 +600,103 @@ input:checked+.skills__slider::before {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
-  transition: opacity 0.5s ease;
-  border: 2px solid #c3c6ce;
-  width: 60rem;
-  height: 30rem;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .feature__gif.active {
   opacity: 1;
+  z-index: 1;
 }
 
-.features__titles {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  position: relative;
+/* === RADIO GROUP ESTILIZADO (Uiverse) === */
+.radiogroup {
+  padding: 48px 64px;
+  border-radius: 16px;
+  background: #ecf0f3;
+  box-shadow: 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
 }
 
-.feature__title {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.feature__title:hover {
-  color: #0077ff;
-}
-
-.feature__title.active {
-  color: #0077ff;
-  font-weight: bold;
-}
-
-.feature__title::before {
-  content: '';
+.state {
   position: absolute;
-  /* 1. Cambia el posicionamiento horizontal y vertical */
   top: 0;
-  /* Comienza desde la parte superior */
-  bottom: 0;
-  /* Termina en la parte inferior */
-  left: 0;
-  /* Centra la línea verticalmente en el contenedor */
-
-  /* 2. Invierte las dimensiones */
-  width: 2px;
-  /* El grosor de la línea ahora es 'width' */
-  height: 35rem;
-  /* Permite que la altura se estire entre top y bottom */
-
-  /* 3. Ajusta el centrado horizontal para compensar el ancho */
-  transform: translateX(-50%);
-
-  background: #ccc;
-  z-index: -1;
+  right: 0;
+  opacity: 1e-5;
+  pointer-events: none;
 }
 
-.feature__title::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  width: 8px;
-  height: 8px;
+.label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #394a56;
+}
+
+.indicator {
+  position: relative;
   border-radius: 50%;
-  background-color: #777;
-  /* Color del nodo */
-  z-index: 3;
+  height: 30px;
+  width: 30px;
+  box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+  overflow: hidden;
+}
+
+
+.indicator::before,
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+}
+
+.indicator::before {
+  box-shadow: -4px -2px 4px 0px #d1d9e6, 4px 2px 8px 0px #fff;
+}
+
+.indicator::after {
+  background-color: #ecf0f3;
+  box-shadow: -4px -2px 4px 0px #fff, 4px 2px 8px 0px #d1d9e6;
+  transform: scale3d(1, 1, 1);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+
+.state:checked ~ .label .indicator::after {
+  transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
+  opacity: 0;
+}
+
+.state:focus ~ .label .text {
+  transform: translate3d(8px, 0, 0);
+  opacity: 1;
+}
+
+.label:hover .text {
+  opacity: 1;
+}
+.text {
+  margin-left: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s linear, transform 0.2s ease-out;
+}
+
+.project__learning {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
 .learning__grid {
   margin-top: 2rem;
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* Skills / logos */

@@ -7,7 +7,7 @@ export async function renderProjectTemplate(projectId) {
     if (!project) {
       return `
         <div class="project__not-found">
-          <h2>😢 Proyecto no encontrado</h2>
+          <h2>Proyecto no encontrado</h2>
           <a href="#/projects" class="back__link">← Volver a proyectos</a>
         </div>`;
     }
@@ -20,34 +20,40 @@ export async function renderProjectTemplate(projectId) {
       .map(tech => `<li>${tech}</li>`)
       .join('');
 
+    // === GIFS SUPERPUESTOS ===
     const gifsHTML = project.features
-      .map(f => `
-      <video 
-        class="feature__gif" 
-        src="${f.demo_gif}" 
-        autoplay 
-        loop 
-        muted 
-        playsinline>
-      </video>
-  `)
-      .join('');
-    const titlesHTML = project.features
       .map((f, i) => `
-      <h4 class="feature__title" data-index="${i}">${f.title}</h4>
-  `)
+        <video 
+          class="feature__gif ${i === 0 ? 'active' : ''}" 
+          src="${f.demo_gif}" 
+          autoplay 
+          loop 
+          muted 
+          playsinline
+          loading="lazy">
+        </video>
+      `)
       .join('');
 
-
-    const featuresHTML = `
-  <div class="features__gifs">
-    ${gifsHTML}
-  </div>
-  <div class="features__titles">
-    ${titlesHTML}
-  </div>
-`;
-
+    // === RADIO BUTTONS ESTILIZADOS ===
+    const radioButtonsHTML = project.features
+      .map((f, i) => `
+        <div class="wrapper">
+          <input 
+            value="${i}" 
+            id="feature-${projectId}-${i}" 
+            name="feature-${projectId}" 
+            type="radio" 
+            class="state" 
+            ${i === 0 ? 'checked' : ''}
+          />
+          <label for="feature-${projectId}-${i}" class="label">
+            <div class="indicator"></div>
+            <span class="text">${f.title}</span>
+          </label>
+        </div>
+      `)
+      .join('');
 
     return `
       <div class="project__page animate-fade-in">
@@ -60,33 +66,38 @@ export async function renderProjectTemplate(projectId) {
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>
             <p class="project__description">${project.description}</p>
-             <div class="project__stack">
+            <div class="project__stack">
               <h3>Stack Tecnológico</h3>
               <ul>${stackHTML}</ul>
             </div>
             <div class="project__links">
-              <a href="${project.demo}" target="_blank" class="btn primaryBtn">🔗 Demo</a>
-              <a href="${project.code}" target="_blank" class="btn secondaryBtn">💻 Código</a>
+              <a href="${project.demo}" target="_blank" class="btn primaryBtn">Demo</a>
+              <a href="${project.code}" target="_blank" class="btn secondaryBtn">Código</a>
             </div>
           </div>
         </div>
 
         <div class="project__content">
+          <div class="project__features">
+            <h3>Características</h3>
+            <div class="features__showcase">
+              <!-- VISOR DE GIFS -->
+              <div class="features__gifs">
+                ${gifsHTML}
+              </div>
 
-           <div class="project__features">
-              <h3>Características</h3>
-              <div class="features__grid">
-                ${featuresHTML}
+              <!-- RADIO BUTTONS -->
+              <div class="radiogroup">
+                ${radioButtonsHTML}
               </div>
             </div>
+          </div>
 
-          <div class="project__learning">
           <h3>Aprendizajes y mejoras</h3>
-            <div class="learning__grid">
-              <p><strong>Retos:</strong> ${project.retos}</p>
-              <p><strong>Aprendizajes:</strong> ${project.aprendizajes}</p>
-              <p><strong>Futuras funcionalidades:</strong> ${project.futuras_funcionalidades}</p>
-            </div>
+          <div class="project__learning">
+            <p><strong>Retos:</strong> ${project.retos}</p>
+            <p><strong>Aprendizajes:</strong> ${project.aprendizajes}</p>
+            <p><strong>Futuras funcionalidades:</strong> ${project.futuras_funcionalidades}</p>
           </div>
         </div>
       </div>
@@ -98,24 +109,24 @@ export async function renderProjectTemplate(projectId) {
 }
 
 export function initFeatureSelector() {
-  const gifs = document.querySelectorAll('.features__gifs .feature__gif');
-  const titles = document.querySelectorAll('.features__titles .feature__title');
-  if (!gifs.length || gifs.length !== titles.length) return;
+  const radios = document.querySelectorAll('.state');
+  const videos = document.querySelectorAll('.feature__gif');
 
-  let activeIndex = 0;
-  gifs[activeIndex].classList.add('active');
-  titles[activeIndex].classList.add('active');
+  if (!radios.length) return;
 
-  titles.forEach((title, i) => {
-    title.addEventListener('click', () => {
-      gifs[activeIndex].classList.remove('active');
-      titles[activeIndex].classList.remove('active');
-
-      gifs[i].classList.add('active');
-      titles[i].classList.add('active');
-
-      activeIndex = i;
+  // Escuchar cambios en cualquier radio
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const index = radio.value;
+      videos.forEach((v, i) => {
+        v.classList.toggle('active', i == index);
+      });
     });
   });
-}
 
+  // Inicial: activar el primero
+  const checked = document.querySelector('.state:checked');
+  if (checked) {
+    videos[checked.value].classList.add('active');
+  }
+}

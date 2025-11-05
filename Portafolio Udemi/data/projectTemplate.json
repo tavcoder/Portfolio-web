@@ -84,7 +84,7 @@
     ],
     "demo": "https://superm.vercel.app",
     "code": "https://github.com/taniaarteaga/superm",
-    "retos": "El mayor reto fue implementar filtros y ordenamiento de productos. La base de datos del curso no podía modificarse, así que creé una nueva estructura en Supabase con los elementos necesarios. Además, los filtros debían adaptarse al diseño responsive como menú desplegable, y sincronizar correctamente con el estado global y la UI.",
+    "retos":"El reto principal consistió en implementar un sistema completo de filtros por categoría, características (eco/sin gluten) y ordenamiento dinámico. Desarrollé un motor modular con funciones puras (`getVisibleProducts`, `applyCategories`, `applySort`) que filtra y ordena en tiempo real. Además, integré un sidebar responsive (fijo en desktop, menú desplegable en móvil) sincronizado con el estado global.Fue durante este proyecto que aprendí a usar GitHub, por lo que los cambios de esta funcionalidad se subieron en bloques masivos (`Add files via upload` – 12, 17 y 24 jun).",
     "aprendizajes": "Estado global con Context API, consultas asíncronas con TanStack Query, manejo de carrito persistente en localStorage, autocompletado de formularios con datos del usuario, diseño de filtros dinámicos y responsive.",
     "futuras_funcionalidades": "Integrar sistema de pagos real, panel de administración para productos y mejoras en UI/UX y performance."
   },
