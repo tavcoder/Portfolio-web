@@ -53,6 +53,14 @@
       "🗄️ Supabase"
     ],
     "features": [
+       {
+        "title": "Notificaciones tipo toast",
+        "demo_gif": "assets/gifs/toast.mp4"
+      },
+      {
+        "title": "Filtros y ordenamiento",
+        "demo_gif": "assets/gifs/toast.mp4"
+      },
       {
         "title": "Carrito persistente",
         "demo_gif": "assets/gifs/toast.mp4"
@@ -61,10 +69,7 @@
         "title": "Autocompletado del formulario de envío",
         "demo_gif": "assets/gifs/toast.mp4"
       },
-      {
-        "title": "Filtros y ordenamiento",
-        "demo_gif": "assets/gifs/toast.mp4"
-      },
+      
       {
         "title": "Checkout simulado",
         "demo_gif": "assets/gifs/toast.mp4"
@@ -72,11 +77,8 @@
       {
         "title": "Resumen del pedido",
         "demo_gif": "assets/gifs/toast.mp4"
-      },
-      {
-        "title": "Notificaciones tipo toast",
-        "demo_gif": "assets/gifs/toast.mp4"
       }
+     
     ],
     "images": [
       "assets/superm1.png",

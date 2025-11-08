@@ -10,7 +10,7 @@
     {
       "text": "Ver mi CV",
       "href": "assets/cv-tania-arteaga.pdf",
-      "class": "btn primaryBtn"
+      "class": "btn primaryBtn glow"
     }
   ]
 }

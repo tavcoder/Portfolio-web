@@ -1,6 +1,6 @@
  /* CSS Custom Properties for theming */
  :root {
-   --primary-bg: #e8e8e8;
+   --primary-bg: #e0e5ec;
    /* Fondo general, inputs y botones */
    --secundary-bg: #cfcaea;
    /* Fondo de tarjetas de skills */
@@ -16,12 +16,13 @@
    /* Color claro del slider */
    --highlight-color2: #6f57e9;
    /* Color oscuro del slider */
-   --linear-gradient: 270deg, var(--highlight-color2), var(--background-gradient-secondary)
+
+   --linear-gradient: 270deg, var(--highlight-color2), var(--background-gradient-secondary);
    --shadow-light: #c1c6ce;
    --shadow-dark: #9da1a7;
    --white-shadow: #ffffff;
 
-   --box-shadow-main: 2px 2px 2px var(--shadow-light), -2px -2px 2px var(--text-color2), 1px 1px 70px var(--shadow-dark);
+   --box-shadow-main: 8px 8px 16px #b8bcc2, -8px -8px 16px #ffffff;
    --box-shadow-inset: inset 10px 10px 10px var(--shadow-light), inset -10px -10px 10px var(--text-color2);
    --box-shadow-press: rgb(193, 198, 206) 2px 2px 2px inset, rgb(255, 255, 255) -2px -2px 5px inset, rgb(193, 198, 206) 0.5px 0.5px 5px inset, rgb(255, 255, 255) -0.5px -0.5px 3px inset;
    --box-shadow-up: 2px 2px 5px var(--shadow-light), -2px -2px 5px var(--text-color2), 0.5px 0.5px 2px var(--shadow-dark), -0.5px -0.5px 2px var(--text-color2);

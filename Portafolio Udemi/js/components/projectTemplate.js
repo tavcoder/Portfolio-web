@@ -79,15 +79,15 @@ export async function renderProjectTemplate(projectId) {
 
         <div class="project__content">
           <div class="project__features">
-            <h3>Características</h3>
-            <div class="features__showcase">
-              <!-- VISOR DE GIFS -->
-              <div class="features__gifs">
-                ${gifsHTML}
-              </div>
-
-              <!-- RADIO BUTTONS -->
-              <div class="radiogroup">
+          <div class="features__showcase">
+          <!-- VISOR DE GIFS -->
+          <div class="features__gifs">
+          ${gifsHTML}
+          </div>
+          
+          <!-- RADIO BUTTONS -->
+          <div class="radiogroup">
+          <h3>Características</h3>
                 ${radioButtonsHTML}
               </div>
             </div>
