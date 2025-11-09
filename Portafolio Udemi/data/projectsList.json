@@ -25,7 +25,7 @@
     "description": " Social Connect is a full-stack social media platform where users can share posts, follow others, like and comment on content, and explore the community. Built with Node.js, Express, MongoDB, React, and Vite, it connects people through seamless interactions and a modern user experience.",
     "github": "https://github.com/tavcoder/Social",
     "demo": "https://taniaarteaga.dev/calendario-trabajo",
-    "frontImage": "assets/img/imgPlaceholder.jpg",
+    "frontImage": "assets/img/superm.png",
     "backImage": "assets/img/imgPlaceholder.jpg",
     "technologies": ["React", "Vite", "MongoDb", "Node", "Express"]
   }
