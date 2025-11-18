@@ -40,7 +40,7 @@ export function renderProjectItem(project, index) {
         <div class="card__buttons">  
          <a href="${project.demo}" target="_blank" class="btn">Demo</a>
          <a href="${project.github}" target="_blank" class="btn">Código</a>
-         <a href="#/project/${project.id}" class="btn" data-id="${project.id}"> Leer + </a>
+         <a href="#/project/${project.id}" class="btn" data-id="${project.id}"> + </a>
          </div>
     </div>
      </div>
