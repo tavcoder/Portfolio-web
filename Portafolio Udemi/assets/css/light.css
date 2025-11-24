@@ -12,6 +12,7 @@
    /* Gris oscuro para body y footer */
    --text-color2: rgb(255, 253, 253);
    /* Texto blanco en CTA */
+   --text-color3: #516d91;
    --highlight-color: #cfcaea;
    /* Color claro del slider */
    --highlight-color2: #6f57e9;
@@ -23,7 +24,7 @@
        #f5f5f5 35%,
        #e6e6e6 70%,
        #d0d0d0 100%);
-
+   --radial-gradient2: radial-gradient(circle at 28% 40%, #e0e5ec, #818694e6);
    --shadow-light: #c1c6ce;
    --shadow-dark: #9da1a7;
    --white-shadow: #ffffff;

@@ -60,7 +60,7 @@ h1 {
   grid-area: aside;
   height: 85vh;
   min-height: 85vh;
-  border-radius: 2rem;
+  border-radius: 10rem 2rem 2rem 10rem;
   overflow: auto;
   overflow-x: hidden;
   background-color: var(--primary-bg);
@@ -534,6 +534,7 @@ input:checked+.skills__slider::before {
 .project__description {
   max-width: 50rem;
   margin-bottom: 2rem;
+  color: rgba(77, 75, 75, 0.711);
 }
 
 .header__text {
@@ -542,6 +543,23 @@ input:checked+.skills__slider::before {
 
 .project__title {
   font-size: 4rem;
+  color: var(--primary-bg);
+  text-shadow: 2px 2px 2px rgb(193, 198, 206), -2px -2px 5px rgb(255, 255, 255), 0.5px 0.5px 3px rgb(193, 198, 206), -0.5px -0.5px 3px rgb(255, 255, 255);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.333);
+}
+
+.project__stack {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 50rem;
+  box-shadow: var(--box-shadow-inset);
+  color: #394a56;
+  font-size: 1rem;
+  padding: 1.5rem;
 }
 
 .project__links {
@@ -549,6 +567,7 @@ input:checked+.skills__slider::before {
   align-items: center;
   gap: 3rem;
   margin-top: 5rem;
+  z-index: 6;
 }
 
 .project__text {
@@ -564,7 +583,7 @@ input:checked+.skills__slider::before {
 }
 
 .project__content {
-  background-color: var(--primary-bg);
+  background-color: white;
   margin-top: -12rem;
   z-index: 2;
   padding: 5rem;
@@ -580,16 +599,22 @@ input:checked+.skills__slider::before {
 
 /* === CONTENEDOR DE FEATURES === */
 .features__showcase {
-  display: grid;
-  grid-template-columns: 1fr 300px;
+  display: flex;
+  flex-direction: row;
   gap: 5rem;
   align-items: start;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: var(--primary-bg);
+  box-shadow: var(--box-shadow-up);
+
 }
 
 .features__gifs {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 254px;
   border-radius: 16px;
   overflow: hidden;
   background: #000;
@@ -642,6 +667,9 @@ input:checked+.skills__slider::before {
       hsla(220, 100%, 60%, 0) 70%
       /* desvanecido suave */
     );
+  box-shadow:
+    0 0 10px rgba(80, 159, 255, 0.4),
+    0 0 25px rgba(90, 184, 255, 0.3);
   filter: blur(0.6px);
   opacity: 0.55;
   transition: opacity .25s ease;
@@ -654,9 +682,12 @@ input:checked+.skills__slider::before {
 .radiogroup {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* VERTICAL */
-  gap: 1rem;
+  gap: 0.5rem;
   position: relative;
+  font-size: 1.3rem;
   /* espacio para el knob */
 }
 
@@ -669,23 +700,8 @@ input:checked+.skills__slider::before {
   height: 26px;
   border-radius: 50%;
   z-index: 5;
-
-  background: radial-gradient(circle at 30% 30%,
-      #ffffff 0%,
-      #f5f5f5 35%,
-      #e6e6e6 70%,
-      #d0d0d0 100%);
-
-  box-shadow:
-    -4px -4px 8px rgba(255, 255, 255, 0.9),
-    /* luz arriba izquierda */
-    4px 4px 8px rgba(0, 0, 0, 0.18),
-    /* sombra abajo derecha */
-    inset -2px -2px 4px rgba(255, 255, 255, 0.7),
-    /* brillo interno */
-    inset 3px 3px 5px rgba(0, 0, 0, 0.15);
-  /* sombra interna */
-
+  background: radial-gradient(circle at 28% 40%, #e0e5ec 0%, #e0e5ec 35%, #818694e6 100%);
+  box-shadow: 2px 4px 6px 0px #5c5f6ae6, inset -1px -2px 5px 0px #e7ebefcc;
   transition: top .35s ease, transform .35s ease;
   transform: translateY(-50%);
 
@@ -801,7 +817,7 @@ input:checked+.skills__slider::before {
   content: '';
   position: absolute;
   /* 1. Cambia el posicionamiento horizontal y vertical */
-  top: 95px;
+  top: 40px;
   /* Comienza desde la parte superior */
   bottom: 0;
   /* Termina en la parte inferior */
@@ -811,79 +827,77 @@ input:checked+.skills__slider::before {
   /* 2. Invierte las dimensiones */
   width: 2px;
   /* El grosor de la línea ahora es 'width' */
-  height: 35rem;
+  height: 6.5rem;
   /* Permite que la altura se estire entre top y bottom */
 
   /* 3. Ajusta el centrado horizontal para compensar el ancho */
   transform: translateX(-50%);
 
   background: #ccc;
-  z-index: -1;
-}
+  box-shadow: var(--box-shadow-press);
+  border: 2px solid rgba(255, 255, 255, 0.333);
 
-.timeline__point::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #777;
-  /* Color del nodo */
-  z-index: 3;
+  z-index: -1;
 }
 
 .studies__icon {
   /* El círculo exterior (el grande) */
-  width: 60px;
-  height: 60px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--primary-bg);
   /* Fondo blanco */
-  border: 1px solid #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-press);
+  border: 2px solid rgba(255, 255, 255, 0.333);
+
   /* Sombra sutil como en la imagen */
   /* El contenido de ${stack} debe ser el ícono interno. Si es un SVG o font-awesome, se centrará aquí. */
 }
 
-.studies__icon::after {
+.studies__icon::before {
   content: '';
   position: absolute;
-  /* 1. Cambia el posicionamiento vertical a 50% y horizontal a 0 */
   left: 0;
-  /* Comienza desde la izquierda */
   right: 0;
-  /* Termina en la derecha (o usa width: 100%) */
-  top: 70%;
-  /* Centra la línea horizontalmente en el contenedor */
-
-  /* 2. Invierte las dimensiones */
   width: 35rem;
-  /* Permite que el ancho se estire entre left y right */
   height: 2px;
-  /* El grosor de la línea ahora es 'height' */
-
-  /* 3. Ajusta el centrado vertical para compensar la altura (2px) */
   transform: translateY(-50%);
-  /* El centrado vertical es necesario para 'top: 50%' */
-  /* **Nota:** Tu código original usaba translatey, lo mantendremos */
-
-  background: #ccc;
+  background: var(--highlight-color);
+  box-shadow: var(--box-shadow-main);
   z-index: -1;
+}
+
+.studies__content-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-image: radial-gradient(hsla(0, 0%, 100%, 1) 0%,
+      /* centro blanco intenso */
+      hsla(220, 100%, 85%, .9) 20%,
+      /* borde azul muy claro */
+      hsla(220, 100%, 75%, .35) 40%, hsla(220, 100%, 60%, 0) 70%
+      /* desvanecido suave */
+    );
+  box-shadow: var(--box-shadow-up);
+
+  /* Color del nodo */
+  z-index: 3;
 }
 
 .studies__content-block {
   text-align: left;
-  /* El texto dentro del bloque es justificado a la izquierda */
   padding: 10px;
-  /* Posiciona el bloque de contenido por debajo de la línea */
-  margin-top: 30px;
   position: relative;
-  left: 10rem;
-  top: 9rem;
+  top: 3rem;
+  border-radius: 2rem;
+  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
 
 }
 
@@ -891,6 +905,7 @@ input:checked+.skills__slider::before {
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 5px;
+  color: var(--text-color3);
 }
 
 .studies__institution {
@@ -903,10 +918,22 @@ input:checked+.skills__slider::before {
 
 .studies__date {
   min-width: 3rem;
-  color: var(--accent-color2);
   font-weight: bold;
+  color: var(--accent-color2);
+  /* color base gris-azulado típico del neomorfismo */
+  text-shadow:
+    2px 2px 2px rgb(193, 198, 206),
+    /* sombra inferior-derecha (da profundidad) */
+    -2px -2px 5px rgb(255, 255, 255),
+    /* luz superior-izquierda (simula hundido) */
+    0.5px 0.5px 3px rgb(193, 198, 206),
+    /* sombra suave extra */
+    -0.5px -0.5px 3px rgb(255, 255, 255);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.333);
+
   margin-bottom: 15px;
 }
+
 
 .studies__description {
   font-size: 0.9em;

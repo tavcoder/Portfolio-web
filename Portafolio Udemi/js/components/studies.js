@@ -16,13 +16,14 @@ export async function renderStudies(language = "es") {
                 <div class="studies__icon">
                     ${stack}
                 </div>
-                 </div>
                 <div class="studies__content-block">
                     <h3 class="studies__title">${title} 
                         <span class="studies__institution">${institution}</span>
                     </h3>
                     <p class="studies__description">${description}</p>
                     </div>
+                 </div>
+                
             </li>
         `).join("");
 

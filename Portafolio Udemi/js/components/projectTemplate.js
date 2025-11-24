@@ -17,7 +17,7 @@ export async function renderProjectTemplate(projectId) {
       .join('');
 
     const stackHTML = project.stack
-      .map(tech => `<li>${tech}</li>`)
+      .map(tech => `<li class="stack__item">${tech}</li>`)
       .join('');
 
     // === GIFS SUPERPUESTOS ===
@@ -38,7 +38,7 @@ export async function renderProjectTemplate(projectId) {
     // === RADIO BUTTONS ESTILIZADOS ===
     const radioButtonsHTML = project.features
       .map((f, i) => `
-        <div class="wrapper">
+        <div class="indicator__wrapper">
           <input 
             value="${i}" 
             id="feature-${projectId}-${i}" 
@@ -66,10 +66,8 @@ export async function renderProjectTemplate(projectId) {
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>
             <p class="project__description">${project.description}</p>
-            <div class="project__stack">
-              <h3>Stack Tecnológico</h3>
-              <ul>${stackHTML}</ul>
-            </div>
+            <h3>Stack Tecnológico</h3>
+              <ul class="project__stack">${stackHTML}</ul>
             <div class="project__links">
               <a href="${project.demo}" target="_blank" class="btn primaryBtn">Demo</a>
               <a href="${project.code}" target="_blank" class="btn secondaryBtn">Código</a>
@@ -92,13 +90,11 @@ export async function renderProjectTemplate(projectId) {
               </div>
             </div>
           </div>
-
-          <h3>Aprendizajes y mejoras</h3>
           <div class="project__learning">
             <p><strong>Retos:</strong> ${project.retos}</p>
             <p><strong>Aprendizajes:</strong> ${project.aprendizajes}</p>
+            </div>
             <p><strong>Futuras funcionalidades:</strong> ${project.futuras_funcionalidades}</p>
-          </div>
         </div>
       </div>
     `;
