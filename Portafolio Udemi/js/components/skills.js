@@ -13,7 +13,7 @@ export async function renderSkills(language = 'es') {
             .map(
                 (tool, i) => `
         <div class="skills__textContent__skills animate-on-scroll animate-fade-in animate-delay-${800 + i * 200}">
-          <div class="skills__textContent__iconCircle"><i class="fas fa-check"></i></div>
+          <div class="skills__textContent__iconCircle"><i class="fas fa-check check"></i></div>
           <p>${tool}</p>
         </div>`
             )
@@ -23,7 +23,7 @@ export async function renderSkills(language = 'es') {
             .map(
                 (tool, i) => `
         <div class="skills__textContent__skills animate-on-scroll animate-fade-in animate-delay-${800 + i * 200}">
-          <div class="skills__textContent__iconCircle"><i class="fas fa-check"></i></div>
+          <div class="skills__textContent__iconCircle"><i class="fas fa-check check"></i></div>
           <p>${tool}</p>
         </div>`
             )

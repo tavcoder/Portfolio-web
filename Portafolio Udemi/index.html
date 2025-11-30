@@ -28,40 +28,37 @@
 <body>
 
     <div class="layout">
-        <div class="wrapper">
-            <svg viewBox="0 0 300 300" width="300" height="300">
-                <defs>
-                    <!-- Degradado más profundo -->
-                    <linearGradient id="degradadoHundoIntenso" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color=" #e0e5ec" />
-                        <stop offset="50%" stop-color=" #e0e5ec" />
-                        <stop offset="100%" stop-color=" #e0e5ec" />
-                    </linearGradient>
-
-                    <!-- Sombra interna más intensa -->
-                    <filter id="inset-shadow-intenso" x="-50%" y="-50%" width="200%" height="200%">
-                        <feOffset dx="0" dy="3" />
-                        <feGaussianBlur stdDeviation="4" result="offset-blur" />
-                        <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
-                        <feFlood flood-color="black" flood-opacity="0.5" result="color" />
-                        <feComposite operator="in" in="color" in2="inverse" result="shadow" />
-                        <feComposite operator="over" in="shadow" in2="SourceGraphic" />
-                    </filter>
-                </defs>
-
-                <path d="M 56 130 Q 65 185 105 202" fill="none" stroke="url(#degradadoHundoIntenso)" stroke-width="10"
-                    stroke-linecap="round" filter="url(#inset-shadow-intenso)" />
-            </svg>
-
-
-
-            <div class="dot"></div>
-        </div>
 
         <!-- Sidebar (info del usuario)-->
         <aside class="layout__aside">
-            <section class="aside__user-info">
+            <div class="wrapper">
+                <svg viewBox="0 0 300 300" width="300" height="300">
+                    <defs>
+                        <!-- Degradado más profundo -->
+                        <linearGradient id="degradadoHundoIntenso" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color=" #e0e5ec" />
+                            <stop offset="50%" stop-color=" #e0e5ec" />
+                            <stop offset="100%" stop-color=" #e0e5ec" />
+                        </linearGradient>
 
+                        <!-- Sombra interna más intensa -->
+                        <filter id="inset-shadow-intenso" x="-50%" y="-50%" width="200%" height="200%">
+                            <feOffset dx="0" dy="3" />
+                            <feGaussianBlur stdDeviation="4" result="offset-blur" />
+                            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+                            <feFlood flood-color="black" flood-opacity="0.5" result="color" />
+                            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+                            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+                        </filter>
+                    </defs>
+
+                    <path d="M 56 130 Q 65 185 105 202" fill="none" stroke="url(#degradadoHundoIntenso)"
+                        stroke-width="10" stroke-linecap="round" filter="url(#inset-shadow-intenso)" />
+                </svg>
+                <div class="dot"></div>
+            </div>
+            <button class="buttons__language">Es</button>
+            <section class="aside__user-info">
                 <!--Información general usuario-->
                 <div class="user-info__general">
                     <div class="user-info__container-image">
@@ -100,11 +97,6 @@
                     </ul>
                 </nav>
             </section>
-
-            <div class="aside__buttons">
-
-                <button class="buttons__language">Es</button>
-            </div>
         </aside>
 
         <!-- Contenido principal -->

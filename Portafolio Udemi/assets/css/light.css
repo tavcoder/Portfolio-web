@@ -4,7 +4,8 @@
    /* Fondo general, inputs y botones */
    --secundary-bg: #cfcaea;
    /* Fondo de tarjetas de skills */
-   --accent-color: #f7c548;
+   --accent-color: #7e97b8;
+   ;
    /* Amarillo para títulos y CTA */
    --accent-color2: #5e4ac7;
    /* Azul oscuro para nav y CTA */
@@ -25,11 +26,20 @@
        #e6e6e6 70%,
        #d0d0d0 100%);
    --radial-gradient2: radial-gradient(circle at 28% 40%, #e0e5ec, #818694e6);
+   --neon-light: radial-gradient(hsla(0, 0%, 100%, 1) 0%,
+       /* centro blanco intenso */
+       hsla(220, 100%, 85%, .9) 20%,
+       /* borde azul muy claro */
+       hsla(220, 100%, 75%, .35) 40%, hsla(220, 100%, 60%, 0) 70%
+       /* desvanecido suave */
+     );
    --shadow-light: #c1c6ce;
    --shadow-dark: #9da1a7;
    --white-shadow: #ffffff;
 
    --box-shadow-main: 8px 8px 16px #b8bcc2, -8px -8px 16px #ffffff;
+   --box-shadow-btn: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+   --box-shadow-card: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
    --box-shadow-inset:
      -4px -4px 8px rgba(255, 255, 255, 0.9),
      /* luz arriba izquierda */

@@ -17,42 +17,33 @@ export async function renderProjectTemplate(projectId) {
       .join('');
 
     const stackHTML = project.stack
-      .map(tech => `<li class="stack__item">${tech}</li>`)
+      .map(tech => `
+    <li class="stack__item">
+      <span class="stack__icon">${tech.icon}</span>
+      <span class="stack__name">${tech.name}</span>
+    </li>
+  `)
       .join('');
 
-    // === GIFS SUPERPUESTOS ===
-    const gifsHTML = project.features
+    // === FEATURES CON GIF + LABEL ASOCIADO ===
+    const featuresHTML = project.features
       .map((f, i) => `
-        <video 
-          class="feature__gif ${i === 0 ? 'active' : ''}" 
-          src="${f.demo_gif}" 
-          autoplay 
-          loop 
-          muted 
-          playsinline
-          loading="lazy">
-        </video>
-      `)
-      .join('');
+    <div class="feature__item ${i === 0 ? 'active' : ''}">
+        <span class="feature__title">${f.title}</span>
 
-    // === RADIO BUTTONS ESTILIZADOS ===
-    const radioButtonsHTML = project.features
-      .map((f, i) => `
-        <div class="indicator__wrapper">
-          <input 
-            value="${i}" 
-            id="feature-${projectId}-${i}" 
-            name="feature-${projectId}" 
-            type="radio" 
-            class="state" 
-            ${i === 0 ? 'checked' : ''}
-          />
-          <label for="feature-${projectId}-${i}" class="label">
-            <div class="indicator"></div>
-            <span class="text">${f.title}</span>
-          </label>
-        </div>
-      `)
+      <!-- GIF/VIDEO asociado directamente -->
+      <video
+        class="feature__gif"
+        src="${f.demo_gif}"
+        autoplay
+        loop
+        muted
+        playsinline
+        loading="lazy"
+        ${i === 0 ? '' : 'data-lazy'} <!-- opcional: lazy load los que no son el primero -->
+      ></video>
+    </div>
+  `)
       .join('');
 
     return `
@@ -77,19 +68,11 @@ export async function renderProjectTemplate(projectId) {
 
         <div class="project__content">
           <div class="project__features">
-          <div class="features__showcase">
-          <!-- VISOR DE GIFS -->
-          <div class="features__gifs">
-          ${gifsHTML}
-          </div>
-          
-          <!-- RADIO BUTTONS -->
-          <div class="radiogroup">
-          <h3>Características</h3>
-                ${radioButtonsHTML}
-              </div>
-            </div>
-          </div>
+  <h3>Características del proyecto</h3>
+  <div class="features__list">
+    ${featuresHTML}
+  </div>
+</div>
           <div class="project__learning">
             <p><strong>Retos:</strong> ${project.retos}</p>
             <p><strong>Aprendizajes:</strong> ${project.aprendizajes}</p>

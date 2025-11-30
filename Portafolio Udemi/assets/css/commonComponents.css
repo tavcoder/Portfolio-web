@@ -1,5 +1,5 @@
 /* Common Components Styles */
-h3{
+h3 {
   color: var(--text-color3);
 }
 
@@ -11,14 +11,14 @@ h3{
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.4px;
-  color: #7e97b8;
+  color: var(--accent-color);
   background-color: #e0e8ef;
   border: 2px solid rgba(255, 255, 255, 0.333);
   border-radius: 0.5rem;
   padding: 10px 20px;
   transform: translate(0px, 0px) rotate(0deg);
   transition: 0.2s;
-  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+  box-shadow: var(--box-shadow-btn);
 }
 
 .btn:hover {
@@ -84,8 +84,8 @@ h3{
 /* Language Button */
 .buttons__language {
   position: relative;
-  top: -43.5rem;
-  left: 5.5rem;
+  top: 1.5rem;
+  left: 12.5rem;
   background: var(--primary-bg);
   border: none;
   border-radius: 50%;
@@ -97,8 +97,8 @@ h3{
 
 
 .wrapper {
-  position: relative;
-  top: -20rem;
+  position: absolute;
+  top: 29rem;
   left: -7rem;
   width: 300px;
   height: 300px;

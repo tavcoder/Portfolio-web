@@ -4,13 +4,34 @@
     "name": "Portafolio Web – SPA Interactivo",
     "description": "Este proyecto nació con una idea clara: crear un espacio donde pudiera mostrar mi trabajo y evolución como desarrolladora, reflejando mi interés por la interacción, animaciones y pequeños detalles. Construido como una SPA desde cero con HTML, CSS y JavaScript modular, implementé routing propio, modo oscuro/claro, animaciones personalizadas y carga dinámica de proyectos desde un JSON. El resultado es un portafolio moderno, fluido y completamente interactivo.",
     "stack": [
-      "🌐 HTML5",
-      "🎨 CSS3",
-      "⚡ JavaScript (ES6+)",
-      "🌀 SPA con routing (router.js)",
-      "💡 Animaciones personalizadas (animations.js)",
-      "🌙 Dark/Light mode toggle (theme.js)",
-      "🖼️ JSON dinámico (projects.json)"
+      {
+        "icon": "fab fa-html5",
+        "name": "HTML5"
+      },
+      {
+        "icon": "fab fa-css3-alt",
+        "name": "CSS3"
+      },
+      {
+        "icon": "JavaScript",
+        "name": "JavaScript (ES6+)"
+      },
+      {
+        "icon": "Routing",
+        "name": "SPA con routing propio"
+      },
+      {
+        "icon": "Sparkles",
+        "name": "Animaciones personalizadas"
+      },
+      {
+        "icon": "Moon",
+        "name": "Dark/Light mode toggle"
+      },
+      {
+        "icon": "Database",
+        "name": "JSON dinámico"
+      }
     ],
     "features": [
       {
@@ -45,40 +66,56 @@
     "name": "SuperM – React E-commerce",
     "description": "SuperM surgió como el proyecto final de mi primer curso de React, pero lo llevé más allá creando un e-commerce moderno con React, Vite y Supabase. Los usuarios pueden registrarse, iniciar sesión, agregar productos al carrito persistente, editar sus datos y usar esos datos para autocompletar el formulario de envío. Implementé Context API, TanStack Query y microinteracciones para mejorar la experiencia, además de checkout simulado y filtros dinámicos de productos.",
     "stack": [
-      "⚛️ React",
-      "⚡ Vite",
-      "🎨 CSS Modules",
-      "🔗 Context API",
-      "📊 TanStack Query",
-      "🗄️ Supabase"
+      {
+        "icon": "fab fa-react",
+        "name": "React"
+      },
+      {
+        "icon": "Vite",
+        "name": "Vite"
+      },
+      {
+        "icon": "fab fa-css3-alt",
+        "name": "CSS Modules"
+      },
+      {
+        "icon": "Context",
+        "name": "Context API"
+      },
+      {
+        "icon": "Query",
+        "name": "TanStack Query"
+      },
+      {
+        "icon": "Supabase",
+        "name": "Supabase"
+      }
     ],
     "features": [
-       {
+      {
         "title": "Notificaciones tipo toast",
         "demo_gif": "assets/gifs/toast.mp4"
       },
       {
         "title": "Filtros y ordenamiento",
-        "demo_gif": "assets/gifs/toast.mp4"
+        "demo_gif": "assets/gifs/filtros.mp4"
       },
       {
         "title": "Carrito persistente",
-        "demo_gif": "assets/gifs/toast.mp4"
+        "demo_gif": "assets/gifs/carrito.mp4"
       },
       {
         "title": "Autocompletado del formulario de envío",
-        "demo_gif": "assets/gifs/toast.mp4"
+        "demo_gif": "assets/gifs/autocompletado.mp4"
       },
-      
       {
         "title": "Checkout simulado",
-        "demo_gif": "assets/gifs/toast.mp4"
+        "demo_gif": "assets/gifs/checkout.mp4"
       },
       {
         "title": "Resumen del pedido",
-        "demo_gif": "assets/gifs/toast.mp4"
+        "demo_gif": "assets/gifs/resumen.mp4"
       }
-     
     ],
     "images": [
       "assets/superm1.png",
@@ -86,24 +123,51 @@
     ],
     "demo": "https://superm.vercel.app",
     "code": "https://github.com/taniaarteaga/superm",
-    "retos":"El reto principal consistió en implementar un sistema completo de filtros por categoría, características (eco/sin gluten) y ordenamiento dinámico. Desarrollé un motor modular con funciones puras (`getVisibleProducts`, `applyCategories`, `applySort`) que filtra y ordena en tiempo real. Además, integré un sidebar responsive (fijo en desktop, menú desplegable en móvil) sincronizado con el estado global.Fue durante este proyecto que aprendí a usar GitHub, por lo que los cambios de esta funcionalidad se subieron en bloques masivos (`Add files via upload` – 12, 17 y 24 jun).",
+    "retos": "El reto principal consistió en implementar un sistema completo de filtros por categoría, características (eco/sin gluten) y ordenamiento dinámico. Desarrollé un motor modular con funciones puras que filtra y ordena en tiempo real...",
     "aprendizajes": "Estado global con Context API, consultas asíncronas con TanStack Query, manejo de carrito persistente en localStorage, autocompletado de formularios con datos del usuario, diseño de filtros dinámicos y responsive.",
     "futuras_funcionalidades": "Integrar sistema de pagos real, panel de administración para productos y mejoras en UI/UX y performance."
   },
   {
     "id": "social-app",
     "name": "Red Social – Full-Stack App",
-    "description": "Este proyecto nació de un curso avanzado de React, enfocándome en mejorar el frontend y adaptarlo a necesidades reales. Usé la API del curso, modificando solo lo necesario: añadí endpoints para likes y simulé la eliminación de avatars en frontend. Construí un frontend con React, Vite, React Router y TanStack React Query, y un backend con Node.js, Express y MongoDB Atlas, logrando una red social funcional con publicaciones, comentarios, seguidores y feed dinámico.",
+    "description": "Este proyecto nació de un curso avanzado de React, enfocándome en mejorar el frontend y adaptarlo a necesidades reales. Usé la API del curso, modificando solo lo necesario: añadí endpoints para likes y simulé la eliminación de avatars en frontend...",
     "stack": [
-      "⚛️ React",
-      "⚡ Vite",
-      "🛠 Node.js",
-      "📦 Express",
-      "🗄 MongoDB",
-      "🔑 JWT",
-      "🎨 CSS3",
-      "🧩 React Router",
-      "📊 TanStack React Query"
+      {
+        "icon": "React",
+        "name": "React"
+      },
+      {
+        "icon": "Vite",
+        "name": "Vite"
+      },
+      {
+        "icon": "Node.js",
+        "name": "Node.js"
+      },
+      {
+        "icon": "Express",
+        "name": "Express"
+      },
+      {
+        "icon": "MongoDB",
+        "name": "MongoDB"
+      },
+      {
+        "icon": "Lock",
+        "name": "JWT"
+      },
+      {
+        "icon": "CSS",
+        "name": "CSS3"
+      },
+      {
+        "icon": "React Router",
+        "name": "React Router"
+      },
+      {
+        "icon": "Query",
+        "name": "TanStack React Query"
+      }
     ],
     "features": [
       {
