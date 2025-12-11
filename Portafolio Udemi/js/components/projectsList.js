@@ -8,7 +8,9 @@ export async function renderProjects() {
     try {
         const response = await fetch('data/projectsList.json');
         const projects = await response.json();
-        const projectsHTML = projects.map((project, index) => renderProjectItem(project, index)).join('');
+        const techResponse = await fetch('data/tech.json');
+        const techData = await techResponse.json();
+        const projectsHTML = projects.map((project, index) => renderProjectItem(project, index, techData)).join('');
 
         return `
             <div class="content__projects">

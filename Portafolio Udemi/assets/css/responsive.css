@@ -4,6 +4,10 @@
     height: 90vh;
   }
 
+  .buttons__language {
+    left: 12.5rem;
+  }
+
   .user-info__container-image {
     width: 9rem;
   }
@@ -27,6 +31,11 @@
   .aside__buttons {
     gap: 4rem;
   }
+
+  .wrapper {
+    top: 29rem;
+  }
+
 
   .card__item {
     width: 28rem;

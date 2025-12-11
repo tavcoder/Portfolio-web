@@ -13,9 +13,10 @@ export async function renderHero() {
             </a>
         `).join('');
 
+        const titleWithSpan = hero.title.replace('Web Developer', '<span class="web-developer">Web Developer</span>');
         return `
             <section class="content__hero">
-                <h1 class="page__title animate-on-scroll animate-fade-right">${hero.title}</h1>
+                <h1 class="page__title animate-on-scroll animate-fade-right">${titleWithSpan}</h1>
                 <p class="page__text animate-on-scroll animate-fade-left">${hero.text}</p>
                 <div class="page__btn">
                     ${buttonsHTML}

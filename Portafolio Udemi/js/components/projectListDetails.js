@@ -2,10 +2,14 @@
  * Renders the HTML for a single project item.
  * @param {Object} project - The project object containing details.
  * @param {number} index - The index of the project in the list.
+ * @param {Array} techData - Array of technology objects from tech.json.
  * @returns {string} The HTML string for the project item.
  */
-export function renderProjectItem(project, index) {
+export function renderProjectItem(project, index, techData) {
   const animationClass = index === 0 ? 'animate-fade-left' : index === 2 ? 'animate-fade-right' : '';
+
+  // Create a map for quick lookup
+  const techMap = new Map(techData.map(t => [t.name, t.icon]));
 
   return `
     <div class="projects__card ${animationClass}">
@@ -13,23 +17,12 @@ export function renderProjectItem(project, index) {
           <img class="card__img" src="${project.frontImage}" alt="${project.title} front image">
           <div class="projects__skill">
           ${project.technologies.map(tech => {
-            if (tech === 'PHP') return '<div class="skill__item"><i class="fab fa-php skill__icon"></i></div>';
-            if (tech === 'Database') return '<div class="skill__item"><i class="fa fa-database skill__icon"></i></div>';
-            if (tech === 'POO') return '<div class="skill__item"><p>POO</p></div>';
-            if (tech === 'MVC') return '<div class="skill__item"><p>MVC</p></div>';
-            if (tech === 'Laravel') return '<div class="skill__item"><i class="fab fa-laravel skill__icon"></i></div>';
-            if (tech === 'Bootstrap') return '<div class="skill__item"><i class="fab fa-bootstrap skill__icon"></i></div>';
-            if (tech === 'CSS') return '<div class="skill__item"><i class="fab fa-css3-alt skill__icon"></i></div>';
-            if (tech === 'HTML') return '<div class="skill__item"><i class="fab fa-html5 skill__icon"></i></div>';
-            if (tech === 'React') return '<div class="skill__item"><i class="fab fa-react skill__icon"></i></div>';
-            if (tech === 'Vite') return '<div class="skill__item"><img src="assets/logo/vite.svg" alt="Vite" class="skill__logo"></div>';
-            if (tech === 'MongoDb') return '<div class="skill__item"><i class="fas fa-leaf skill__icon"></i></div>';
-            if (tech === 'Node') return '<div class="skill__item"><i class="fab fa-node-js skill__icon"></i></div>';
-            if (tech === 'Express') return '<div class="skill__item"><p>Express</p></div>';
-            if (tech === 'Supabase') return '<div class="skill__item"><img src="assets/logo/supabase.svg" alt="Supabase" class="skill__logo"></div>';
-            if (tech === 'SASS') return '<div class="skill__item"><i class="fab fa-sass skill__icon"></i></div>';
-            if (tech === 'JAVA SCRIPT') return '<div class="skill__item"><i class="fab fa-js-square skill__icon"></i></div>';
-            return `<div class="skill__item"><p>${tech}</p></div>`;
+            const icon = techMap.get(tech);
+            if (icon) {
+              return `<div class="skill__item"><span class="iconify" data-icon="${icon}"></span></div>`;
+            } else {
+              return `<div class="skill__item"><p>${tech}</p></div>`;
+            }
            }).join('')}
         </div>
 

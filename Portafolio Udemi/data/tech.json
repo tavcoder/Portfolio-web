@@ -1,0 +1,102 @@
+[
+    {
+        "name": "HTML5",
+        "icon": "logos:html-5"
+    },
+    {
+        "name": "CSS3",
+        "icon": "logos:css-3"
+    },
+    {
+        "name": "JavaScript",
+        "icon": "logos:javascript"
+    },
+    {
+        "name": "Routing Propio",
+        "icon": "mdi:route"
+    },
+    {
+        "name": "Animaciones",
+        "icon": "mdi:animation"
+    },
+    {
+        "name": "Dark/Light",
+        "icon": "mdi:theme-light-dark"
+    },
+    {
+        "name": "JSON Dinámico",
+        "icon": "mdi:code-json"
+    },
+    {
+        "name": "React",
+        "icon": "logos:react"
+    },
+    {
+        "name": "Vite",
+        "icon": "logos:vitejs"
+    },
+    {
+        "name": "CSS Modules",
+        "icon": "mdi:code-tags"
+    },
+    {
+        "name": "Context API",
+        "icon": "mdi:state-machine"
+    },
+    {
+        "name": "TanStack Query",
+        "icon": "logos:tanstack-query"
+    },
+    {
+        "name": "Supabase",
+        "icon": "logos:supabase-icon"
+    },
+    {
+        "name": "Node.js",
+        "icon": "logos:nodejs-icon"
+    },
+    {
+        "name": "Express",
+        "icon": "simple-icons:express"
+    },
+    {
+        "name": "MongoDB",
+        "icon": "logos:mongodb-icon"
+    },
+    {
+        "name": "JWT",
+        "icon": "mdi:shield-key-outline"
+    },
+    {
+        "name": "React Router",
+        "icon": "logos:react-router"
+    },
+    {
+        "name": "PHP",
+        "icon": "logos:php"
+    },
+    {
+        "name": "Database",
+        "icon": "mdi:database"
+    },
+    {
+        "name": "POO",
+        "icon": "mdi:shape-outline"
+    },
+    {
+        "name": "MVC",
+        "icon": "mdi:source-branch"
+    },
+    {
+        "name": "Laravel",
+        "icon": "logos:laravel"
+    },
+    {
+        "name": "Bootstrap",
+        "icon": "logos:bootstrap"
+    },
+    {
+        "name": "SASS",
+        "icon": "logos:sass"
+    }
+]
