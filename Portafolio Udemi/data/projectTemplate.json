@@ -4,34 +4,13 @@
     "name": "Portafolio Web – SPA Interactivo",
     "description": "Este proyecto nació con una idea clara: crear un espacio donde pudiera mostrar mi trabajo y evolución como desarrolladora, reflejando mi interés por la interacción, animaciones y pequeños detalles. Construido como una SPA desde cero con HTML, CSS y JavaScript modular, implementé routing propio, modo oscuro/claro, animaciones personalizadas y carga dinámica de proyectos desde un JSON. El resultado es un portafolio moderno, fluido y completamente interactivo.",
     "stack": [
-      {
-        "icon": "fab fa-html5",
-        "name": "HTML5"
-      },
-      {
-        "icon": "fab fa-css3-alt",
-        "name": "CSS3"
-      },
-      {
-        "icon": "JavaScript",
-        "name": "JavaScript (ES6+)"
-      },
-      {
-        "icon": "Routing",
-        "name": "SPA con routing propio"
-      },
-      {
-        "icon": "Sparkles",
-        "name": "Animaciones personalizadas"
-      },
-      {
-        "icon": "Moon",
-        "name": "Dark/Light mode toggle"
-      },
-      {
-        "icon": "Database",
-        "name": "JSON dinámico"
-      }
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "SPA con routing propio",
+      "Animaciones personalizadas",
+      "Dark/Light mode toggle",
+      "JSON dinámico"
     ],
     "features": [
       {
@@ -66,30 +45,12 @@
     "name": "SuperM – React E-commerce",
     "description": "SuperM surgió como el proyecto final de mi primer curso de React, pero lo llevé más allá creando un e-commerce moderno con React, Vite y Supabase. Los usuarios pueden registrarse, iniciar sesión, agregar productos al carrito persistente, editar sus datos y usar esos datos para autocompletar el formulario de envío. Implementé Context API, TanStack Query y microinteracciones para mejorar la experiencia, además de checkout simulado y filtros dinámicos de productos.",
     "stack": [
-      {
-        "icon": "fab fa-react",
-        "name": "React"
-      },
-      {
-        "icon": "Vite",
-        "name": "Vite"
-      },
-      {
-        "icon": "fab fa-css3-alt",
-        "name": "CSS Modules"
-      },
-      {
-        "icon": "Context",
-        "name": "Context API"
-      },
-      {
-        "icon": "Query",
-        "name": "TanStack Query"
-      },
-      {
-        "icon": "Supabase",
-        "name": "Supabase"
-      }
+      "React",
+      "Vite",
+      "CSS3",
+      "Context API",
+      "TanStack Query",
+      "Supabase"
     ],
     "features": [
       {
@@ -132,42 +93,15 @@
     "name": "Red Social – Full-Stack App",
     "description": "Este proyecto nació de un curso avanzado de React, enfocándome en mejorar el frontend y adaptarlo a necesidades reales. Usé la API del curso, modificando solo lo necesario: añadí endpoints para likes y simulé la eliminación de avatars en frontend...",
     "stack": [
-      {
-        "icon": "React",
-        "name": "React"
-      },
-      {
-        "icon": "Vite",
-        "name": "Vite"
-      },
-      {
-        "icon": "Node.js",
-        "name": "Node.js"
-      },
-      {
-        "icon": "Express",
-        "name": "Express"
-      },
-      {
-        "icon": "MongoDB",
-        "name": "MongoDB"
-      },
-      {
-        "icon": "Lock",
-        "name": "JWT"
-      },
-      {
-        "icon": "CSS",
-        "name": "CSS3"
-      },
-      {
-        "icon": "React Router",
-        "name": "React Router"
-      },
-      {
-        "icon": "Query",
-        "name": "TanStack React Query"
-      }
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "CSS3",
+      "React Router",
+      "TanStack Query"
     ],
     "features": [
       {

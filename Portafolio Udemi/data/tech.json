@@ -45,7 +45,7 @@
     },
     {
         "name": "TanStack Query",
-        "icon": "logos:tanstack-query"
+        "icon": "mdi:database"
     },
     {
         "name": "Supabase",

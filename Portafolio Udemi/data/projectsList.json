@@ -6,8 +6,11 @@
     "github": "https://github.com/tavcoder/Portfolio-web",
     "demo": "https://tavcoder.github.io/Portfolio-web/Portafolio%20Udemi/",
     "frontImage": "assets/img/portfolio.png",
-    "backImage": "assets/img/imgPlaceholder.jpg",
-    "technologies": ["JavaScript", "CSS"]
+    "imageRatio": "landscape",
+    "technologies": [
+      "JavaScript",
+      "CSS3"
+    ]
   },
   {
     "id": "super-m",
@@ -16,8 +19,13 @@
     "github": "https://github.com/tavcoder/SuperM",
     "demo": "https://supermdemo.netlify.app/",
     "frontImage": "assets/img/superm.png",
-    "backImage": "assets/img/imgPlaceholder.jpg",
-    "technologies": ["React", "Vite", "Node","Supabase"]
+    "imageRatio": "portrait",
+    "technologies": [
+      "React",
+      "Vite",
+      "Node.js",
+      "Supabase"
+    ]
   },
   {
     "id": "social",
@@ -26,7 +34,13 @@
     "github": "https://github.com/tavcoder/Social",
     "demo": "https://taniaarteaga.dev/calendario-trabajo",
     "frontImage": "assets/img/superm.png",
-    "backImage": "assets/img/imgPlaceholder.jpg",
-    "technologies": ["React", "Vite", "MongoDb", "Node", "Express"]
+    "imageRatio": "portrait",
+    "technologies": [
+      "React",
+      "Vite",
+      "MongoDB",
+      "Node.js",
+      "Express"
+    ]
   }
 ]

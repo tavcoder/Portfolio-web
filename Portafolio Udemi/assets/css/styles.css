@@ -125,6 +125,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 12rem;
+  z-index: 2;
 }
 
 .menu__option {
@@ -411,17 +412,14 @@ h1 {
 }
 
 
-
-
-
 /* Projects Section */
 .projects__container {
-  display: flex;
-  justify-content: end;
-  align-items: center;
   height: 100%;
   min-height: 100%;
   width: 80%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 /* Tarjeta */
@@ -430,8 +428,7 @@ h1 {
   flex: 1;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  place-content: center;
   font-weight: 600;
   transition: flex 0.1s linear;
   position: relative;
@@ -447,8 +444,7 @@ h1 {
   height: 60rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
   border-radius: 20px;
   background: #f5f5f5;
   position: relative;
@@ -459,11 +455,33 @@ h1 {
   box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
 }
 
+.card__img-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card__img-wrapper--landscape {
+  aspect-ratio: 350 / 200;
+}
+
+.card__img-wrapper--portrait {
+  aspect-ratio: 3/2;
+}
+
 .card__img {
   width: 100%;
-  height: 26rem;
+  height: 100%;
   object-fit: cover;
   transition: opacity 0.3s ease;
+}
+
+.card__tech {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* Contenido de la tarjeta */
@@ -483,8 +501,7 @@ h1 {
 .card__buttons {
   transform: translate(-50%, 125%);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
   gap: 2rem;
   width: 60%;
   border: none;
@@ -501,7 +518,7 @@ h1 {
 .card__title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #222;
+  color: var(--accent-color2);
   margin-bottom: 0.5rem;
 }
 
@@ -518,7 +535,7 @@ h1 {
 }
 
 .card__item:hover .card__img,
-.card__item:hover .projects__skill {
+.card__item:hover .card__tech {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -541,6 +558,26 @@ h1 {
   align-items: center;
   padding: 2rem;
 }
+
+.project__links {
+  position: fixed;
+  /* Mantiene el div fijo en la pantalla */
+  top: 1rem;
+  /* Distancia desde la parte superior de la página */
+  right: 1rem;
+  /* Distancia desde la parte derecha de la página */
+  display: flex;
+  /* Para organizar los botones en una columna */
+  flex-direction: column;
+  /* Coloca los elementos en una columna */
+  align-items: flex-end;
+  /* Alinea los elementos a la derecha (dentro de la columna) */
+  gap: 1rem;
+  /* Espacio entre los botones */
+  z-index: 6;
+  /* Asegura que esté por encima de otros elementos */
+}
+
 
 .back__link {
   align-self: end;
@@ -577,26 +614,20 @@ h1 {
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.333);
 }
 
-.project__stack {
+.project__tech {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   border-radius: 50rem;
-  box-shadow: var(--box-shadow-inset);
   color: #394a56;
   font-size: 1rem;
-  padding: 1.5rem;
 }
 
-.project__links {
+.tech__item {
   display: flex;
-  align-items: center;
-  gap: 3rem;
-  margin-top: 5rem;
-  z-index: 6;
+  flex-direction: column;
+  align-items: start;
 }
 
 .project__text {
@@ -633,7 +664,6 @@ h1 {
   width: 100%;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   margin: 30px 0;
 }
 
@@ -642,7 +672,7 @@ h1 {
   position: relative;
   background: var(--primary-bg);
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: start;
   cursor: pointer;
   overflow: hidden;
@@ -702,7 +732,6 @@ h1 {
   transform: translate3d(0.2rem, 0, 0);
   opacity: 1;
   color: #516d91;
-
 }
 
 .feature__title {
@@ -710,16 +739,13 @@ h1 {
   z-index: 3;
   color: var(--text-color);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);
-  letter-spacing: 1px;
   pointer-events: none;
   padding: 20px 10px;
-  background: var(--accent-color);
-  box-shadow: var(--box-shadow-up);
-  border-radius: 2rem;
 
 }
 
@@ -736,36 +762,6 @@ h1 {
   flex-direction: column;
   gap: 2rem;
 }
-
-/* Skills / logos */
-.projects__skill {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
-  font-size: 1rem;
-  width: 26rem;
-  transition: opacity 0.3s ease;
-}
-
-.skill__item {
-  width: 7rem;
-  height: 7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skill__icon {
-  font-size: 1.5rem;
-}
-
-.skill__logo {
-  width: 1.6rem;
-  height: 1.6rem;
-  object-fit: contain;
-  opacity: 0.85;
-}
-
 
 /* Studies Section */
 .content__studies {

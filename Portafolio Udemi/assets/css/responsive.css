@@ -1,11 +1,21 @@
 /* Responsive styles */
+.layout {
+  margin: 5vh auto;
+  width: 90%;
+ }
+
 @media (max-width: 1300px) {
   .layout__aside {
     height: 90vh;
   }
 
-  .buttons__language {
-    left: 12.5rem;
+  .toggle-container {
+    position: absolute;
+    aspect-ratio: 292 / 142;
+    top: 2rem;
+    left: 10rem;
+    transform: rotate(-45deg);
+    height: 1.875em;
   }
 
   .user-info__container-image {
@@ -38,8 +48,8 @@
 
 
   .card__item {
-    width: 28rem;
-    height: 26rem;
+    width: 29rem;
+    height: 34rem;
   }
 
   .content__project {
