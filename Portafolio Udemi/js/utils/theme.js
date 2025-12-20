@@ -1,27 +1,23 @@
-/**
- * Dot element for toggling the theme.
- * @type {HTMLElement}
- */
-const toggleDot = document.querySelector('.dot');
-
-/**
- * Stylesheet link element for the theme.
- * @type {HTMLLinkElement}
- */
+const dot = document.querySelector('.dot');
+const wrapper = document.querySelector('.wrapper');
 const stylesheet = document.getElementById('theme-stylesheet');
 
-// Initialize body class based on current theme
+// estado inicial
 if (stylesheet.getAttribute('href') === 'assets/css/dark.css') {
   document.body.classList.add('dark');
+  dot.classList.add('is-active');
+  wrapper.classList.add('is-active');
 }
 
-// Listen for click event on the dot to switch between light.css and dark.css
-toggleDot.addEventListener('click', () => {
-  if (stylesheet.getAttribute('href') === 'assets/css/light.css') {
-    stylesheet.setAttribute('href', 'assets/css/dark.css');
-    document.body.classList.add('dark');
-  } else {
-    stylesheet.setAttribute('href', 'assets/css/light.css');
-    document.body.classList.remove('dark');
-  }
+dot.addEventListener('click', () => {
+  const isLight = stylesheet.getAttribute('href') === 'assets/css/light.css';
+
+  stylesheet.setAttribute(
+    'href',
+    isLight ? 'assets/css/dark.css' : 'assets/css/light.css'
+  );
+
+  document.body.classList.toggle('dark', isLight);
+  dot.classList.toggle('is-active', isLight);
+  wrapper.classList.toggle('is-active', isLight);
 });
