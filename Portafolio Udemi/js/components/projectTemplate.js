@@ -79,9 +79,22 @@ export async function renderProjectTemplate(projectId) {
     return `
       <div class="project__page animate-fade-in">
         <div class="project__links">
-              <a href="#/projects" class="btn back__link">← Volver</a>
-              <a href="${project.demo}" target="_blank" class="btn primaryBtn">Demo</a>
-              <a href="${project.code}" target="_blank" class="btn secondaryBtn">Código</a>
+        <a href="#/projects" class="btn links__btn">
+          <span class="iconify btn__icon" data-icon="mdi:arrow-left"></span>
+          <span class="btn__text">Volver</span>
+        </a>
+
+        <a href="${project.demo}" target="_blank" class="btn links__btn">
+          <span class="iconify btn__icon" data-icon="mdi:open-in-new"></span>
+          <span class="btn__text">Demo</span>
+        </a>
+
+<a href="${project.code}" target="_blank" class="btn links__btn">
+  <span class="iconify btn__icon" data-icon="mdi:github"></span>
+  <span class="btn__text">Código</span>
+</a>
+
+
         </div>
 
         <div class="project__header">

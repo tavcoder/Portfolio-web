@@ -561,27 +561,62 @@ h1 {
 
 .project__links {
   position: fixed;
-  /* Mantiene el div fijo en la pantalla */
-  top: 1rem;
-  /* Distancia desde la parte superior de la página */
-  right: 1rem;
-  /* Distancia desde la parte derecha de la página */
+  top: 5rem;
+  right: 8rem;
   display: flex;
-  /* Para organizar los botones en una columna */
   flex-direction: column;
-  /* Coloca los elementos en una columna */
   align-items: flex-end;
-  /* Alinea los elementos a la derecha (dentro de la columna) */
+  justify-content: center;
   gap: 1rem;
-  /* Espacio entre los botones */
   z-index: 6;
-  /* Asegura que esté por encima de otros elementos */
 }
 
+.links__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
 
-.back__link {
-  align-self: end;
+  width: 30px;
+  height: 30px;
+  padding: 0 8px;
+
+  border-radius: 999px;
+  transition: width 0.3s ease;
 }
+
+.btn__icon {
+  position: absolute;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.iconify {
+  font-size: 1.5rem;
+}
+
+.btn__text {
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.links__btn:hover {
+  width: 130px;
+}
+
+.links__btn:hover .btn__text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.links__btn:hover .btn__icon {
+  position: relative;
+  transform: translateX(-4px);
+}
+
 
 .project__header {
   display: flex;
@@ -652,7 +687,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5rem 0 5rem 0;
+  margin: 10rem 0 5rem 0;
 
 }
 
