@@ -27,8 +27,7 @@ body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: var(--text-color);
-  background: #e8ebf0;
-  /* Gris muy claro o tono pastel */
+  background: var(--primary-bg);
   background-size: 800% 800%;
   -webkit-animation: backgroundAnimation 10s ease infinite;
   -moz-animation: backgroundAnimation 10s ease infinite;
@@ -63,8 +62,8 @@ h1 {
   border-radius: 10rem 2rem 2rem 10rem;
   overflow: auto;
   overflow-x: hidden;
-  background-color: var(--primary-bg);
-  box-shadow: var(--box-shadow-main);
+  background: var(--primary-bg);
+  box-shadow: var(--box-shadow-aside);
 }
 
 .aside__user-info {
@@ -86,8 +85,8 @@ h1 {
   width: 12rem;
   margin-top: 3rem;
   border-radius: 20rem;
-  border: 2px solid var(--primary-bg);
-  box-shadow: var(--box-shadow-main);
+  border: var(--border-user-image);
+  box-shadow: var(--box-shadow-aside);
   overflow: hidden;
 }
 
@@ -103,13 +102,13 @@ h1 {
   justify-content: start;
   align-items: center;
   gap: 1rem;
-  color: var(--highlight-color2);
+  color: var(--color-link-user);
 }
 
 .user-info__name {
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--highlight-color2);
+  color: var(--label-color2);
 }
 
 .user-info__email {
@@ -183,9 +182,8 @@ h1 {
 .page__title span {
   font-size: 40px;
   font-weight: 600;
-  color: var(--text-color2);
-  text-shadow:
-    2px 2px 5px var(--shadow-light), -2px -2px 5px var(--text-color2), 0.5px 0.5px 2px var(--shadow-dark), -0.5px -0.5px 2px var(--text-color2);
+  color: var(--title-color2);
+  text-shadow: var(--text-shadow-title);
   position: relative;
 }
 
@@ -228,12 +226,12 @@ h1 {
 
 .skills__textContent__title {
   margin: 1.8rem 0;
-  color: var(--highlight-color2);
+  color: var(--vibrant-purple);
 }
 
 .skills__textContent__subtitle {
   font-size: medium;
-  color: var(--accent-color2);
+  color: var(--deep-purple);
   font-weight: 500;
   margin-top: 3rem;
 }
@@ -265,12 +263,12 @@ h1 {
   width: 1.5rem;
   border-radius: 100%;
   background: var(--icon-circle-bg);
-  box-shadow: inset 3px 3px 5px var(--icon-circle-shadow-light), inset -3px -3px 5px var(--icon-circle-shadow-dark);
+  box-shadow: var(--box-shadow-inset-circle);
 }
 
 .check {
   font-size: 1rem;
-  color: var(--accent-color2);
+  color: var(--deep-purple);
   background-image: var(--neon-light);
 }
 
@@ -285,7 +283,7 @@ h1 {
 
 .skills__container__title {
   margin: 1.8rem 0;
-  color: var(--highlight-color2);
+  color: var(--vibrant-purple);
 }
 
 @media (max-width: 768px) {
@@ -344,8 +342,8 @@ h1 {
   height: 20px;
   border-radius: 34px;
   cursor: pointer;
-  box-shadow: var(--box-shadow-main);
-  border: 2px solid white;
+  box-shadow: var(--box-shadow-aside);
+  border: var(--border-skills-switch);
 }
 
 .skills__slider {
@@ -354,7 +352,7 @@ h1 {
   height: 20px;
   position: absolute;
   border-radius: 15px;
-  background: linear-gradient(145deg, rgb(255, 201, 255), rgb(201, 255, 255));
+  background: var(--gradient-pink-cyan);
   box-shadow: var(--box-shadow-inset);
 
 }
@@ -362,7 +360,7 @@ h1 {
 .skills__label {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--accent-color2);
+  color: var(--label-color2);
   border-radius: 14px;
   margin: 0.1rem 0 0 9rem;
   z-index: 1;
@@ -378,15 +376,15 @@ h1 {
   bottom: 0;
   width: 83px;
   height: 16px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.5);
+  box-shadow: var(--box-shadow-neon-cyan);
 }
 
 /* glow rosa (derecha) */
 .switch__input:checked+.skills__slider .skills__label {
   margin-left: 0.2rem;
   width: 80px;
-  background: rgb(255, 201, 255);
-  box-shadow: 0 0 30px rgba(255, 100, 230, 0.8), 0 0 60px rgba(255, 120, 240, 0.6);
+  background: var(--pink-light);
+  box-shadow: var(--box-shadow-neon-pink);
 }
 
 /* El círculo (thumb) que se desliza */
@@ -446,13 +444,13 @@ h1 {
   flex-direction: column;
   place-content: center;
   border-radius: 20px;
-  background: #f5f5f5;
   position: relative;
   padding: 1.8rem;
-  border: 2px solid #f5f5f5;
+  background: var(--card-bg);
+  border: var(--border-card);
+  box-shadow: var(--box-shadow-card);
   transition: 0.5s ease-out;
   overflow: visible;
-  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
 }
 
 .card__img-wrapper {
@@ -518,20 +516,20 @@ h1 {
 .card__title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--accent-color2);
+  color: var(--title-color2);
   margin-bottom: 0.5rem;
 }
 
 .card__text {
   font-size: 1.3rem;
-  color: #555;
+  color: var(--text-color);
   line-height: 1.4;
   flex: 1;
 }
 
 .card__item:hover {
-  border-color: var(--accent-color2);
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  border-color: var(--deep-purple);
+  box-shadow: var(--box-shadow-card-hover);
 }
 
 .card__item:hover .card__img,
@@ -625,8 +623,7 @@ h1 {
 }
 
 .header__gallery {
-  background-color: var(--accent-color2);
-  box-shadow: var(--box-shadow-main);
+  box-shadow: var(--box-shadow-aside);
   width: 50rem;
   height: 30rem;
   margin-top: 11rem;
@@ -635,7 +632,7 @@ h1 {
 .project__description {
   max-width: 50rem;
   margin-bottom: 2rem;
-  color: rgba(77, 75, 75, 0.711);
+  color: var(--secundary-text-color);
 }
 
 .header__text {
@@ -644,9 +641,9 @@ h1 {
 
 .project__title {
   font-size: 4rem;
-  color: var(--primary-bg);
-  text-shadow: 2px 2px 2px rgb(193, 198, 206), -2px -2px 5px rgb(255, 255, 255), 0.5px 0.5px 3px rgb(193, 198, 206), -0.5px -0.5px 3px rgb(255, 255, 255);
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.333);
+  color: var(--light-gray);
+  text-shadow: var(--text-shadow-neumorphism);
+  -webkit-text-stroke: var(--text-stroke-ligh);
 }
 
 .project__tech {
@@ -655,8 +652,8 @@ h1 {
   flex-direction: row;
   gap: 2rem;
   border-radius: 50rem;
-  color: #394a56;
   font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .tech__item {
@@ -666,7 +663,7 @@ h1 {
 }
 
 .project__text {
-  background-color: var(--primary-bg);
+  background: var(--primary-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -712,7 +709,7 @@ h1 {
   cursor: pointer;
   overflow: hidden;
   transition: flex 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-  box-shadow: var(--box-shadow-card);
+  box-shadow: var(--box-shadow-card-old);
 }
 
 .feature__item:hover {
@@ -772,7 +769,6 @@ h1 {
 .feature__title {
   position: relative;
   z-index: 3;
-  color: var(--text-color);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -785,7 +781,7 @@ h1 {
 }
 
 .project__learning {
-  background-color: white;
+  background-color: var(--pure-white);
   display: flex;
   align-items: center;
   gap: 4rem;
@@ -861,7 +857,7 @@ h1 {
   /* 3. Ajusta el centrado horizontal para compensar el ancho */
   transform: translateX(-50%);
 
-  background: #ccc;
+  background: var(--gray-200);
   box-shadow: var(--box-shadow-press);
   border: 2px solid rgba(255, 255, 255, 0.333);
 
@@ -879,7 +875,7 @@ h1 {
   justify-content: center;
   align-items: center;
   box-shadow: var(--box-shadow-press);
-  border: 2px solid rgba(255, 255, 255, 0.333);
+  border: var(--border-card);
 
   /* Sombra sutil como en la imagen */
   /* El contenido de ${stack} debe ser el ícono interno. Si es un SVG o font-awesome, se centrará aquí. */
@@ -893,8 +889,8 @@ h1 {
   width: 35rem;
   height: 2px;
   transform: translateY(-50%);
-  background: var(--highlight-color);
-  box-shadow: var(--box-shadow-main);
+  background: var(--soft-purple);
+  box-shadow: var(--box-shadow-aside);
   z-index: -1;
 }
 
@@ -919,7 +915,7 @@ h1 {
   position: relative;
   top: 3rem;
   border-radius: 2rem;
-  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+  box-shadow: var(--box-shadow-card);
 
 }
 
@@ -927,13 +923,13 @@ h1 {
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 5px;
-  color: var(--text-color3);
+  color: var(--steel-blue);
 }
 
 .studies__institution {
   font-weight: normal;
   font-size: 0.9em;
-  color: #666;
+  color: var(--gray-700-70);
   display: block;
   /* Mueve la institución a una nueva línea si es necesario */
 }
@@ -941,25 +937,17 @@ h1 {
 .studies__date {
   min-width: 3rem;
   font-weight: bold;
-  color: var(--accent-color2);
+  color: var(--title-color2);
   /* color base gris-azulado típico del neomorfismo */
-  text-shadow:
-    2px 2px 2px rgb(193, 198, 206),
-    /* sombra inferior-derecha (da profundidad) */
-    -2px -2px 5px rgb(255, 255, 255),
-    /* luz superior-izquierda (simula hundido) */
-    0.5px 0.5px 3px rgb(193, 198, 206),
-    /* sombra suave extra */
-    -0.5px -0.5px 3px rgb(255, 255, 255);
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.333);
-
+  text-shadow: var(--text-shadow-neumorphism);
+  -webkit-text-stroke: var(--text-stroke-light);
   margin-bottom: 15px;
 }
 
 
 .studies__description {
   font-size: 0.9em;
-  color: #444;
+  color: var(--secundary-text-color);
   line-height: 1.4;
 }
 

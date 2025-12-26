@@ -11,20 +11,20 @@ h3 {
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.4px;
-  color: var(--accent-color);
-  background-color: #e0e8ef;
-  border: 2px solid rgba(255, 255, 255, 0.333);
+  color: var(--medium-blue);
+  background: var(--gray-blue-100);
+  border: var(--border-btn);
+  box-shadow: var(--box-shadow-btn);
   border-radius: 0.5rem;
   padding: 10px 20px;
   transform: translate(0px, 0px) rotate(0deg);
   transition: 0.2s;
-  box-shadow: var(--box-shadow-btn);
 }
 
 .btn:hover {
-  color: #516d91;
-  background-color: #E5EDF5;
-  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+  color: var(--steel-blue);
+  background-color: var(--gray-blue-100);
+  box-shadow: var(--box-shadow-btn-new);
   cursor: pointer;
 }
 
