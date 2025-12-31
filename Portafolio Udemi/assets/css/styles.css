@@ -2,23 +2,25 @@
 
 @import "commonComponents.css";
 
-/* Base styles */
+/* ═══════════════════════════════════════════════════════════════
+   MAIN STYLESHEET
+   Todos los estilos consumen tokens semánticos (roles),
+   nunca tokens base directos.
+   Actualizado con el sistema de 4 sombras esenciales.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   BASE STYLES
+   ─────────────────────────────────────────────────────────────── */
+
 html {
   font-size: 10px;
 }
 
 @keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 body {
@@ -26,11 +28,9 @@ body {
   height: auto;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
-  color: var(--text-color);
-  background: var(--primary-bg);
+  color: var(--text-body);
+  background: var(--bg-page);
   background-size: 800% 800%;
-  -webkit-animation: backgroundAnimation 10s ease infinite;
-  -moz-animation: backgroundAnimation 10s ease infinite;
   animation: backgroundAnimation 10s ease infinite;
   transition: 0.1s ease-in-out;
   overflow: hidden;
@@ -40,7 +40,10 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* Layout styles */
+/* ───────────────────────────────────────────────────────────────
+   LAYOUT
+   ─────────────────────────────────────────────────────────────── */
+
 .layout {
   position: relative;
   width: 85%;
@@ -51,10 +54,12 @@ h1 {
   display: grid;
   grid-template-areas: "aside content";
   grid-template-columns: 15% 90%;
-
 }
 
-/* Sidebar */
+/* ───────────────────────────────────────────────────────────────
+   SIDEBAR
+   ─────────────────────────────────────────────────────────────── */
+
 .layout__aside {
   grid-area: aside;
   height: 85vh;
@@ -62,8 +67,8 @@ h1 {
   border-radius: 10rem 2rem 2rem 10rem;
   overflow: auto;
   overflow-x: hidden;
-  background: var(--primary-bg);
-  box-shadow: var(--box-shadow-aside);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-elevation);
 }
 
 .aside__user-info {
@@ -85,14 +90,14 @@ h1 {
   width: 12rem;
   margin-top: 3rem;
   border-radius: 20rem;
-  border: var(--border-user-image);
-  box-shadow: var(--box-shadow-aside);
+  border: var(--border-avatar);
+  box-shadow: var(--shadow-elevation);
   overflow: hidden;
 }
 
 .user-info__image {
   width: 100%;
-  box-shadow: var(--box-shadow-press);
+  box-shadow: var(--shadow-inset);
 }
 
 .user-info__links {
@@ -102,13 +107,13 @@ h1 {
   justify-content: start;
   align-items: center;
   gap: 1rem;
-  color: var(--color-link-user);
+  color: var(--text-link);
 }
 
 .user-info__name {
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--label-color2);
+  color: var(--text-accent);
 }
 
 .user-info__email {
@@ -149,8 +154,10 @@ h1 {
   overflow-x: hidden;
 }
 
-/* Component styles */
-/* Hero Section */
+/* ───────────────────────────────────────────────────────────────
+   HERO SECTION
+   ─────────────────────────────────────────────────────────────── */
+
 .content__page {
   height: 100%;
   padding: 2rem;
@@ -167,11 +174,11 @@ h1 {
 
 .page__text {
   max-width: 50%;
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0;
 }
 
 .page__title {
-  color: var(--accent-color2);
+  color: var(--text-title);
   opacity: 0.7;
 }
 
@@ -182,7 +189,7 @@ h1 {
 .page__title span {
   font-size: 40px;
   font-weight: 600;
-  color: var(--title-color2);
+  color: var(--text-title);
   text-shadow: var(--text-shadow-title);
   position: relative;
 }
@@ -200,18 +207,17 @@ h1 {
   margin-top: 3rem;
 }
 
+/* ───────────────────────────────────────────────────────────────
+   SKILLS SECTION
+   ─────────────────────────────────────────────────────────────── */
 
-
-/* Skills Section */
 .content__studies {
   height: 100%;
   overflow-y: hidden;
 }
 
 .content__skills {
-
   flex-direction: row;
-
 }
 
 .skills__textContent {
@@ -226,12 +232,12 @@ h1 {
 
 .skills__textContent__title {
   margin: 1.8rem 0;
-  color: var(--vibrant-purple);
+  color: var(--text-accent);
 }
 
 .skills__textContent__subtitle {
   font-size: medium;
-  color: var(--deep-purple);
+  color: var(--text-title);
   font-weight: 500;
   margin-top: 3rem;
 }
@@ -262,14 +268,14 @@ h1 {
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 100%;
-  background: var(--icon-circle-bg);
-  box-shadow: var(--box-shadow-inset-circle);
+  background: var(--bg-icon-circle);
+  box-shadow: var(--shadow-inset);
 }
 
 .check {
   font-size: 1rem;
-  color: var(--deep-purple);
-  background-image: var(--neon-light);
+  color: var(--text-title);
+  background-image: var(--gradient-neon-light);
 }
 
 .skills__container {
@@ -283,26 +289,7 @@ h1 {
 
 .skills__container__title {
   margin: 1.8rem 0;
-  color: var(--vibrant-purple);
-}
-
-@media (max-width: 768px) {
-  .skills__container__group {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .skills__container__tech {
-    padding: 0.5rem;
-  }
-
-  .skills__container__tech i {
-    font-size: 2rem;
-  }
+  color: var(--text-accent);
 }
 
 .skills__container__group {
@@ -326,8 +313,9 @@ h1 {
   display: none;
 }
 
-/* Switch */
-
+/* ───────────────────────────────────────────────────────────────
+   SKILLS SWITCH TOGGLE
+   ─────────────────────────────────────────────────────────────── */
 
 .switch__input {
   opacity: 0;
@@ -342,8 +330,8 @@ h1 {
   height: 20px;
   border-radius: 34px;
   cursor: pointer;
-  box-shadow: var(--box-shadow-aside);
-  border: var(--border-skills-switch);
+  box-shadow: var(--shadow-elevation);
+  border: var(--border-subtle);
 }
 
 .skills__slider {
@@ -352,15 +340,14 @@ h1 {
   height: 20px;
   position: absolute;
   border-radius: 15px;
-  background: var(--gradient-pink-cyan);
-  box-shadow: var(--box-shadow-inset);
-
+  background: var(--gradient-accent);
+  box-shadow: var(--shadow-inset);
 }
 
 .skills__label {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--label-color2);
+  color: var(--text-accent);
   border-radius: 14px;
   margin: 0.1rem 0 0 9rem;
   z-index: 1;
@@ -376,18 +363,16 @@ h1 {
   bottom: 0;
   width: 83px;
   height: 16px;
-  box-shadow: var(--box-shadow-neon-cyan);
+  box-shadow: var(--glow-cyan);
 }
 
-/* glow rosa (derecha) */
-.switch__input:checked+.skills__slider .skills__label {
+.switch__input:checked + .skills__slider .skills__label {
   margin-left: 0.2rem;
   width: 80px;
   background: var(--pink-light);
-  box-shadow: var(--box-shadow-neon-pink);
+  box-shadow: var(--glow-pink);
 }
 
-/* El círculo (thumb) que se desliza */
 .skills__slider::after {
   content: '';
   position: absolute;
@@ -397,20 +382,20 @@ h1 {
   bottom: 0;
   width: 88px;
   height: 18px;
-  background: var(--primary-bg);
-  box-shadow: var(--box-shadow-up);
-
+  background: var(--bg-page);
+  box-shadow: var(--shadow-raised);
   border-radius: 34px;
   transition: all 0.5s ease;
 }
 
-/* Posición derecha (azul) */
-.switch__input:checked+.skills__slider::after {
+.switch__input:checked + .skills__slider::after {
   transform: translateX(70px);
 }
 
+/* ───────────────────────────────────────────────────────────────
+   PROJECTS SECTION
+   ─────────────────────────────────────────────────────────────── */
 
-/* Projects Section */
 .projects__container {
   height: 100%;
   min-height: 100%;
@@ -420,7 +405,6 @@ h1 {
   align-items: center;
 }
 
-/* Tarjeta */
 .content__projects {
   height: 100%;
   flex: 1;
@@ -436,7 +420,10 @@ h1 {
   transition: flex 0.1s linear;
 }
 
-/* Imagen superior */
+/* ───────────────────────────────────────────────────────────────
+   PROJECT CARDS
+   ─────────────────────────────────────────────────────────────── */
+
 .card__item {
   width: 40rem;
   height: 60rem;
@@ -446,9 +433,9 @@ h1 {
   border-radius: 20px;
   position: relative;
   padding: 1.8rem;
-  background: var(--card-bg);
+  background: var(--bg-card);
   border: var(--border-card);
-  box-shadow: var(--box-shadow-card);
+  box-shadow: var(--shadow-elevation);
   transition: 0.5s ease-out;
   overflow: visible;
 }
@@ -482,10 +469,9 @@ h1 {
   font-size: 1.5rem;
 }
 
-/* Contenido de la tarjeta */
 .card__details {
   height: 100%;
-  gap: .5em;
+  gap: 0.5em;
   display: grid;
   place-content: center;
   opacity: 0;
@@ -504,7 +490,7 @@ h1 {
   width: 60%;
   border: none;
   font-size: 1rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -512,24 +498,23 @@ h1 {
   transition: 0.3s ease-out;
 }
 
-/* Título y descripción */
 .card__title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--title-color2);
+  color: var(--text-title);
   margin-bottom: 0.5rem;
 }
 
 .card__text {
   font-size: 1.3rem;
-  color: var(--text-color);
+  color: var(--text-body);
   line-height: 1.4;
   flex: 1;
 }
 
 .card__item:hover {
-  border-color: var(--deep-purple);
-  box-shadow: var(--box-shadow-card-hover);
+  border-color: var(--text-title);
+  box-shadow: var(--shadow-hover);
 }
 
 .card__item:hover .card__img,
@@ -547,7 +532,9 @@ h1 {
   opacity: 1;
 }
 
-/* projectTemplate */
+/* ───────────────────────────────────────────────────────────────
+   PROJECT TEMPLATE
+   ─────────────────────────────────────────────────────────────── */
 
 .project__page {
   display: flex;
@@ -575,11 +562,9 @@ h1 {
   align-items: center;
   gap: 8px;
   overflow: hidden;
-
   width: 30px;
   height: 30px;
   padding: 0 8px;
-
   border-radius: 999px;
   transition: width 0.3s ease;
 }
@@ -615,7 +600,6 @@ h1 {
   transform: translateX(-4px);
 }
 
-
 .project__header {
   display: flex;
   justify-content: start;
@@ -623,7 +607,7 @@ h1 {
 }
 
 .header__gallery {
-  box-shadow: var(--box-shadow-aside);
+  box-shadow: var(--shadow-elevation);
   width: 50rem;
   height: 30rem;
   margin-top: 11rem;
@@ -632,7 +616,7 @@ h1 {
 .project__description {
   max-width: 50rem;
   margin-bottom: 2rem;
-  color: var(--secundary-text-color);
+  color: var(--text-secondary);
 }
 
 .header__text {
@@ -641,9 +625,9 @@ h1 {
 
 .project__title {
   font-size: 4rem;
-  color: var(--light-gray);
-  text-shadow: var(--text-shadow-neumorphism);
-  -webkit-text-stroke: var(--text-stroke-ligh);
+  color: var(--text-primary);
+  text-shadow: var(--text-shadow-neumorphic);
+  -webkit-text-stroke: var(--border-subtle);
 }
 
 .project__tech {
@@ -663,7 +647,7 @@ h1 {
 }
 
 .project__text {
-  background: var(--primary-bg);
+  background: var(--bg-page);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -685,10 +669,11 @@ h1 {
   flex-direction: column;
   justify-content: center;
   margin: 10rem 0 5rem 0;
-
 }
 
-/* === CONTENEDOR DE FEATURES === */
+/* ───────────────────────────────────────────────────────────────
+   FEATURES LIST
+   ─────────────────────────────────────────────────────────────── */
 
 .features__list {
   display: flex;
@@ -702,14 +687,14 @@ h1 {
 .feature__item {
   flex: 1;
   position: relative;
-  background: var(--primary-bg);
+  background: var(--bg-page);
   display: flex;
   align-items: end;
   justify-content: start;
   cursor: pointer;
   overflow: hidden;
   transition: flex 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-  box-shadow: var(--box-shadow-card-old);
+  box-shadow: var(--shadow-elevation);
 }
 
 .feature__item:hover {
@@ -717,10 +702,8 @@ h1 {
   flex: 4;
   opacity: 1;
   visibility: visible;
-  /* Forzar reproducción al hacer hover */
   animation: playVideo 0.1s forwards;
 }
-
 
 .feature__gif {
   position: absolute;
@@ -739,31 +722,14 @@ h1 {
   z-index: 1;
 }
 
-/* Forzar que el video se reproduzca al estar visible */
 @keyframes playVideo {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
-/* En móvil: usar :active en vez de :hover */
-@media (max-width: 768px) {
-  .feature__item:active {
-    flex: 5;
-  }
-
-  .feature__item:active .feature__gif {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-
-/* Focus */
-.feature__radio:focus+.feature__title {
+.feature__radio:focus + .feature__title {
   transform: translate3d(0.2rem, 0, 0);
   opacity: 1;
-  color: #516d91;
+  color: var(--text-subtitle);
 }
 
 .feature__title {
@@ -777,11 +743,10 @@ h1 {
   transform: rotate(180deg);
   pointer-events: none;
   padding: 20px 10px;
-
 }
 
 .project__learning {
-  background-color: var(--pure-white);
+  background-color: var(--bg-card);
   display: flex;
   align-items: center;
   gap: 4rem;
@@ -794,7 +759,10 @@ h1 {
   gap: 2rem;
 }
 
-/* Studies Section */
+/* ───────────────────────────────────────────────────────────────
+   STUDIES TIMELINE
+   ─────────────────────────────────────────────────────────────── */
+
 .content__studies {
   display: flex;
   flex-direction: row;
@@ -814,17 +782,12 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 0;
   gap: 30px;
 }
 
-
-
 .studies__item {
-  /* Define el ancho de cada columna de la línea de tiempo */
   flex: 0 0 250px;
   margin: 0 20px;
-  /* Espacio entre las columnas */
   text-align: center;
   position: relative;
   z-index: 2;
@@ -840,45 +803,28 @@ h1 {
 .timeline__point::before {
   content: '';
   position: absolute;
-  /* 1. Cambia el posicionamiento horizontal y vertical */
   top: 40px;
-  /* Comienza desde la parte superior */
   bottom: 0;
-  /* Termina en la parte inferior */
   left: 50%;
-  /* Centra la línea verticalmente en el contenedor */
-
-  /* 2. Invierte las dimensiones */
   width: 2px;
-  /* El grosor de la línea ahora es 'width' */
   height: 6.5rem;
-  /* Permite que la altura se estire entre top y bottom */
-
-  /* 3. Ajusta el centrado horizontal para compensar el ancho */
   transform: translateX(-50%);
-
-  background: var(--gray-200);
-  box-shadow: var(--box-shadow-press);
-  border: 2px solid rgba(255, 255, 255, 0.333);
-
+  background: var(--gray-tint-77);
+  box-shadow: var(--shadow-inset);
+  border: var(--border-subtle);
   z-index: -1;
 }
 
 .studies__icon {
-  /* El círculo exterior (el grande) */
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background-color: var(--primary-bg);
-  /* Fondo blanco */
+  background-color: var(--bg-page);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--box-shadow-press);
+  box-shadow: var(--shadow-inset);
   border: var(--border-card);
-
-  /* Sombra sutil como en la imagen */
-  /* El contenido de ${stack} debe ser el ícono interno. Si es un SVG o font-awesome, se centrará aquí. */
 }
 
 .studies__icon::before {
@@ -889,8 +835,8 @@ h1 {
   width: 35rem;
   height: 2px;
   transform: translateY(-50%);
-  background: var(--soft-purple);
-  box-shadow: var(--box-shadow-aside);
+  background: var(--purple-soft);
+  box-shadow: var(--shadow-elevation);
   z-index: -1;
 }
 
@@ -902,10 +848,8 @@ h1 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-image: var(--neon-light);
-  box-shadow: var(--box-shadow-up);
-
-  /* Color del nodo */
+  background-image: var(--gradient-neon-light);
+  box-shadow: var(--shadow-raised);
   z-index: 3;
 }
 
@@ -915,55 +859,56 @@ h1 {
   position: relative;
   top: 3rem;
   border-radius: 2rem;
-  box-shadow: var(--box-shadow-card);
-
+  box-shadow: var(--shadow-elevation);
 }
 
 .studies__title {
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 5px;
-  color: var(--steel-blue);
+  color: var(--text-subtitle);
 }
 
 .studies__institution {
   font-weight: normal;
   font-size: 0.9em;
-  color: var(--gray-700-70);
+  color: var(--text-secondary);
   display: block;
-  /* Mueve la institución a una nueva línea si es necesario */
 }
 
 .studies__date {
   min-width: 3rem;
   font-weight: bold;
-  color: var(--title-color2);
-  /* color base gris-azulado típico del neomorfismo */
-  text-shadow: var(--text-shadow-neumorphism);
-  -webkit-text-stroke: var(--text-stroke-light);
+  color: var(--text-title);
+  text-shadow: var(--text-shadow-neumorphic);
+  -webkit-text-stroke: var(--border-subtle);
   margin-bottom: 15px;
 }
 
-
 .studies__description {
   font-size: 0.9em;
-  color: var(--secundary-text-color);
+  color: var(--text-secondary);
   line-height: 1.4;
 }
 
-/* Footer */
+/* ───────────────────────────────────────────────────────────────
+   FOOTER
+   ─────────────────────────────────────────────────────────────── */
+
 footer {
   text-align: center;
   font-size: 1rem;
 }
 
-/* Animation styles */
+/* ───────────────────────────────────────────────────────────────
+   SCROLL ANIMATIONS
+   ─────────────────────────────────────────────────────────────── */
+
 @keyframes fadeInLeft {
   from {
     opacity: 0;
     transform: translateX(-50px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -975,7 +920,6 @@ footer {
     opacity: 0;
     transform: translateX(50px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -983,13 +927,8 @@ footer {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes zoomIn {
@@ -997,7 +936,6 @@ footer {
     opacity: 0;
     transform: scale(0.8);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -1009,7 +947,6 @@ footer {
     opacity: 0;
     transform: scale(0.8) translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1057,26 +994,41 @@ footer {
   transform: scale(1) translateY(0);
 }
 
-.animate-delay-200 {
-  transition-delay: 0.2s;
-}
+.animate-delay-200 { transition-delay: 0.2s; }
+.animate-delay-300 { transition-delay: 0.3s; }
+.animate-delay-400 { transition-delay: 0.4s; }
+.animate-delay-600 { transition-delay: 0.6s; }
+.animate-delay-800 { transition-delay: 0.8s; }
+.animate-delay-1000 { transition-delay: 1s; }
 
-.animate-delay-300 {
-  transition-delay: 0.3s;
-}
+/* ───────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ─────────────────────────────────────────────────────────────── */
 
-.animate-delay-400 {
-  transition-delay: 0.4s;
-}
+@media (max-width: 768px) {
+  .skills__container__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 
-.animate-delay-600 {
-  transition-delay: 0.6s;
-}
+  .skills__container__tech {
+    padding: 0.5rem;
+  }
 
-.animate-delay-800 {
-  transition-delay: 0.8s;
-}
+  .skills__container__tech i {
+    font-size: 2rem;
+  }
 
-.animate-delay-1000 {
-  transition-delay: 1s;
+  .feature__item:active {
+    flex: 5;
+  }
+
+  .feature__item:active .feature__gif {
+    opacity: 1;
+    visibility: visible;
+  }
 }

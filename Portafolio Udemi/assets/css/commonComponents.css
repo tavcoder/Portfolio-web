@@ -1,88 +1,120 @@
-/* Common Components Styles */
+/* ═══════════════════════════════════════════════════════════════
+   COMMON COMPONENTS
+   Todos los componentes consumen tokens semánticos (roles),
+   nunca tokens base directos.
+   Actualizado con el sistema de 4 sombras esenciales.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   TYPOGRAPHY
+   ─────────────────────────────────────────────────────────────── */
+
 h3 {
-  color: var(--text-color3);
+  color: var(--text-subtitle);
 }
+
+/* ───────────────────────────────────────────────────────────────
+   BUTTONS - Base
+   ─────────────────────────────────────────────────────────────── */
 
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.4px;
-  color: var(--medium-blue);
-  background: var(--gray-blue-100);
-  border: var(--border-btn);
-  box-shadow: var(--box-shadow-btn);
+  
+  color: var(--text-button);
+  background: var(--bg-button);
+  border: var(--border-button);
+  box-shadow: var(--shadow-elevation);
   border-radius: 0.5rem;
   padding: 10px 20px;
-  transform: translate(0px, 0px) rotate(0deg);
-  transition: 0.2s;
-}
-
-.btn:hover {
-  color: var(--steel-blue);
-  background-color: var(--gray-blue-100);
-  box-shadow: var(--box-shadow-btn-new);
+  
+  transform: translate(0, 0) rotate(0deg);
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
-.btn:active {
-  box-shadow: none;
+.btn:hover {
+  color: var(--text-button-hover);
+  background-color: var(--bg-button-hover);
+  box-shadow: var(--shadow-raised);
 }
 
+.btn:active {
+  box-shadow: var(--shadow-inset);
+}
+
+/* ───────────────────────────────────────────────────────────────
+   BUTTONS - Variants
+   ─────────────────────────────────────────────────────────────── */
+
+/* Primary Button - Acciones principales */
 .primaryBtn {
-  background-color: #fffbdb;
-  opacity: 2;
-  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-  border: 2px solid rgba(255, 255, 255, 0.333);
+  background-color: var(--bg-button-primary);
+  box-shadow: var(--shadow-elevation);
+  border: var(--border-subtle);
+  opacity: 1;
 }
 
 .primaryBtn:hover {
-  background-color: #f5f3e5;
-  opacity: 2;
-  box-shadow: var(--box-shadow-up)
+  background-color: var(--bg-button-primary-hover);
+  box-shadow: var(--shadow-raised);
 }
 
+.primaryBtn:active {
+  box-shadow: var(--shadow-inset);
+}
+
+/* Secondary Button - Acciones secundarias */
 .secondaryBtn:hover {
-  box-shadow: var(--box-shadow-up)
+  box-shadow: var(--shadow-raised);
 }
 
-/* Tertiary Buttons (Menu Links in sidebar) */
+.secondaryBtn:active {
+  box-shadow: var(--shadow-inset);
+}
+
+/* Tertiary Button - Links en sidebar/menú */
 .tertiaryBtn {
-  background-color: var(--primary-bg);
-  outline: 0.05rem solid var(--primary-bg);
+  background-color: var(--bg-button-tertiary);
+  outline: 0.05rem solid var(--bg-button-tertiary);
   border: none;
+  box-shadow: var(--shadow-inset);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--box-shadow-inset-box);
 }
 
 .tertiaryBtn:hover {
-  background-color: var(--primary-bg);
-  box-shadow: var(--box-shadow-up);
+  background-color: var(--bg-button-tertiary);
+  box-shadow: var(--shadow-raised);
 }
 
 .tertiaryBtn.active {
-  box-shadow: var(--box-shadow-press);
+  box-shadow: var(--shadow-inset);
 }
 
 .tertiaryBtn:active {
   padding: 10px 20px;
-  background-color: var(--menu-link-active-bg);
-  color: var(--text-color);
+  background-color: var(--bg-button-active);
+  color: var(--text-body);
   border: none;
   border-radius: 0.5rem;
-  cursor: pointer;
+  box-shadow: var(--shadow-raised);
   transition: background-color 0.3s ease;
-  box-shadow: var(--box-shadow-up);
 }
 
 .tertiaryBtn:active:hover {
-  box-shadow: var(--box-shadow-press);
+  box-shadow: var(--shadow-inset);
 }
 
-/* Language Button */
+/* ───────────────────────────────────────────────────────────────
+   LANGUAGE TOGGLE
+   ─────────────────────────────────────────────────────────────── */
+
 .toggle-container {
   position: relative;
   aspect-ratio: 292 / 142;
@@ -113,32 +145,31 @@ h3 {
 .toggle-text {
   font-size: 5rem;
   font-weight: 600;
-  fill: var(--text-color2);
+  fill: var(--text-button-light);
   transform: rotate(45deg);
-
 }
 
 .toggle-background {
-  fill: var(--accent-color2);
-  transition: fill .4s;
+  fill: var(--text-title);
+  transition: fill 0.4s ease;
 }
 
-.toggle-input:checked+.toggle .toggle-background {
-  fill: var(--accent-color2);
+.toggle-input:checked + .toggle .toggle-background {
+  fill: var(--text-title);
 }
 
 .toggle-circle-center {
   transform-origin: center;
-  transition: transform .6s;
+  transition: transform 0.6s ease;
 }
 
-.toggle-input:checked+.toggle .toggle-circle-center {
+.toggle-input:checked + .toggle .toggle-circle-center {
   transform: translateX(150px);
 }
 
 .toggle-circle {
   transform-origin: center;
-  transition: transform .45s;
+  transition: transform 0.45s ease;
   backface-visibility: hidden;
 }
 
@@ -146,7 +177,7 @@ h3 {
   transform: scale(1);
 }
 
-.toggle-input:checked+.toggle .toggle-circle.left {
+.toggle-input:checked + .toggle .toggle-circle.left {
   transform: scale(0);
 }
 
@@ -154,22 +185,25 @@ h3 {
   transform: scale(0);
 }
 
-.toggle-input:checked+.toggle .toggle-circle.right {
+.toggle-input:checked + .toggle .toggle-circle.right {
   transform: scale(1);
 }
 
 .toggle-icon {
-  transition: fill .4s;
+  transition: fill 0.4s ease;
 }
 
 .toggle-icon.on {
-  fill: var(--accent-color2);
+  fill: var(--text-title);
 }
 
-
-.toggle-input:checked+.toggle .toggle-icon.off {
-  fill: var(--accent-color2);
+.toggle-input:checked + .toggle .toggle-icon.off {
+  fill: var(--text-title);
 }
+
+/* ───────────────────────────────────────────────────────────────
+   ANIMATED DOT TOGGLE
+   ─────────────────────────────────────────────────────────────── */
 
 .wrapper {
   position: absolute;
@@ -187,19 +221,19 @@ h3 {
   top: 0;
   left: 0;
   cursor: pointer;
-
+  
   offset-path: path("M 56 130 Q 65 185 105 202");
   offset-rotate: 0deg;
   offset-distance: 0%;
-
-  transition: offset-distance 0.8s ease-in-out,
+  
+  transition: 
+    offset-distance 0.8s ease-in-out,
     background-color 0.4s ease;
 }
 
-
 .dot.is-active {
   offset-distance: 100%;
-  background-color: var(--accent-color2);
+  background-color: var(--text-title);
 }
 
 .wrapper .track {
