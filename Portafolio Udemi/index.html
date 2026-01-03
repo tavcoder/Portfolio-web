@@ -43,19 +43,17 @@
                         class="toggle-background">
                     </path>
 
-                    <!-- Texto ES (modo OFF) -->
-                    <text x="75" y="15" class="toggle-text es">ES</text>
-
-                    <!-- Texto EN (modo ON) -->
-                    <text x="175" y="-85" class="toggle-text en">EN</text>
-
                     <g filter="url('#goo')">
-                        <rect fill="#fff" rx="29" height="58" width="116" y="42" x="13" class="toggle-circle-center">
+                        <rect fill="var(--bg-button-primary)" rx="29" height="58" width="116" y="42" x="13"
+                            class="toggle-circle-center">
                         </rect>
-                        <rect fill="#fff" rx="58" height="114" width="114" y="14" x="14" class="toggle-circle left">
+                        <rect fill="var(--bg-button-primary)" rx="58" height="114" width="114" y="14" x="14"
+                            class="toggle-circle left">
                         </rect>
-                        <rect fill="#fff" rx="58" height="114" width="114" y="14" x="164" class="toggle-circle right">
+                        <rect fill="var(--bg-button-primary)" rx="58" height="114" width="114" y="14" x="164"
+                            class="toggle-circle right">
                         </rect>
+
                     </g>
 
                     <filter id="goo">
@@ -129,10 +127,15 @@
 
                     <path d="M 56 130 Q 65 185 105 202" fill="none" stroke="url(#degradadoHundoIntenso)"
                         stroke-width="10" stroke-linecap="round" filter="url(#inset-shadow-intenso)" />
+
+                    <!-- Texto EN en el extremo izquierdo -->
+                    <text x="56" y="110" font-size="10" font-weight="bold" fill="var(--text-button)" text-anchor="middle">EN</text>
+
+                    <!-- Texto ES en el extremo derecho -->
+                    <text x="125" y="210" font-size="10" font-weight="bold" fill="var(--text-button)" text-anchor="middle">ES</text>
                 </svg>
 
                 <div class="dot btn"></div>
-
             </div>
         </aside>
 
