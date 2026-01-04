@@ -2,7 +2,7 @@
    COMMON COMPONENTS
    Todos los componentes consumen tokens semánticos (roles),
    nunca tokens base directos.
-   Actualizado con el sistema de 4 sombras esenciales.
+   Actualizado con sistema completo de tokens.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ───────────────────────────────────────────────────────────────
@@ -10,7 +10,7 @@
    ─────────────────────────────────────────────────────────────── */
 
 h3 {
-  color: var(--text-subtitle);
+  color: var(--color-text-subtitle);
 }
 
 /* ───────────────────────────────────────────────────────────────
@@ -21,32 +21,32 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
   
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.4px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-tight);
   
-  color: var(--text-button);
-  background: var(--bg-button);
+  color: var(--color-text-button);
+  background: var(--color-background-button);
   border: var(--border-button);
-  box-shadow: var(--shadow-elevation);
-  border-radius: 0.5rem;
-  padding: 10px 20px;
+  box-shadow: var(--shadow-elevation-default);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
   
   transform: translate(0, 0) rotate(0deg);
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
   cursor: pointer;
 }
 
 .btn:hover {
-  color: var(--text-button-hover);
-  background-color: var(--bg-button-hover);
-  box-shadow: var(--shadow-raised);
+  color: var(--color-text-button-hover);
+  background-color: var(--color-background-button-hover);
+  box-shadow: var(--shadow-raised-default);
 }
 
 .btn:active {
-  box-shadow: var(--shadow-inset);
+  box-shadow: var(--shadow-inset-default);
 }
 
 /* ───────────────────────────────────────────────────────────────
@@ -55,80 +55,81 @@ h3 {
 
 /* Primary Button - Acciones principales */
 .primaryBtn {
-  background-color: var(--bg-button-primary);
-  box-shadow: var(--shadow-elevation);
+  background-color: var(--color-background-button-primary);
+  box-shadow: var(--shadow-elevation-default);
   border: var(--border-subtle);
   opacity: 1;
 }
 
 .primaryBtn:hover {
-  background-color: var(--bg-button-primary-hover);
-  box-shadow: var(--shadow-raised);
+  background-color: var(--color-background-button-primary-hover);
+  box-shadow: var(--shadow-raised-default);
 }
 
 .primaryBtn:active {
-  box-shadow: var(--shadow-inset);
+  box-shadow: var(--shadow-inset-default);
 }
 
 /* Secondary Button - Acciones secundarias */
 .secondaryBtn:hover {
-  box-shadow: var(--shadow-raised);
+  box-shadow: var(--shadow-raised-default);
 }
 
 .secondaryBtn:active {
-  box-shadow: var(--shadow-inset);
+  box-shadow: var(--shadow-inset-default);
 }
 
 /* Tertiary Button - Links en sidebar/menú */
 .tertiaryBtn {
-  background-color: var(--bg-button-tertiary);
-  outline: 0.05rem solid var(--bg-button-tertiary);
+  background-color: var(--color-background-button-tertiary);
+  outline: 0.05rem solid var(--color-background-button-tertiary);
   border: none;
-  box-shadow: var(--shadow-inset);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  transition: background-color var(--transition-medium), 
+              box-shadow var(--transition-medium);
 }
 
 .tertiaryBtn:hover {
-  background-color: var(--bg-button-tertiary);
-  box-shadow: var(--shadow-raised);
+  background-color: var(--color-background-button-tertiary);
+  box-shadow: var(--shadow-raised-default);
 }
 
 .tertiaryBtn.active {
-  box-shadow: var(--shadow-inset);
+  box-shadow: var(--shadow-inset-default);
 }
 
 .tertiaryBtn:active {
-  padding: 10px 20px;
-  background-color: var(--bg-button-active);
-  color: var(--text-body);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-background-button-active);
+  color: var(--color-text-body);
   border: none;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow-raised);
-  transition: background-color 0.3s ease;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-raised-default);
+  transition: background-color var(--transition-medium);
 }
 
 .tertiaryBtn:active:hover {
-  box-shadow: var(--shadow-inset);
+  box-shadow: var(--shadow-inset-default);
 }
 
 /* ───────────────────────────────────────────────────────────────
-   LANGUAGE TOGGLE
+   THEME TOGGLE
    ─────────────────────────────────────────────────────────────── */
 
 .toggle-container {
   position: relative;
   aspect-ratio: 292 / 142;
-  top: 4rem;
+  top: var(--spacing-2xl);
   left: 17rem;
   transform: rotate(-45deg);
-  height: 1.875em;
+  height: var(--size-toggle-height);
 }
 
 .toggle-input {
   appearance: none;
   margin: 0;
   position: absolute;
-  z-index: 1;
+  z-index: var(--z-above);
   top: 0;
   left: 0;
   width: 100%;
@@ -142,25 +143,18 @@ h3 {
   overflow: visible;
 }
 
-.toggle-text {
-  font-size: 5rem;
-  font-weight: 600;
-  fill: var(--text-button-light);
-  transform: rotate(45deg);
-}
-
 .toggle-background {
-  fill: var(--text-title);
-  transition: fill 0.4s ease;
+  fill: var(--color-text-title);
+  transition: fill var(--transition-slow);
 }
 
 .toggle-input:checked + .toggle .toggle-background {
-  fill: var(--text-title);
+  fill: var(--color-text-title);
 }
 
 .toggle-circle-center {
   transform-origin: center;
-  transition: transform 0.6s ease;
+  transition: var(--transition-transform-smooth);
 }
 
 .toggle-input:checked + .toggle .toggle-circle-center {
@@ -169,7 +163,7 @@ h3 {
 
 .toggle-circle {
   transform-origin: center;
-  transition: transform 0.45s ease;
+  transition: var(--transition-transform);
   backface-visibility: hidden;
 }
 
@@ -190,19 +184,19 @@ h3 {
 }
 
 .toggle-icon {
-  transition: fill 0.4s ease;
+  transition: fill var(--transition-slow);
 }
 
 .toggle-icon.on {
-  fill: var(--text-title);
+  fill: var(--color-text-title);
 }
 
 .toggle-input:checked + .toggle .toggle-icon.off {
-  fill: var(--text-title);
+  fill: var(--color-text-title);
 }
 
 /* ───────────────────────────────────────────────────────────────
-   ANIMATED DOT TOGGLE
+   LANGUAGE TOGGLE
    ─────────────────────────────────────────────────────────────── */
 
 .wrapper {
@@ -214,9 +208,9 @@ h3 {
 }
 
 .dot {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  border-radius: var(--radius-full);
   position: absolute;
   top: 0;
   left: 0;
@@ -228,12 +222,12 @@ h3 {
   
   transition: 
     offset-distance 0.8s ease-in-out,
-    background-color 0.4s ease;
+    background-color var(--transition-slow);
 }
 
 .dot.is-active {
   offset-distance: 100%;
-  background-color: var(--text-title);
+  background-color: var(--color-text-title);
 }
 
 .wrapper .track {
