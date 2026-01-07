@@ -1,16 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   DESIGN TOKENS - Sistema completo con nomenclatura consistente
-   ═══════════════════════════════════════════════════════════════
-   
-   Convención de nomenclatura:
-   --[categoría]-[tipo]-[variante]-[estado]
-   
-   Ejemplos:
-   --color-gray-100
-   --spacing-md
-   --radius-lg
-   --font-size-xl
-   
+   DESIGN TOKENS - Sistema optimizado con menos colores
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
@@ -22,66 +11,35 @@
   --color-white: #ffffff;
   --color-black: #000000;
 
-  /* ═══ Colors: Gray Scale ═══ */
-  --color-gray-base: #394a56;
-  --color-gray-100: #f5f5f5;
-  --color-gray-200: #e8e8e8;
-  --color-gray-300: #e0e5ec;
+  /* ═══ Colors: Gray Scale (REDUCIDO A 6) ═══ */
+  --color-gray-100: #e8e8e8;
+  --color-gray-300: #c1c6ce;
   --color-gray-350: #e0e8ef;
-  --color-gray-400: #c1c6ce;
-  --color-gray-500: #9da1a7;
+  --color-white-alpha-12: rgba(255, 255, 255, 0.12);
+  --color-gray-500: #394a56;
   --color-gray-700: #2e3844;
-  --color-gray-750: #3d4854;
   --color-gray-800: #252d36;
   --color-gray-900: #0f1215;
 
-  /* ═══ Colors: Gray Opacity ═══ */
-  --color-gray-alpha-40: rgba(57, 74, 86, 0.4);
-  --color-gray-alpha-70: rgba(57, 74, 86, 0.7);
+  /* ═══ Colors: White Opacity - ELIMINADOS ═══ */
 
-  /* ═══ Colors: White Opacity ═══ */
-  --color-white-alpha-5: rgba(255, 255, 255, 0.05);
-  --color-white-alpha-8: rgba(255, 255, 255, 0.08);
-  --color-white-alpha-12: rgba(255, 255, 255, 0.12);
-  --color-white-alpha-20: rgba(255, 255, 255, 0.2);
-  --color-white-alpha-33: rgba(255, 255, 255, 0.33);
-  --color-white-alpha-70: rgba(255, 255, 255, 0.7);
-  --color-white-alpha-90: rgba(255, 255, 255, 0.9);
-  --color-white-alpha-99: rgba(255, 253, 253, 1);
-
-  /* ═══ Colors: Black Opacity ═══ */
-  --color-black-alpha-15: rgba(0, 0, 0, 0.15);
-  --color-black-alpha-25: rgba(0, 0, 0, 0.25);
-  --color-black-alpha-30: rgba(0, 0, 0, 0.3);
-  --color-black-alpha-40: rgba(0, 0, 0, 0.4);
-  --color-black-alpha-50: rgba(0, 0, 0, 0.5);
-  --color-black-alpha-60: rgba(0, 0, 0, 0.6);
-  --color-black-alpha-80: rgba(0, 0, 0, 0.8);
+  /* ═══ Colors: Black Opacity - ELIMINADOS ═══ */
 
   /* ═══ Colors: Blue ═══ */
   --color-blue-base: #7e97b8;
   --color-blue-dark: #516d91;
   --color-blue-bright: #5f9de7;
-  --color-blue-bright-alt: #78b4f0;
   --color-blue-alpha-48: rgba(95, 157, 231, 0.48);
 
-  /* ═══ Colors: Purple ═══ */
-  --color-purple-soft: #cfcaea;
-  --color-purple-deep: #5e4ac7;
-  --color-purple-base: #6f57e9;
-  --color-purple-bright: #9f88ff;
+  /* ═══ Colors: Purple (REDUCIDO A 2) ═══ */
+  --color-purple-dark: #5e4ac7;
   --color-purple-light: #beb1fb;
-  --color-purple-lighter: #d4c8ff;
 
   /* ═══ Colors: Accent ═══ */
-  --color-pink-base: #ffc9ff;
-  --color-pink-alt: #ffb4ff;
+  --color-purple-base: #d4c9ff;
+  --color-purple-alt: #c4b4ff;
   --color-cyan-base: #c9ffff;
   --color-cyan-alt: #96e6ff;
-  --color-yellow-base: #fffbdb;
-  --color-yellow-dark: #f5f3e5;
-  --color-yellow-darker: #3d3a28;
-  --color-yellow-darkest: #2f2d1f;
   --color-beige-base: #ebe6e2;
   --color-beige-dark: #3a3632;
   --color-text-dark: #333333;
@@ -91,68 +49,42 @@
   --color-neon-cyan-90: rgba(0, 255, 255, 0.9);
   --color-neon-cyan-50: rgba(0, 255, 255, 0.5);
   --color-neon-cyan-60: rgba(0, 255, 255, 0.6);
-  --color-neon-pink-80: rgba(255, 100, 230, 0.8);
-  --color-neon-pink-90: rgba(255, 100, 230, 0.9);
-  --color-neon-pink-60: rgba(255, 120, 240, 0.6);
-  --color-neon-pink-70: rgba(255, 120, 240, 0.7);
+  --color-neon-purple-80: rgba(200, 140, 255, 0.8);
+  --color-neon-purple-90: rgba(200, 140, 255, 0.9);
+  --color-neon-purple-60: rgba(200, 140, 255, 0.6);
+  --color-neon-purple-70: rgba(200, 140, 255, 0.7);
 
   /* ═══ Spacing ═══ */
   --spacing-xs: 0.5rem;
-  /* 5px */
   --spacing-sm: 1rem;
-  /* 10px */
   --spacing-md: 1.5rem;
-  /* 15px */
   --spacing-lg: 2rem;
-  /* 20px */
   --spacing-xl: 3rem;
-  /* 30px */
   --spacing-2xl: 4rem;
-  /* 40px */
   --spacing-3xl: 5rem;
-  /* 50px */
   --spacing-4xl: 7rem;
-  /* 70px */
   --spacing-5xl: 10rem;
-  /* 100px */
   --spacing-6xl: 12rem;
-  /* 120px */
   --spacing-7xl: 14rem;
-  /* 140px */
 
   /* ═══ Border Radius ═══ */
   --radius-sm: 0.5rem;
-  /* Botones, inputs */
   --radius-md: 1rem;
-  /* Cards pequeñas */
   --radius-lg: 2rem;
-  /* Cards grandes, content blocks */
   --radius-xl: 10rem;
-  /* Sidebar redondeada */
   --radius-2xl: 20rem;
-  /* Avatar container */
   --radius-full: 50%;
-  /* Círculos perfectos */
   --radius-pill: 999px;
-  /* Pills, badges */
 
   /* ═══ Typography: Font Size ═══ */
   --font-size-xs: 1rem;
-  /* 10px */
   --font-size-sm: 1.1rem;
-  /* 11px */
   --font-size-base: 1.2rem;
-  /* 12px */
   --font-size-md: 1.3rem;
-  /* 13px */
   --font-size-lg: 1.5rem;
-  /* 15px */
   --font-size-xl: 1.8rem;
-  /* 18px */
   --font-size-2xl: 2.5rem;
-  /* 25px */
   --font-size-3xl: 4rem;
-  /* 40px */
 
   /* ═══ Typography: Font Weight ═══ */
   --font-weight-normal: 400;
@@ -208,40 +140,40 @@
      ─────────────────────────────────────────────────────────────── */
 
   /* ═══ Background Colors ═══ */
-  --color-background-page: var(--color-gray-300);
+  --color-background-page: var(--color-gray-100);
   --color-background-card: var(--color-gray-100);
   --color-background-button: var(--color-gray-350);
-  --color-background-button-hover: var(--color-gray-350);
-  --color-background-button-primary: var(--color-yellow-base);
-  --color-background-button-primary-hover: var(--color-yellow-dark);
-  --color-background-button-tertiary: var(--color-gray-300);
+  --color-background-button-hover: var(--color-gray-100);
+  --color-background-button-primary: var(--color-purple-base);
+  --color-background-button-tertiary: var(--color-gray-100);
   --color-background-button-active: var(--color-beige-base);
-  --color-background-icon-circle: var(--color-gray-200);
+  --color-background-icon-circle: var(--color-gray-100);
 
   /* ═══ Text Colors ═══ */
   --color-text-body: var(--color-text-dark);
-  --color-text-primary: var(--color-gray-base);
-  --color-text-secondary: var(--color-gray-alpha-70);
-  --color-text-accent: var(--color-purple-base);
-  --color-text-title: var(--color-purple-deep);
-  --color-text-link: var(--color-purple-base);
+  --color-text-primary: var(--color-gray-500);
+  --color-text-secondary: var(--color-gray-700);
+  --color-text-accent: var(--color-purple-dark);
+  --color-text-title: var(--color-purple-dark);
+  --color-text-link: var(--color-purple-dark);
   --color-text-button: var(--color-blue-base);
   --color-text-button-hover: var(--color-blue-dark);
-  --color-text-button-light: var(--color-white-alpha-99);
+  --color-text-button-light: var(--color-white);
   --color-text-subtitle: var(--color-blue-dark);
 
   /* ═══ Decorative Colors ═══ */
-  --color-decorative-line: var(--color-gray-400);
-  --color-decorative-accent: var(--color-purple-soft);
-  --color-decorative-highlight: var(--color-pink-base);
+  --color-decorative-accent: var(--color-purple-light);
+  --color-decorative-highlight: var(--color-purple-base);
 
   /* ═══ Border Colors ═══ */
-  --color-border-subtle: var(--color-white-alpha-33);
+  --color-border-subtle: var(--color-cyan-base);
+  --color-border-subtle-primary: var(--color-purple-alt);
   --color-border-card: var(--color-gray-100);
-  --color-border-avatar: var(--color-gray-300);
+  --color-border-avatar: var(--color-gray-100);
 
   /* ═══ Borders ═══ */
   --border-subtle: 2px solid var(--color-border-subtle);
+  --border-subtle-primary: 2px solid var(--color-border-subtle-primary);
   --border-card: 2px solid var(--color-border-card);
   --border-avatar: 2px solid var(--color-border-avatar);
   --border-button: var(--border-subtle);
@@ -252,29 +184,29 @@
     4px 2px 16px 0 var(--color-blue-alpha-48);
 
   --shadow-elevation-hover:
-    0 4px 18px 0 var(--color-black-alpha-25);
+    0 4px 18px 0 var(--color-gray-300);
 
   --shadow-inset-default:
-    inset 2px 2px 2px var(--color-gray-400),
+    inset 2px 2px 2px var(--color-gray-300),
     inset -2px -2px 5px var(--color-white),
-    inset 0.5px 0.5px 5px var(--color-gray-400),
+    inset 0.5px 0.5px 5px var(--color-gray-300),
     inset -0.5px -0.5px 3px var(--color-white);
 
   --shadow-raised-default:
-    2px 2px 5px var(--color-gray-400),
-    -2px -2px 5px var(--color-white-alpha-99),
+    2px 2px 5px var(--color-gray-300),
+    -2px -2px 5px var(--color-white),
     0.5px 0.5px 2px var(--color-gray-500),
-    -0.5px -0.5px 2px var(--color-white-alpha-99);
+    -0.5px -0.5px 2px var(--color-white);
 
   /* ═══ Text Shadows ═══ */
   --shadow-text-soft:
-    2px 2px 2px var(--color-gray-400),
+    2px 2px 2px var(--color-gray-300),
     -2px -2px 5px var(--color-white),
-    0.5px 0.5px 3px var(--color-gray-400),
+    0.5px 0.5px 3px var(--color-gray-300),
     -0.5px -0.5px 3px var(--color-white);
 
   --shadow-text-strong:
-    2px 2px 5px var(--color-gray-400),
+    2px 2px 5px var(--color-gray-300),
     -2px -2px 5px var(--color-white),
     0.5px 0.5px 2px var(--color-gray-500),
     -0.5px -0.5px 2px var(--color-white);
@@ -284,23 +216,23 @@
     0 0 30px var(--color-neon-cyan-80),
     0 0 60px var(--color-neon-cyan-50);
 
-  --effect-glow-pink:
-    0 0 30px var(--color-neon-pink-80),
-    0 0 60px var(--color-neon-pink-60);
+  --effect-glow-purple:
+    0 0 30px var(--color-neon-purple-80),
+    0 0 60px var(--color-neon-purple-60);
 
   /* ═══ Gradients ═══ */
   --gradient-accent-default:
-    linear-gradient(145deg, var(--color-pink-base), var(--color-cyan-base));
+    linear-gradient(145deg, var(--color-purple-base), var(--color-cyan-base));
 
   --gradient-glow-light:
     radial-gradient(var(--color-white) 0%,
-      var(--color-white-alpha-90) 20%,
-      var(--color-white-alpha-33) 40%,
+      var(--color-gray-100) 20%,
+      var(--color-gray-300) 40%,
       transparent 70%);
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   DARK MODE - Solo override de tokens semánticos
+   DARK MODE
    ═══════════════════════════════════════════════════════════════ */
 
 :root[data-theme="dark"] {
@@ -308,29 +240,28 @@
   --color-background-page: var(--color-gray-900);
   --color-background-card: var(--color-gray-800);
   --color-background-button: var(--color-gray-700);
-  --color-background-button-hover: var(--color-gray-750);
-  --color-background-button-primary: var(--color-yellow-darker);
-  --color-background-button-primary-hover: var(--color-yellow-darkest);
+  --color-background-button-hover: var(--color-gray-700);
+  --color-background-button-primary: var(--color-purple-dark);
+  --color-background-button-primary-hover: var(--color-purple-light);
   --color-background-button-tertiary: var(--color-gray-800);
   --color-background-button-active: var(--color-beige-dark);
   --color-background-icon-circle: var(--color-gray-700);
 
   /* ═══ Text Colors ═══ */
-  --color-text-body: var(--color-gray-200);
-  --color-text-primary: var(--color-white-alpha-90);
-  --color-text-secondary: var(--color-white-alpha-70);
-  --color-text-accent: var(--color-purple-bright);
-  --color-text-title: var(--color-purple-lighter);
-  --color-text-link: var(--color-purple-bright);
+  --color-text-body: var(--color-gray-100);
+  --color-text-primary: var(--color-gray-100);
+  --color-text-secondary: var(--color-gray-300);
+  --color-text-accent: var(--color-purple-light);
+  --color-text-title: var(--color-purple-light);
+  --color-text-link: var(--color-purple-light);
   --color-text-button: var(--color-blue-base);
   --color-text-button-hover: var(--color-blue-bright-alt);
-  --color-text-button-light: var(--color-white-alpha-90);
+  --color-text-button-light: var(--color-gray-100);
   --color-text-subtitle: var(--color-blue-dark);
 
   /* ═══ Decorative Colors ═══ */
-  --color-decorative-line: var(--color-gray-700);
   --color-decorative-accent: var(--color-purple-light);
-  --color-decorative-highlight: var(--color-pink-alt);
+  --color-decorative-highlight: var(--color-purple-alt);
 
   /* ═══ Border Colors ═══ */
   --color-border-subtle: var(--color-white-alpha-12);
@@ -339,53 +270,53 @@
 
   /* ═══ Shadows ═══ */
   --shadow-elevation-default:
-    -4px -2px 16px 0 var(--color-white-alpha-5),
-    4px 2px 16px 0 var(--color-black-alpha-60);
+    -4px -2px 16px 0 var(--color-gray-800),
+    4px 2px 16px 0 var(--color-gray-900);
 
   --shadow-elevation-hover:
-    0 4px 18px 0 var(--color-black-alpha-80);
+    0 4px 18px 0 var(--color-gray-700);
 
   --shadow-inset-default:
-    inset 2px 2px 4px var(--color-black-alpha-50),
-    inset -2px -2px 4px var(--color-white-alpha-5),
-    inset 0.5px 0.5px 3px var(--color-black-alpha-40),
-    inset -0.5px -0.5px 2px var(--color-white-alpha-8);
+    inset 2px 2px 4px var(--color-gray-900),
+    inset -2px -2px 4px var(--color-gray-800),
+    inset 0.5px 0.5px 3px var(--color-gray-900),
+    inset -0.5px -0.5px 2px var(--color-gray-700);
 
   --shadow-raised-default:
-    2px 2px 5px var(--color-black-alpha-50),
-    -2px -2px 5px var(--color-white-alpha-8),
-    0.5px 0.5px 2px var(--color-black-alpha-40),
-    -0.5px -0.5px 2px var(--color-white-alpha-5);
+    2px 2px 5px var(--color-gray-900),
+    -2px -2px 5px var(--color-gray-700),
+    0.5px 0.5px 2px var(--color-gray-900),
+    -0.5px -0.5px 2px var(--color-gray-800);
 
   /* ═══ Text Shadows ═══ */
   --shadow-text-soft:
-    2px 2px 4px var(--color-black-alpha-50),
-    -2px -2px 4px var(--color-white-alpha-8),
-    0.5px 0.5px 3px var(--color-black-alpha-40),
-    -0.5px -0.5px 2px var(--color-white-alpha-5);
+    2px 2px 4px var(--color-gray-900),
+    -2px -2px 4px var(--color-gray-700),
+    0.5px 0.5px 3px var(--color-gray-900),
+    -0.5px -0.5px 2px var(--color-gray-800);
 
   --shadow-text-strong:
-    2px 2px 5px var(--color-black-alpha-60),
-    -2px -2px 5px var(--color-white-alpha-12),
-    0.5px 0.5px 2px var(--color-black-alpha-50),
-    -0.5px -0.5px 2px var(--color-white-alpha-8);
+    2px 2px 5px var(--color-gray-900),
+    -2px -2px 5px var(--color-gray-700),
+    0.5px 0.5px 2px var(--color-gray-900),
+    -0.5px -0.5px 2px var(--color-gray-700);
 
   /* ═══ Glow Effects ═══ */
   --effect-glow-cyan:
     0 0 40px var(--color-neon-cyan-90),
     0 0 80px var(--color-neon-cyan-60);
 
-  --effect-glow-pink:
-    0 0 40px var(--color-neon-pink-90),
-    0 0 80px var(--color-neon-pink-70);
+  --effect-glow-purple:
+    0 0 40px var(--color-neon-purple-90),
+    0 0 80px var(--color-neon-purple-70);
 
   /* ═══ Gradients ═══ */
   --gradient-accent-default:
-    linear-gradient(145deg, var(--color-pink-alt), var(--color-cyan-alt));
+    linear-gradient(145deg, var(--color-purple-alt), var(--color-cyan-alt));
 
   --gradient-glow-light:
-    radial-gradient(var(--color-white-alpha-20) 0%,
-      var(--color-white-alpha-12) 20%,
-      var(--color-white-alpha-5) 40%,
+    radial-gradient(var(--color-gray-700) 0%,
+      var(--color-gray-800) 20%,
+      var(--color-gray-800) 40%,
       transparent 70%);
 }

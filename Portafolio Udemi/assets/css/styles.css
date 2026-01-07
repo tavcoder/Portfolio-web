@@ -803,7 +803,7 @@ h1 {
   width: 2px;
   height: 6.5rem;
   transform: translateX(-50%);
-  background: var(--color-decorative-line);
+  background: var(--color-decorative-accent);
   box-shadow: var(--shadow-inset-default);
   border: var(--border-subtle);
   z-index: var(--z-below);
