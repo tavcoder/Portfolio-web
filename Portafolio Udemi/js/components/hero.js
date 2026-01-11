@@ -1,11 +1,12 @@
-/**
- * Renders the hero section HTML.
- * @returns {Promise<string>} The HTML string for the hero section.
- */
+// ========================================
+// hero.js - ACTUALIZADO
+// ========================================
+import { loadData, t } from '../i18n.js';
+
 export async function renderHero() {
     try {
-        const response = await fetch('data/hero.json');
-        const hero = await response.json();
+        const hero = await loadData('hero');
+        if (!hero) throw new Error('No hero data');
 
         const buttonsHTML = hero.buttons.map((btn, index) => `
             <a href="${btn.href}" target="_blank" class="animate-on-scroll animate-zoom-in${index > 0 ? ' animate-delay-300' : ''}">
@@ -25,6 +26,6 @@ export async function renderHero() {
         `;
     } catch (error) {
         console.error('Error loading hero:', error);
-        return '<section class="content__hero">Error loading hero.</section>';
+        return `<section class="content__hero">${t('errorLoadingHero')}</section>`;
     }
 }

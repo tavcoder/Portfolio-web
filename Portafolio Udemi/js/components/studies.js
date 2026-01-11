@@ -1,13 +1,12 @@
-/**
- * Renders the studies section by fetching the JSON file based on the selected language.
- * @param {string} language - The current language code (e.g., "es" or "en").
- * @returns {Promise<string>} The HTML string for the studies section.
- */
-export async function renderStudies(language = "es") {
+// ========================================
+// studies.js - ACTUALIZADO
+// ========================================
+import { loadData, t } from '../i18n.js';
+
+export async function renderStudies() {
     try {
-        const response = await fetch(`data/studies_${language}.json`);
-        if (!response.ok) throw new Error(`Error al cargar studies_${language}.json`);
-        const studies = await response.json();
+        const studies = await loadData('studies');
+        if (!studies) throw new Error('No studies data');
 
         const listItems = studies.map(({ date, stack, title, institution, description, delay }) => `
             <li class="studies__item animate-on-scroll animate-zoom-in${delay ? ` animate-delay-${delay}` : ""}">
@@ -23,7 +22,6 @@ export async function renderStudies(language = "es") {
                     <p class="studies__description">${description}</p>
                     </div>
                  </div>
-                
             </li>
         `).join("");
 
@@ -38,7 +36,7 @@ export async function renderStudies(language = "es") {
         console.error(error);
         return `
             <section class="content__studies">
-                <p class="error">No se pudo cargar la información de estudios.</p>
+                <p class="error">${t('errorLoadingStudies')}</p>
             </section>
         `;
     }

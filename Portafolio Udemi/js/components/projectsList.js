@@ -1,16 +1,19 @@
+// ========================================
+// projectsList.js - ACTUALIZADO
+// ========================================
+import { loadData, t } from '../i18n.js';
 import { renderProjectItem } from './projectListDetails.js';
 
-/**
- * Renders the projects section HTML.
- * @returns {Promise<string>} The HTML string for the projects section.
- */
 export async function renderProjects() {
     try {
-        const response = await fetch('data/projectsList.json');
-        const projects = await response.json();
-        const techResponse = await fetch('data/tech.json');
-        const techData = await techResponse.json();
-        const projectsHTML = projects.map((project, index) => renderProjectItem(project, index, techData)).join('');
+        const projects = await loadData('projectsList');
+        const techData = await loadData('tech');
+
+        if (!projects || !techData) throw new Error('Missing data');
+
+        const projectsHTML = projects.map((project, index) =>
+            renderProjectItem(project, index, techData)
+        ).join('');
 
         return `
             <div class="content__projects">
@@ -19,6 +22,6 @@ export async function renderProjects() {
         `;
     } catch (error) {
         console.error('Error loading projects:', error);
-        return '<div class="content__projects">Error loading projects.</div>';
+        return `<div class="content__projects">${t('errorLoadingProjects')}</div>`;
     }
 }

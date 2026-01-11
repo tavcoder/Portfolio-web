@@ -1,20 +1,17 @@
-/**
- * Renders the skills section based on selected language.
- * @param {string} language - Language code ('es' or 'en').
- * @returns {Promise<string>} The HTML string for the skills section.
- */
-export async function renderSkills(language = 'es') {
-  try {
-    const response = await fetch(`data/skills_${language}.json`);
-    if (!response.ok) throw new Error(`Error al cargar skills_${language}.json`);
-    const skills = await response.json();
+// ========================================
+// skills.js - ACTUALIZADO
+// ========================================
+import { loadData, t } from '../i18n.js';
 
-    const techResponse = await fetch('data/tech.json');
-    const techData = await techResponse.json();
+export async function renderSkills() {
+  try {
+    const skills = await loadData('skills');
+    const techData = await loadData('tech');
+
+    if (!skills || !techData) throw new Error('Missing data');
 
     const programmingHTML = skills.programmingTools.items
-      .map(
-        (tool, i) => `
+      .map((tool, i) => `
         <div class="skills__textContent__skills animate-on-scroll animate-fade-in animate-delay-${800 + i * 200}">
           <div class="skills__textContent__iconCircle"><i class="fas fa-check check"></i></div>
           <p>${tool}</p>
@@ -23,8 +20,7 @@ export async function renderSkills(language = 'es') {
       .join('');
 
     const designHTML = skills.designTools.items
-      .map(
-        (tool, i) => `
+      .map((tool, i) => `
         <div class="skills__textContent__skills animate-on-scroll animate-fade-in animate-delay-${800 + i * 200}">
           <div class="skills__textContent__iconCircle"><i class="fas fa-check check"></i></div>
           <p>${tool}</p>
@@ -32,14 +28,11 @@ export async function renderSkills(language = 'es') {
       )
       .join('');
 
-    const techMap = new Map(techData.map(t => [t.name, t.icon]));
-
     const frontendTechs = techData.filter(t => t.category === 'frontend' || t.category === 'both');
     const backendTechs = techData.filter(t => t.category === 'backend' || t.category === 'both');
 
     const frontendHTML = frontendTechs
-      .map(
-        (tech, i) => `
+      .map((tech, i) => `
         <div class="skills__container__tech animate-on-scroll animate-zoom-in animate-delay-${200 + i * 200}">
           <span class="iconify" data-icon="${tech.icon}"></span>
           <p class="skills__container__tech__name">${tech.name}</p>
@@ -48,8 +41,7 @@ export async function renderSkills(language = 'es') {
       .join('');
 
     const backendHTML = backendTechs
-      .map(
-        (tech) => `
+      .map((tech) => `
         <div class="skills__container__tech">
           <span class="iconify" data-icon="${tech.icon}"></span>
           <p class="skills__container__tech__name">${tech.name}</p>
@@ -77,9 +69,9 @@ export async function renderSkills(language = 'es') {
           <div id="backend" class="skills__container__group hidden">${backendHTML}</div>
 
           <label class="skills__switch">
-            <input type="checkbox" class="switch__input" id="toggle-tech" onclick="toggleTechnologies()">
+            <input type="checkbox" class="switch__input" id="toggle-tech">
             <span class="skills__slider">
-              <p class="skills__label" id="label-text">Frontend</p>
+              <p class="skills__label" id="label-text">${t('frontend')}</p>
             </span>
           </label>
         </div>
@@ -87,6 +79,6 @@ export async function renderSkills(language = 'es') {
     `;
   } catch (error) {
     console.error('Error loading skills data:', error);
-    return `<div class="content__skills">Error cargando los datos de habilidades.</div>`;
+    return `<div class="content__skills">${t('errorLoadingSkills')}</div>`;
   }
 }

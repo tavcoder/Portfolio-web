@@ -4,6 +4,49 @@ import { renderStudies } from './components/studies.js';
 import { renderProjects } from './components/projectsList.js';
 import { renderProjectTemplate, initFeatureSelector } from './components/projectTemplate.js';
 
+/**
+ * Estado global del idioma actual
+ * @type {string}
+ */
+let currentLanguage = localStorage.getItem('language') || 'es';
+
+/**
+ * Obtiene el idioma actual
+ * @returns {string}
+ */
+export function getCurrentLanguage() {
+    return currentLanguage;
+}
+
+/**
+ * Cambia el idioma de la aplicación
+ * @param {string} lang - Código del idioma ('es' o 'en')
+ */
+export function setLanguage(lang) {
+    if (lang !== 'es' && lang !== 'en') return;
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+
+    // Actualizar el atributo lang del HTML
+    document.documentElement.lang = lang;
+
+    // Re-renderizar la vista actual
+    const currentHash = window.location.hash.replace(/^#\/?/, '');
+    navigateTo(currentHash || '');
+
+    // Actualizar el selector de idioma si existe
+    updateLanguageSelector();
+}
+
+/**
+ * Actualiza el estado visual del selector de idioma
+ */
+function updateLanguageSelector() {
+    const languageButtons = document.querySelectorAll('[data-language]');
+    languageButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-language') === currentLanguage);
+    });
+}
 
 /**
  * Map of routes to their corresponding render functions.
@@ -24,7 +67,7 @@ const routes = {
  */
 function normalizeRoute(route) {
     if (!route) return '';
-    return route.replace(/^\/+|\/+$/g, ''); // elimina "/" al inicio y final
+    return route.replace(/^\/+|\/+$/g, '');
 }
 
 /**
@@ -32,7 +75,7 @@ function normalizeRoute(route) {
  * @param {string} rawRoute - The route to navigate to (may include leading slash).
  */
 export async function navigateTo(rawRoute) {
-    const route = normalizeRoute(rawRoute); // e.g. "project/superm" or "projects"
+    const route = normalizeRoute(rawRoute);
 
     // Detectar si la ruta es un proyecto individual: "project/<id>"
     if (route.startsWith('project/')) {
@@ -40,9 +83,7 @@ export async function navigateTo(rawRoute) {
         const content = document.getElementById('content__page');
         content.innerHTML = await renderProjectTemplate(projectId);
         initFeatureSelector();
-        // Actualiza el hash en formato "#/project/superm"
         window.location.hash = `#/${route}`;
-        // observar animaciones si las hay
         observeAnimations();
         return;
     }
@@ -54,6 +95,7 @@ export async function navigateTo(rawRoute) {
         content.innerHTML = await renderFunction();
         observeAnimations();
         updateActiveMenu(route);
+        updateLanguageSelector();
 
         if (route === 'skills') {
             setTimeout(() => {
@@ -64,12 +106,10 @@ export async function navigateTo(rawRoute) {
             }, 0);
         }
     } else {
-        // si no existe la ruta, ir a la principal
         await navigateTo('');
         return;
     }
 
-    // Actualiza el hash de forma consistente "#/route" (si route == '' -> "#/")
     window.location.hash = route ? `#/${route}` : '#/';
 }
 
@@ -105,11 +145,11 @@ function toggleTechnologies() {
     if (checkbox.checked) {
         frontend?.classList.add('hidden');
         backend?.classList.remove('hidden');
-        labelText && (labelText.textContent = 'Backend');
+        labelText && (labelText.textContent = currentLanguage === 'es' ? 'Backend' : 'Backend');
     } else {
         frontend?.classList.remove('hidden');
         backend?.classList.add('hidden');
-        labelText && (labelText.textContent = 'Frontend');
+        labelText && (labelText.textContent = currentLanguage === 'es' ? 'Frontend' : 'Frontend');
     }
 }
 
@@ -141,18 +181,29 @@ function observeAnimations() {
 
 /**
  * Detect hash changes and navigate automatically.
- * Normalizamos el hash para que sea compatible con navigateTo.
  */
 window.addEventListener('hashchange', () => {
-    // Remueve "#/" o "#" y pasa el resto (ej: "#/project/superm" -> "project/superm")
     const raw = window.location.hash.replace(/^#\/?/, '');
     navigateTo(raw);
 });
 
 /**
- * Load initial route on page load.
+ * Load initial route on page load and set up language selector.
  */
 window.addEventListener('DOMContentLoaded', () => {
+    // Establecer el idioma en el HTML
+    document.documentElement.lang = currentLanguage;
+
+    // Configurar eventos de los botones de idioma
+    const languageButtons = document.querySelectorAll('[data-language]');
+    languageButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const lang = e.currentTarget.getAttribute('data-language');
+            setLanguage(lang);
+        });
+    });
+
+    // Navegar a la ruta inicial
     const initialRaw = window.location.hash.replace(/^#\/?/, '');
     navigateTo(initialRaw || '');
 });
