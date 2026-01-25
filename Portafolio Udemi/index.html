@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Tania Arteaga - Frontend Developer especializada en JavaScript y desarrollo web moderno">
+    <meta name="keywords" content="frontend, developer, javascript, web development, portfolio, Tania Arteaga">
+    <meta name="author" content="Tania Arteaga">
+
     <title>Tania Arteaga - Web Developer</title>
 
-    <!-- Hoja de estilos -->
+    <!-- Estilos -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link id="theme-stylesheet" rel="stylesheet" href="assets/css/theme.css">
 
-    <!-- Enlace para Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,99 +29,97 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
-    <!-- Iconos -->
+
+    <!-- Iconify -->
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
-
 </head>
 
 <body>
-
     <div class="layout">
-
-        <!-- Sidebar (info del usuario)-->
+        <!-- Sidebar (info del usuario) -->
         <aside class="layout__aside">
+            <!-- Theme Toggle -->
             <div class="toggle-container">
                 <input type="checkbox" class="toggle-input">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 142" class="toggle">
-
                     <path
                         d="M71 142C31.7878 142 0 110.212 0 71C0 31.7878 31.7878 0 71 0C110.212 0 119 30 146 30C173 30 182 0 221 0C260 0 292 31.7878 292 71C292 110.212 260.212 142 221 142C181.788 142 173 112 146 112C119 112 110.212 142 71 142Z"
-                        class="toggle-background">
-                    </path>
+                        class="toggle-background"></path>
 
                     <g filter="url('#goo')">
                         <rect fill="var(--color-background-button)" rx="29" height="58" width="116" y="42" x="13"
-                            class="toggle-circle-center">
-                        </rect>
+                            class="toggle-circle-center"></rect>
                         <rect fill="var(--color-background-button)" rx="58" height="114" width="114" y="14" x="14"
-                            class="toggle-circle left">
-                        </rect>
+                            class="toggle-circle left"></rect>
                         <rect fill="var(--color-background-button)" rx="58" height="114" width="114" y="14" x="164"
-                            class="toggle-circle right">
-                        </rect>
-
+                            class="toggle-circle right"></rect>
                     </g>
 
                     <filter id="goo">
                         <feGaussianBlur stdDeviation="10" result="blur" in="SourceGraphic"></feGaussianBlur>
                         <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix"
-                            in="blur">
-                        </feColorMatrix>
+                            in="blur"></feColorMatrix>
                     </filter>
                 </svg>
             </div>
 
+            <!-- User Info Section -->
             <section class="aside__user-info">
-                <!--Información general usuario-->
+                <!-- Información general usuario -->
                 <div class="user-info__general">
                     <div class="user-info__container-image">
                         <a href="index.html">
-                            <img class="user-info__image" src="assets/img/imgPlaceholder.jpg" alt="Profile Picture">
+                            <img class="user-info__image" src="assets/img/imgPlaceholder.jpg"
+                                alt="Tania Arteaga Profile Picture">
                         </a>
                     </div>
 
                     <div class="user-info__links">
                         <h2 class="user-info__name">Tania Arteaga</h2>
-                        <a href="https://www.linkedin.com/" target="_blank">
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/" target="_blank">
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub Profile">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
                     <p class="user-info__email">tarteagadesign@gmail.com</p>
                 </div>
 
-                <!--Menú de navegación-->
+                <!-- Menú de navegación -->
                 <nav class="aside__menu">
                     <ul class="menu__list">
                         <li class="menu__option">
-                            <a class=" btn tertiaryBtn active" data-route="" href="#">Inicio</a>
+                            <a class="btn tertiaryBtn active" data-route="" href="#" aria-label="Inicio">Inicio</a>
                         </li>
                         <li class="menu__option">
-                            <a class=" btn tertiaryBtn" data-route="skills" href="#skills">Sobre mí</a>
+                            <a class="btn tertiaryBtn" data-route="skills" href="#skills" aria-label="Sobre mí">Sobre
+                                mí</a>
                         </li>
                         <li class="menu__option">
-                            <a class=" btn tertiaryBtn" data-route="projects" href="#projects">Proyectos</a>
+                            <a class="btn tertiaryBtn" data-route="projects" href="#projects"
+                                aria-label="Proyectos">Proyectos</a>
                         </li>
                         <li class="menu__option">
-                            <a class=" btn tertiaryBtn" data-route="studies" href="#studies">Estudios</a>
+                            <a class="btn tertiaryBtn" data-route="studies" href="#studies"
+                                aria-label="Estudios">Estudios</a>
                         </li>
                     </ul>
                 </nav>
             </section>
-            <div class="wrapper">
-                <svg viewBox="0 0 300 300" width="300" height="300">
+
+            <!-- Language Toggle -->
+            <div class="wrapper" role="button" aria-label="Cambiar idioma" tabindex="0">
+                <svg viewBox="0 0 300 300" width="300" height="300" aria-hidden="true">
                     <defs>
-                        <!-- Degradado más profundo -->
                         <linearGradient id="degradadoHundoIntenso" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color=" #e0e5ec" />
-                            <stop offset="50%" stop-color=" #e0e5ec" />
-                            <stop offset="100%" stop-color=" #e0e5ec" />
+                            <stop offset="0%" stop-color="#e0e5ec" />
+                            <stop offset="50%" stop-color="#e0e5ec" />
+                            <stop offset="100%" stop-color="#e0e5ec" />
                         </linearGradient>
 
-                        <!-- Sombra interna más intensa -->
                         <filter id="inset-shadow-intenso" x="-50%" y="-50%" width="200%" height="200%">
                             <feOffset dx="0" dy="3" />
                             <feGaussianBlur stdDeviation="4" result="offset-blur" />
@@ -128,16 +133,16 @@
                     <path d="M 56 130 Q 65 185 105 202" fill="none" stroke="url(#degradadoHundoIntenso)"
                         stroke-width="10" stroke-linecap="round" filter="url(#inset-shadow-intenso)" />
 
-                    <!-- Texto EN en el extremo izquierdo -->
+                    <!-- Texto EN -->
                     <text x="56" y="110" font-size="10" font-weight="bold" fill="var(--color-text-button)"
                         text-anchor="middle">EN</text>
 
-                    <!-- Texto ES en el extremo derecho -->
+                    <!-- Texto ES -->
                     <text x="125" y="210" font-size="10" font-weight="bold" fill="var(--color-text-button)"
                         text-anchor="middle">ES</text>
                 </svg>
 
-                <div class="dot btn"></div>
+                <div class="dot btn" role="switch" aria-checked="false" aria-label="Selector de idioma"></div>
             </div>
         </aside>
 
@@ -146,11 +151,17 @@
             <div id="content__page" class="content__page neumorphic-scroll"></div>
         </main>
     </div>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Tania Arteaga. Loosely designed in Figma and coded in Visual Studio Code by yours truly.</p>
+        <p>&copy; 2025 Tania Arteaga. Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built
+            with Vanilla JavaScript.</p>
     </footer>
+
+    <!-- Application Entry Point -->
     <script type="module" src="js/main.js"></script>
+
+    <!-- Theme Utility (standalone) -->
     <script src="js/utils/theme.js"></script>
 </body>
 

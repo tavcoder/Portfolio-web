@@ -1,7 +1,7 @@
 // ========================================
 // projectsList.js - ACTUALIZADO
 // ========================================
-import { loadData, t } from '../i18n.js';
+import { loadData, t } from '../core/i18n.js';
 import { renderProjectItem } from './projectListDetails.js';
 
 export async function renderProjects() {

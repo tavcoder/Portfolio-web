@@ -1,9 +1,10 @@
 {
+  "sectionId": "skills",
   "title": "Este es mi kit",
   "intro": "Siempre me he sentido en la encrucijada entre el diseño y la programación, lo que me ha permitido combinar lo mejor de ambos mundos: mi base técnica y mi pasión por crear experiencias de usuario. Me encanta aprender cosas nuevas, ya sea explorando nuevas tecnologías o perfeccionando las prácticas en mi campo.",
   "programmingTools": {
     "title": "Herramientas de programación",
-    "items": ["Git+Github", "PostMan", "Wampp", "MongoDB"]
+    "items": ["Git + Github", "Postman", "Wampp", "MongoDB"]
   },
   "designTools": {
     "title": "Herramientas de diseño",

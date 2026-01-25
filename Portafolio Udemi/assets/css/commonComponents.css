@@ -197,8 +197,9 @@ h3 {
 }
 
 /* ───────────────────────────────────────────────────────────────
+ /* ══════════════════════════════════════════════════════════════
    LANGUAGE TOGGLE
-   ─────────────────────────────────────────────────────────────── */
+   ══════════════════════════════════════════════════════════════ */
 
 .wrapper {
   position: absolute;
@@ -206,6 +207,8 @@ h3 {
   left: -7rem;
   width: 300px;
   height: 300px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .dot {
@@ -217,20 +220,26 @@ h3 {
   left: 0;
   cursor: pointer;
 
+  /* Animación a lo largo del path SVG */
   offset-path: path("M 56 130 Q 65 185 105 202");
   offset-rotate: 0deg;
   offset-distance: 0%;
+  /* Inicio (EN) */
 
+  /* Transiciones suaves */
   transition:
-    offset-distance 0.8s ease-in-out,
+    offset-distance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
     background-color var(--transition-slow);
 }
 
+/* Cuando el idioma es ES (español) */
 .dot.is-active {
   offset-distance: 100%;
+  /* Final (ES) */
   background-color: var(--color-text-title);
 }
 
+/* Estilos del track (opcional si usas el path visible) */
 .wrapper .track {
   stroke: url(#degradadoNormal);
   filter: url(#shadowNormal);
@@ -239,4 +248,18 @@ h3 {
 .wrapper.is-active .track {
   stroke: url(#degradadoActivo);
   filter: url(#shadowActivo);
+}
+
+/* Transiciones suaves para los textos SVG */
+.wrapper svg text {
+  transition: opacity 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Hover effect en el wrapper */
+.wrapper:hover .dot {
+  transform: scale(1.15);
+}
+
+.dot:active {
+  transform: scale(0.95);
 }

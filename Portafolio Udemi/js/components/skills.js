@@ -1,7 +1,7 @@
 // ========================================
 // skills.js - ACTUALIZADO
 // ========================================
-import { loadData, t } from '../i18n.js';
+import { loadData, t } from '../core/i18n.js';
 
 export async function renderSkills() {
   try {
