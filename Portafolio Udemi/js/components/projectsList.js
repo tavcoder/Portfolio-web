@@ -7,17 +7,17 @@ import { renderProjectItem } from './projectListDetails.js';
 export async function renderProjects() {
     try {
         const projects = await loadData('projectsList');
-        const techData = await loadData('tech');
 
-        if (!projects || !techData) throw new Error('Missing data');
+        if (!projects) throw new Error('Missing data');
 
-        const projectsHTML = projects.map((project, index) =>
-            renderProjectItem(project, index, techData)
+        const projectsHTML = projects.items.map((project, index) =>
+            renderProjectItem(project, index)
         ).join('');
 
         return `
             <div class="content__projects">
-                ${projectsHTML}
+                <h2 class="projects__title">${projects.title}</h2>
+                <div class="projects__list">${projectsHTML}</div>
             </div>
         `;
     } catch (error) {

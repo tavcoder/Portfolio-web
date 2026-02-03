@@ -1,24 +1,36 @@
 {
-  "sectionId": "skills",
-  "title": "Este es mi kit",
-  "intro": "Siempre me he sentido en la encrucijada entre el diseño y la programación, lo que me ha permitido combinar lo mejor de ambos mundos: mi base técnica y mi pasión por crear experiencias de usuario. Me encanta aprender cosas nuevas, ya sea explorando nuevas tecnologías o perfeccionando las prácticas en mi campo.",
-  "programmingTools": {
-    "title": "Herramientas de programación",
-    "items": ["Git + Github", "Postman", "Wampp", "MongoDB"]
+  "title": "Technical Stack",
+  "intro": "Front-End Developer with hands-on experience in JavaScript ES6+ and React. Strong focus on fundamentals, modular architecture, responsive design and REST API consumption. Design background applied to reusable and maintainable interfaces.",
+  "tools": {
+    "title": "Development Tools",
+    "items": [
+      "Git/GitHub",
+      "npm",
+      "Vite",
+      "DevTools",
+      "Lighthouse"
+    ]
   },
-  "designTools": {
-    "title": "Herramientas de diseño",
-    "items": ["Adobe XD", "Wireframing", "Prototyping"]
-  },
+ 
   "tech": {
-    "title": "Lenguajes y Frameworks",
-    "frontend": {
-      "label": "Frontend",
-      "items": ["HTML", "CSS", "SASS", "Bootstrap", "JQuery UI"]
-    },
-    "backend": {
-      "label": "Backend",
-      "items": ["JavaScript", "PHP", "SQLite", "MySQL", "Laravel"]
-    }
+    "title": "Core",
+    "items": [
+      {
+        "name": "HTML5",
+        "icon": "logos:html-5"
+      },
+      {
+        "name": "CSS3",
+        "icon": "logos:css-3"
+      },
+      {
+        "name": "JavaScript ES6+",
+        "icon": "logos:javascript"
+      },
+      {
+        "name": "React",
+        "icon": "logos:react"
+      }
+    ]
   }
 }

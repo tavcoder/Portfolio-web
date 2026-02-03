@@ -1,0 +1,52 @@
+{
+    "title": "Proyectos destacados",
+    "items": [
+        {
+            "id": "portfolio",
+            "title": "Portfolio SPA – Vanilla JavaScript",
+            "description": "Single Page Application desarrollada sin frameworks para consolidar fundamentos de Front-End. Implementé routing con History API, renderizado dinámico desde JSON y arquitectura modular con ES6 modules. Incluye sistema de theming (dark/light) con CSS custom properties.",
+            "github": "https://github.com/tavcoder/Portfolio-web",
+            "demo": "https://tavcoder.github.io/Portfolio-web/Portafolio%20Udemi/",
+            "frontImage": "assets/img/portfolio.png",
+            "imageRatio": "landscape",
+            "technologies": [
+                "HTML5",
+                "CSS3",
+                "JavaScript ES6+",
+                "SPA",
+                "History API"
+            ]
+        },
+        {
+            "id": "super-m",
+            "title": "E-commerce SPA con React",
+            "description": "Aplicación de e-commerce desarrollada con React y Vite. Implementé autenticación de usuarios, carrito persistente y gestión de estado global. Consumo de datos con Supabase y renderizado optimizado para una experiencia consistente.",
+            "github": "https://github.com/tavcoder/SuperM",
+            "demo": "https://supermdemo.netlify.app/",
+            "frontImage": "assets/img/superm.png",
+            "imageRatio": "portrait",
+            "technologies": [
+                "React",
+                "JavaScript ES6+",
+                "Vite",
+                "State Management",
+                "Supabase"
+            ]
+        },
+        {
+            "id": "social",
+            "title": "Social Network SPA – React Front-End",
+            "description": "Single Page Application en React con autenticación, feed dinámico y sistema de interacciones (likes, follows). Enfoque en Front-End: gestión de estado, routing y experiencia de usuario reactiva sobre API existente.",
+            "github": "https://github.com/tavcoder/Social",
+            "demo": "https://taniaarteaga.dev/calendario-trabajo",
+            "frontImage": "assets/img/superm.png",
+            "imageRatio": "portrait",
+            "technologies": [
+                "React",
+                "JavaScript ES6+",
+                "React Router",
+                "API Consumption"
+            ]
+        }
+    ]
+}

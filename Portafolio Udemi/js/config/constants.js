@@ -33,7 +33,7 @@ export const APP_CONFIG = {
  */
 export const SELECTORS = {
     contentContainer: '#content__page',
-    menuButtons: '.tertiaryBtn',
+    menuButtons: '.btn--tertiary',
     languageDot: '.dot.btn',
     languageWrapper: '.wrapper',
     animatedElements: '.animate-on-scroll',

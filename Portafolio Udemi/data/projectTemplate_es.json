@@ -1,17 +1,17 @@
 [
   {
     "id": "portfolio",
-    "name": "Portafolio Web – SPA Interactivo",
-    "description": "Este proyecto nació con una idea clara: crear un espacio donde pudiera mostrar mi trabajo y evolución como desarrolladora, reflejando mi interés por la interacción, animaciones y pequeños detalles. Construido como una SPA desde cero con HTML, CSS y JavaScript modular, implementé routing propio, modo oscuro/claro, animaciones personalizadas y carga dinámica de proyectos desde un JSON. El resultado es un portafolio moderno, fluido y completamente interactivo.",
+    "name": "Portfolio SPA – Vanilla JavaScript",
+    "description": "Single Page Application desarrollada sin frameworks para reforzar los fundamentos de Front-End. Implementa routing con History API, renderizado dinámico desde JSON y una arquitectura modular usando ES6 modules.",
     "stack": [
       "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "SPA con routing propio",
-      "Animaciones personalizadas",
-      "Dark/Light mode toggle",
-      "JSON dinámico"
+      "CSS3 (Custom Properties)",
+      "JavaScript ES6+",
+      "History API",
+      "SPA sin frameworks"
     ],
+    "retos": "Implementar routing personalizado y renderizado dinámico sin recargas de página.",
+    "aprendizajes": "Manipulación del DOM, delegación de eventos, modularización y manejo de estado sin abstracciones.",
     "features": [
       {
         "title": "SPA Interactiva",
@@ -35,23 +35,22 @@
       "assets/portfolio2.png"
     ],
     "demo": "https://taniaarteaga.github.io/tania-portfolio",
-    "code": "https://github.com/taniaarteaga/tania-portfolio",
-    "retos": "Renderizar contenido dinámico sin recargar la página, mantener SPA modularizada y crear un sistema propio de routing. Implementar animaciones suaves y modo oscuro/claro sin afectar la performance.",
-    "aprendizajes": "Modularización de JavaScript, gestión de rutas sin frameworks y arquitectura limpia en un proyecto SPA desde cero.",
-    "futuras_funcionalidades": "Agregar backend para contacto, soporte multilenguaje e integración con CMS para actualizar proyectos dinámicamente."
+    "code": "https://github.com/taniaarteaga/tania-portfolio"
   },
   {
     "id": "super-m",
-    "name": "SuperM – React E-commerce",
-    "description": "SuperM surgió como el proyecto final de mi primer curso de React, pero lo llevé más allá creando un e-commerce moderno con React, Vite y Supabase. Los usuarios pueden registrarse, iniciar sesión, agregar productos al carrito persistente, editar sus datos y usar esos datos para autocompletar el formulario de envío. Implementé Context API, TanStack Query y microinteracciones para mejorar la experiencia, además de checkout simulado y filtros dinámicos de productos.",
+    "name": "React E-commerce SPA",
+    "description": "Aplicación e-commerce con autenticación, carrito persistente y checkout simulado. El estado global se gestiona con Context API y el cacheo de datos remotos con TanStack Query.",
     "stack": [
       "React",
-      "Vite",
-      "CSS3",
+      "JavaScript ES6+",
       "Context API",
       "TanStack Query",
-      "Supabase"
+      "Supabase",
+      "Vite"
     ],
+    "retos": "Diseñar filtros dinámicos y mantener el estado global sin duplicaciones.",
+    "aprendizajes": "Gestión de estado global, cacheo de datos remotos y separación entre lógica y UI.",
     "features": [
       {
         "title": "Notificaciones tipo toast",
@@ -83,26 +82,20 @@
       "assets/superm2.png"
     ],
     "demo": "https://superm.vercel.app",
-    "code": "https://github.com/taniaarteaga/superm",
-    "retos": "El reto principal consistió en implementar un sistema completo de filtros por categoría, características (eco/sin gluten) y ordenamiento dinámico. Desarrollé un motor modular con funciones puras que filtra y ordena en tiempo real...",
-    "aprendizajes": "Estado global con Context API, consultas asíncronas con TanStack Query, manejo de carrito persistente en localStorage, autocompletado de formularios con datos del usuario, diseño de filtros dinámicos y responsive.",
-    "futuras_funcionalidades": "Integrar sistema de pagos real, panel de administración para productos y mejoras en UI/UX y performance."
+    "code": "https://github.com/taniaarteaga/superm"
   },
   {
     "id": "social-app",
-    "name": "Red Social – Full-Stack App",
-    "description": "Este proyecto nació de un curso avanzado de React, enfocándome en mejorar el frontend y adaptarlo a necesidades reales. Usé la API del curso, modificando solo lo necesario: añadí endpoints para likes y simulé la eliminación de avatars en frontend...",
+    "name": "Red Social SPA – React",
+    "description": "Single Page Application en React con autenticación, feed dinámico y sistema de seguidores. Se implementaron optimistic updates con TanStack Query para mejorar la UX en acciones críticas.",
     "stack": [
       "React",
-      "Vite",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT",
-      "CSS3",
-      "React Router",
-      "TanStack Query"
+      "JavaScript ES6+",
+      "TanStack Query",
+      "React Router"
     ],
+    "retos": "Gestionar estado remoto con optimistic updates y rollback automático ante errores.",
+    "aprendizajes": "Optimistic updates, custom hooks y separación de la lógica de negocio.",
     "features": [
       {
         "title": "Registro y login",
@@ -130,9 +123,6 @@
       "assets/social2.png"
     ],
     "demo": "https://social-demo.vercel.app",
-    "code": "https://github.com/taniaarteaga/social-media-app",
-    "retos": "Consumir la API del curso en lugar de Supabase, adaptar endpoints para likes, simular eliminación de avatars en frontend, unificar rutas con parámetros opcionales y mantener la aplicación escalable y reactiva con hooks personalizados y React Query.",
-    "aprendizajes": "Trabajo con React Router Outlet, rutas unificadas con parámetros opcionales, Blob URLs, exponer index en dominios para facilitar imports, uso de git stash y cherry-pick, modularización de hooks y componentes, manejo avanzado de estado con React Query.",
-    "futuras_funcionalidades": "Notificaciones en tiempo real, panel de administración, filtros y búsqueda avanzada de usuarios, y mejoras de rendimiento en el feed."
+    "code": "https://github.com/taniaarteaga/social-media-app"
   }
 ]

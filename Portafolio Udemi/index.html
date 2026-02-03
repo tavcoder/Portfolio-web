@@ -23,9 +23,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
@@ -38,44 +36,20 @@
     <div class="layout">
         <!-- Sidebar (info del usuario) -->
         <aside class="layout__aside">
-            <!-- Theme Toggle -->
-            <div class="toggle-container">
-                <input type="checkbox" class="toggle-input">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 142" class="toggle">
-                    <path
-                        d="M71 142C31.7878 142 0 110.212 0 71C0 31.7878 31.7878 0 71 0C110.212 0 119 30 146 30C173 30 182 0 221 0C260 0 292 31.7878 292 71C292 110.212 260.212 142 221 142C181.788 142 173 112 146 112C119 112 110.212 142 71 142Z"
-                        class="toggle-background"></path>
-
-                    <g filter="url('#goo')">
-                        <rect fill="var(--color-background-button)" rx="29" height="58" width="116" y="42" x="13"
-                            class="toggle-circle-center"></rect>
-                        <rect fill="var(--color-background-button)" rx="58" height="114" width="114" y="14" x="14"
-                            class="toggle-circle left"></rect>
-                        <rect fill="var(--color-background-button)" rx="58" height="114" width="114" y="14" x="164"
-                            class="toggle-circle right"></rect>
-                    </g>
-
-                    <filter id="goo">
-                        <feGaussianBlur stdDeviation="10" result="blur" in="SourceGraphic"></feGaussianBlur>
-                        <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix"
-                            in="blur"></feColorMatrix>
-                    </filter>
-                </svg>
-            </div>
-
             <!-- User Info Section -->
             <section class="aside__user-info">
                 <!-- Información general usuario -->
                 <div class="user-info__general">
                     <div class="user-info__container-image">
                         <a href="index.html">
-                            <img class="user-info__image" src="assets/img/imgPlaceholder.jpg"
+                            <img class="user-info__image" src="assets/img/imgPlaceholder.jpg?text= TA"
                                 alt="Tania Arteaga Profile Picture">
                         </a>
                     </div>
-
-                    <div class="user-info__links">
-                        <h2 class="user-info__name">Tania Arteaga</h2>
+                    <p class="user-info__name">Tania Arteaga</p>
+                    <p class="user-info__title">Front End Developer</p>
+                    <p class="user-info__email">tarteagadesign@gmail.com</p>
+                    <div class="user-info__links" aria-label="Redes sociales">
                         <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
                             aria-label="LinkedIn Profile">
                             <i class="fab fa-linkedin"></i>
@@ -85,25 +59,25 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
-                    <p class="user-info__email">tarteagadesign@gmail.com</p>
+
                 </div>
 
                 <!-- Menú de navegación -->
                 <nav class="aside__menu">
                     <ul class="menu__list">
                         <li class="menu__option">
-                            <a class="btn tertiaryBtn active" data-route="" href="#" aria-label="Inicio">Inicio</a>
+                            <a class="btn btn--tertiary active" data-route="" href="#" aria-label="Inicio">Inicio</a>
                         </li>
                         <li class="menu__option">
-                            <a class="btn tertiaryBtn" data-route="skills" href="#skills" aria-label="Sobre mí">Sobre
+                            <a class="btn btn--tertiary" data-route="skills" href="#skills" aria-label="Sobre mí">Sobre
                                 mí</a>
                         </li>
                         <li class="menu__option">
-                            <a class="btn tertiaryBtn" data-route="projects" href="#projects"
+                            <a class="btn btn--tertiary" data-route="projects" href="#projects"
                                 aria-label="Proyectos">Proyectos</a>
                         </li>
                         <li class="menu__option">
-                            <a class="btn tertiaryBtn" data-route="studies" href="#studies"
+                            <a class="btn btn--tertiary" data-route="studies" href="#studies"
                                 aria-label="Estudios">Estudios</a>
                         </li>
                     </ul>
@@ -130,15 +104,15 @@
                         </filter>
                     </defs>
 
-                    <path d="M 56 130 Q 65 185 105 202" fill="none" stroke="url(#degradadoHundoIntenso)"
+                    <path d="M 134 170 Q 125 195 95 202" fill="none" stroke="url(#degradadoHundoIntenso)"
                         stroke-width="10" stroke-linecap="round" filter="url(#inset-shadow-intenso)" />
 
                     <!-- Texto EN -->
-                    <text x="56" y="110" font-size="10" font-weight="bold" fill="var(--color-text-button)"
+                    <text x="136" y="150" font-size="10" font-weight="bold" fill="var(--color-text-button)"
                         text-anchor="middle">EN</text>
 
                     <!-- Texto ES -->
-                    <text x="125" y="210" font-size="10" font-weight="bold" fill="var(--color-text-button)"
+                    <text x="66" y="210" font-size="10" font-weight="bold" fill="var(--color-text-button)"
                         text-anchor="middle">ES</text>
                 </svg>
 
@@ -154,8 +128,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Tania Arteaga. Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built
-            with Vanilla JavaScript.</p>
+        <p>&copy; 2025 Tania Arteaga.</p>
     </footer>
 
     <!-- Application Entry Point -->

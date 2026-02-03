@@ -6,12 +6,10 @@ import { loadData, t } from '../core/i18n.js';
 export async function renderProjectTemplate(projectId) {
   try {
     const projects = await loadData('projectTemplate');
-    const techData = await loadData('tech');
 
-    if (!projects || !techData) throw new Error('Missing data');
+    if (!projects) throw new Error('Missing data');
 
     const project = projects.find(p => p.id === projectId);
-    const techMap = new Map(techData.map(t => [t.name, t.icon]));
 
     if (!project) {
       return `
@@ -26,24 +24,13 @@ export async function renderProjectTemplate(projectId) {
       .join('');
 
     const stackHTML = project.stack
-      .map(tech => {
-        const icon = techMap.get(tech);
-        if (icon) {
-          return `
-        <li class="tech__item">
-          <span class="iconify" data-icon="${icon}"></span>
-          <p class="tech__name">${tech}</p>
-        </li>
-      `;
-        } else {
-          return `
-        <div class="tech__item">
-          <p>${tech}</p>
-        </div>
-      `;
-        }
-      })
+      .map(tech => `
+    <div class="tech-tag">
+      <p>${tech}</p>
+    </div>
+  `)
       .join('');
+
 
     const featuresHTML = project.features
       .map((f, i) => `
@@ -84,13 +71,17 @@ export async function renderProjectTemplate(projectId) {
 
         <div class="project__header">
           <div class="header__gallery">
-            ${imagesHTML}
+            <img src="https://placehold.co/960x600/e6d9ff/7B3FF2?text=SuperM+E-commerce" alt="SuperM">
           </div>
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>
             <p class="project__description">${project.description}</p>
-            <h3>${t('technologicalStack')}</h3>
+            <h3 class="project__subtitle">${t('technologicalStack')}</h3>
             <ul class="project__tech">${stackHTML}</ul>
+             <div class="project__learning">
+            <p><strong class="learning__title">${t('challenges')}:</strong> ${project.retos}</p>
+            <p><strong class="learning__title">${t('learnings')}:</strong> ${project.aprendizajes}</p>
+          </div>
           </div>
         </div>
 
@@ -101,11 +92,7 @@ export async function renderProjectTemplate(projectId) {
               ${featuresHTML}
             </div>
           </div>
-          <div class="project__learning">
-            <p><strong>${t('challenges')}:</strong> ${project.retos}</p>
-            <p><strong>${t('learnings')}:</strong> ${project.aprendizajes}</p>
-          </div>
-          <p><strong>${t('futureFunctionalities')}:</strong> ${project.futuras_funcionalidades}</p>
+         
         </div>
       </div>
     `;

@@ -2,7 +2,7 @@
 .layout {
   margin: 5vh auto;
   width: 90%;
- }
+}
 
 @media (max-width: 1300px) {
   .layout__aside {
@@ -27,14 +27,14 @@
   }
 
   .user-info__name {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
   }
 
   .user-info__email {
     font-size: 0.95rem;
   }
 
-  .tertiaryBtn {
+  .btn--tertiary {
     padding: 1rem;
   }
 

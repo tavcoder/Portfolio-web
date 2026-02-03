@@ -1,46 +1,52 @@
-[
-  {
-    "id": "portfolio",
-    "title": "Portfolio",
-    "description": "Interactive Developer Portfolio crafted with vanilla JavaScript and CSS, featuring smooth animations, light/dark mode, and project highlights to present my journey as a frontend web developer.",
-    "github": "https://github.com/tavcoder/Portfolio-web",
-    "demo": "https://tavcoder.github.io/Portfolio-web/Portafolio%20Udemi/",
-    "frontImage": "assets/img/portfolio.png",
-    "imageRatio": "landscape",
-    "technologies": [
-      "JavaScript",
-      "CSS3"
-    ]
-  },
-  {
-    "id": "super-m",
-    "title": "Super M",
-    "description": "SuperM is a modern e-commerce platform for browsing products, managing a shopping cart, and completing purchases with ease. Built with React and Vite, it delivers a smooth shopping experience with user authentication and a fast, responsive interface.",
-    "github": "https://github.com/tavcoder/SuperM",
-    "demo": "https://supermdemo.netlify.app/",
-    "frontImage": "assets/img/superm.png",
-    "imageRatio": "portrait",
-    "technologies": [
-      "React",
-      "Vite",
-      "Node.js",
-      "Supabase"
-    ]
-  },
-  {
-    "id": "social",
-    "title": "Social",
-    "description": " Social Connect is a full-stack social media platform where users can share posts, follow others, like and comment on content, and explore the community. Built with Node.js, Express, MongoDB, React, and Vite, it connects people through seamless interactions and a modern user experience.",
-    "github": "https://github.com/tavcoder/Social",
-    "demo": "https://taniaarteaga.dev/calendario-trabajo",
-    "frontImage": "assets/img/superm.png",
-    "imageRatio": "portrait",
-    "technologies": [
-      "React",
-      "Vite",
-      "MongoDB",
-      "Node.js",
-      "Express"
-    ]
-  }
-]
+{
+  "title": "Featured Projects",
+  "items": [
+    {
+      "id": "portfolio",
+      "title": "Portfolio SPA – Vanilla JavaScript",
+      "description": "Single Page Application built without frameworks to consolidate Front-End fundamentals. Implemented routing with the History API, dynamic rendering from JSON, and a modular architecture using ES6 modules. Includes a theming system (dark/light) with CSS custom properties.",
+      "github": "https://github.com/tavcoder/Portfolio-web",
+      "demo": "https://tavcoder.github.io/Portfolio-web/Portafolio%20Udemi/",
+      "frontImage": "assets/img/portfolio.png",
+      "imageRatio": "landscape",
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6+",
+        "SPA",
+        "History API"
+      ]
+    },
+    {
+      "id": "super-m",
+      "title": "SuperM – React E-commerce SPA",
+      "description": "E-commerce application built with React and Vite. Implemented user authentication, a persistent cart, and global state management. Data is fetched via Supabase with optimized rendering for a consistent user experience.",
+      "github": "https://github.com/tavcoder/SuperM",
+      "demo": "https://supermdemo.netlify.app/",
+      "frontImage": "assets/img/superm.png",
+      "imageRatio": "portrait",
+      "technologies": [
+        "React",
+        "JavaScript ES6+",
+        "Vite",
+        "State Management",
+        "Supabase"
+      ]
+    },
+    {
+      "id": "social",
+      "title": "Social Network SPA – React Front-End",
+      "description": "React Single Page Application with authentication, a dynamic feed, and interaction system (likes, follows). Front-End focused: state management, routing, and a responsive user experience on top of an existing API.",
+      "github": "https://github.com/tavcoder/Social",
+      "demo": "https://taniaarteaga.dev/calendario-trabajo",
+      "frontImage": "assets/img/superm.png",
+      "imageRatio": "portrait",
+      "technologies": [
+        "React",
+        "JavaScript ES6+",
+        "React Router",
+        "API Consumption"
+      ]
+    }
+  ]
+}

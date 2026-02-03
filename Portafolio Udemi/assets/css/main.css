@@ -1,0 +1,16 @@
+/* main.css */
+
+/* Tokens de diseño */
+@import './tokens.css';
+
+/* Estilos base */
+@import './base.css';
+
+/* Layout */
+@import './layout.css';
+
+/* Componentes */
+@import './components.css';
+
+/* Utilidades */
+@import './utilities.css';

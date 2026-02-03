@@ -1,0 +1,128 @@
+[
+    {
+        "id": "portfolio",
+        "name": "Portfolio SPA – Vanilla JavaScript",
+        "description": "Single Page Application built without frameworks to strengthen Front-End fundamentals. Implements routing with the History API, dynamic rendering from JSON, and a modular architecture using ES6 modules.",
+        "stack": [
+            "HTML5",
+            "CSS3 (Custom Properties)",
+            "JavaScript ES6+",
+            "History API",
+            "Framework-free SPA"
+        ],
+        "challenges": "Implement custom routing and dynamic rendering without page reloads.",
+        "learnings": "DOM manipulation, event delegation, modularization, and state management without abstractions.",
+        "features": [
+            {
+                "title": "Interactive SPA",
+                "demo_gif": "assets/gifs/spa-interactiva.gif"
+            },
+            {
+                "title": "Dark/Light mode",
+                "demo_gif": "assets/gifs/dark-light-mode.gif"
+            },
+            {
+                "title": "Animations and microinteractions",
+                "demo_gif": "assets/gifs/animaciones.gif"
+            },
+            {
+                "title": "Dynamic project loading",
+                "demo_gif": "assets/gifs/carga-proyectos.gif"
+            }
+        ],
+        "images": [
+            "assets/portfolio1.png",
+            "assets/portfolio2.png"
+        ],
+        "demo": "https://taniaarteaga.github.io/tania-portfolio",
+        "code": "https://github.com/taniaarteaga/tania-portfolio"
+    },
+    {
+        "id": "super-m",
+        "name": "React E-commerce SPA",
+        "description": "E-commerce application with authentication, persistent cart, and simulated checkout. Global state is managed with Context API, and remote data caching with TanStack Query.",
+        "stack": [
+            "React",
+            "JavaScript ES6+",
+            "Context API",
+            "TanStack Query",
+            "Supabase",
+            "Vite"
+        ],
+        "challenges": "Design dynamic filters and maintain global state without duplications.",
+        "learnings": "Global state management, remote data caching, and separation between logic and UI.",
+        "features": [
+            {
+                "title": "Toast notifications",
+                "demo_gif": "assets/gifs/toast.mp4"
+            },
+            {
+                "title": "Filters and sorting",
+                "demo_gif": "assets/gifs/filtros.mp4"
+            },
+            {
+                "title": "Persistent cart",
+                "demo_gif": "assets/gifs/carrito.mp4"
+            },
+            {
+                "title": "Autocompleted shipping form",
+                "demo_gif": "assets/gifs/autocompletado.mp4"
+            },
+            {
+                "title": "Simulated checkout",
+                "demo_gif": "assets/gifs/checkout.mp4"
+            },
+            {
+                "title": "Order summary",
+                "demo_gif": "assets/gifs/resumen.mp4"
+            }
+        ],
+        "images": [
+            "assets/superm1.png",
+            "assets/superm2.png"
+        ],
+        "demo": "https://superm.vercel.app",
+        "code": "https://github.com/taniaarteaga/superm"
+    },
+    {
+        "id": "social-app",
+        "name": "Social Network SPA – React",
+        "description": "Single Page Application in React with authentication, dynamic feed, and followers system. Implemented optimistic updates with TanStack Query to enhance UX in critical actions.",
+        "stack": [
+            "React",
+            "JavaScript ES6+",
+            "TanStack Query",
+            "React Router"
+        ],
+        "challenges": "Manage remote state with optimistic updates and automatic rollback on errors.",
+        "learnings": "Optimistic updates, custom hooks, and separation of business logic.",
+        "features": [
+            {
+                "title": "Sign-up and login",
+                "demo_gif": "assets/gifs/registro-login.gif"
+            },
+            {
+                "title": "Dynamic post feed",
+                "demo_gif": "assets/gifs/feed.gif"
+            },
+            {
+                "title": "Likes and comments",
+                "demo_gif": "assets/gifs/likes-comentarios.gif"
+            },
+            {
+                "title": "User and follower management",
+                "demo_gif": "assets/gifs/usuarios-seguidores.gif"
+            },
+            {
+                "title": "Profile and avatar editing",
+                "demo_gif": "assets/gifs/perfil-avatar.gif"
+            }
+        ],
+        "images": [
+            "assets/social1.png",
+            "assets/social2.png"
+        ],
+        "demo": "https://social-demo.vercel.app",
+        "code": "https://github.com/taniaarteaga/social-media-app"
+    }
+]

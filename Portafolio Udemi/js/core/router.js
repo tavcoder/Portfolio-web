@@ -116,10 +116,7 @@ async function handleStaticRoute(route, content) {
         observeAnimations();
         updateActiveMenu(route);
 
-        // Special handling for skills page
-        if (route === ROUTES.SKILLS) {
-            setTimeout(() => setupSkillsToggle(), 0);
-        }
+
 
         window.location.hash = route ? `#/${route}` : '#/';
 
@@ -132,17 +129,6 @@ async function handleStaticRoute(route, content) {
         await navigateTo(ROUTES.HOME);
     }
 }
-
-/**
- * Sets up the toggle for skills page
- */
-function setupSkillsToggle() {
-    const toggleCheckbox = document.getElementById('toggle-tech');
-    if (toggleCheckbox) {
-        toggleCheckbox.addEventListener('change', toggleTechnologies);
-    }
-}
-
 /**
  * Updates the active menu item
  * @param {string} route
