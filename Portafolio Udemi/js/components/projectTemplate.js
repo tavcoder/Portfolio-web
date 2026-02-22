@@ -19,10 +19,6 @@ export async function renderProjectTemplate(projectId) {
         </div>`;
     }
 
-    const imagesHTML = project.images
-      .map(img => `<img src="${img}" alt="${project.name}" class="project__img">`)
-      .join('');
-
     const stackHTML = project.stack
       .map(tech => `
     <div class="tech-tag">
@@ -36,16 +32,11 @@ export async function renderProjectTemplate(projectId) {
       .map((f, i) => `
         <div class="feature__item ${i === 0 ? 'active' : ''}">
           <span class="feature__title">${f.title}</span>
-          <video
-            class="feature__gif"
-            src="${f.demo_gif}"
-            autoplay
-            loop
-            muted
-            playsinline
-            loading="lazy"
-            ${i === 0 ? '' : 'data-lazy'}
-          ></video>
+         <img
+  class="feature__gif"
+  src="${f.demo_gif}"
+  loading="lazy"
+>
         </div>
       `)
       .join('');
@@ -71,7 +62,7 @@ export async function renderProjectTemplate(projectId) {
 
         <div class="project__header">
           <div class="header__gallery">
-            <img src="https://placehold.co/960x600/e6d9ff/7B3FF2?text=SuperM+E-commerce" alt="SuperM">
+            <img src= ${project.image}>
           </div>
           <div class="header__text">
             <h2 class="project__title">${project.name}</h2>

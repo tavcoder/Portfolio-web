@@ -14,25 +14,24 @@
         "learnings": "DOM manipulation, event delegation, modularization, and state management without abstractions.",
         "features": [
             {
-                "title": "Interactive SPA",
-                "demo_gif": "assets/gifs/spa-interactiva.gif"
+                "title": "Notificaciones tipo toast",
+                "demo_gif": "assets/img/SuperM-toast.webp"
             },
             {
-                "title": "Dark/Light mode",
-                "demo_gif": "assets/gifs/dark-light-mode.gif"
+                "title": "Filtros y ordenamiento",
+                "demo_gif": "assets/img/SuperM-filter.webp"
             },
             {
-                "title": "Animations and microinteractions",
-                "demo_gif": "assets/gifs/animaciones.gif"
+                "title": "Carrito persistente",
+                "demo_gif": "assets/img/SuperM-checkout.webp"
             },
             {
-                "title": "Dynamic project loading",
-                "demo_gif": "assets/gifs/carga-proyectos.gif"
+                "title": "Checkout simulado",
+                "demo_gif": "assets/img/SuperM-shipping.webp"
             }
         ],
         "images": [
-            "assets/portfolio1.png",
-            "assets/portfolio2.png"
+            "assets/img/SuperM-landing.webp"
         ],
         "demo": "https://taniaarteaga.github.io/tania-portfolio",
         "code": "https://github.com/taniaarteaga/tania-portfolio"
@@ -40,7 +39,7 @@
     {
         "id": "super-m",
         "name": "React E-commerce SPA",
-        "description": "E-commerce application with authentication, persistent cart, and simulated checkout. Global state is managed with Context API, and remote data caching with TanStack Query.",
+        "description": "E-commerce application with authentication, persistent cart, and simulated checkout. Global state is managed with the Context API, and remote data caching with TanStack Query. CSS architecture using custom properties for dynamic theming — 100% dark mode coverage without code duplication.",
         "stack": [
             "React",
             "JavaScript ES6+",

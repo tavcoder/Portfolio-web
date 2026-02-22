@@ -1,50 +1,41 @@
 [
     {
-        "date": "Diciembre 2024",
-        "stack": "⚛️",
-        "title": "SEO y posicionamiento web para Desarrolladores web.",
-        "institution": "UDEMI",
-        "description": "Curso enfocado en optimización para motores de búsqueda (SEO), buenas prácticas de indexación y herramientas para mejorar la visibilidad de sitios web desarrollados con HTML, CSS y JS.",
-        "delay": 1000
+        "date": "2025",
+        "title": "React Full Course",
+        "institution": "react-tutorial.app",
+        "type": "Online",
+        "skills": [
+            "React",
+            "Context API",
+            "React Router",
+            "State Management"
+        ],
+        "description": "Desarrollo de aplicaciones React: hooks, gestión de estado global, routing. Proyecto final: e-commerce con autenticación y carrito persistente."
     },
     {
         "date": "2021-2024",
-        "stack": "⚛️",
-        "title": "Técnico en Gestión y desarrollo de proyectos Web.",
-        "institution": "Academia de Estudios Avanzados de Informática (CEPIBASE)",
-        "description": "Formación integral en desarrollo web front y backend, gestión de bases de datos, control de versiones y metodologías ágiles.",
-        "delay": 800
+        "title": "Técnico en Desarrollo Web",
+        "institution": "CEPIBASE",
+        "type": "Ciclo Formativo (2000h)",
+        "skills": [
+            "JavaScript",
+            "PHP",
+            "MySQL",
+            "HTML/CSS",
+            "MVC"
+        ],
+        "description": "Formación técnica full-stack: bases de datos, arquitectura MVC, interfaces responsive. Proyecto: sistema de gestión con MySQL y Bootstrap."
     },
     {
         "date": "2019-2020",
-        "stack": "⚛️",
-        "title": "UX design Challenge",
-        "institution": "UXERSCHOOL",
-        "description": "Proyecto práctico centrado en diseño de experiencia de usuario, investigación, wireframing, testeo y presentación de prototipos funcionales.",
-        "delay": 600
-    },
-    {
-        "date": "2019-2020",
-        "stack": "⚛️",
-        "title": "Web Design, Wireframes to prototype",
-        "institution": "Instituto de las Artes de California (CalArts)",
-        "description": "Curso orientado al diseño de interfaces web desde wireframes hasta prototipos interactivos, aplicando principios de diseño visual y usabilidad.",
-        "delay": 400
-    },
-    {
-        "date": "2012-2017",
-        "stack": "⚛️",
-        "title": "Grado en Diseño",
-        "institution": "Universidad de La Habana, Cuba",
-        "description": "Formación universitaria en diseño visual, comunicación gráfica y fundamentos estéticos aplicados a proyectos digitales y editoriales.",
-        "delay": 200
-    },
-    {
-        "date": "2007-2009",
-        "stack": "⚛️",
-        "title": "Bachiller, Técnico Medio en Informática.",
-        "institution": "Instituto Politécnico Fernando Aguado y Rico, Cuba",
-        "description": "Estudios técnicos centrados en programación básica, redes y mantenimiento de sistemas informáticos.",
-        "delay": 0
+        "title": "UX Design Bootcamp",
+        "institution": "UXER School",
+        "type": "Bootcamp",
+        "skills": [
+            "User Research",
+            "Prototyping",
+            "User Testing"
+        ],
+        "description": "Diseño centrado en usuario: research, wireframing, testing iterativo. Base metodológica aplicada a productos digitales."
     }
 ]

@@ -23,7 +23,7 @@
             "description": "Aplicación de e-commerce desarrollada con React y Vite. Implementé autenticación de usuarios, carrito persistente y gestión de estado global. Consumo de datos con Supabase y renderizado optimizado para una experiencia consistente.",
             "github": "https://github.com/tavcoder/SuperM",
             "demo": "https://supermdemo.netlify.app/",
-            "frontImage": "assets/img/superm.png",
+            "frontImage": "/assets/img/SuperM-toast.jpg",
             "imageRatio": "portrait",
             "technologies": [
                 "React",

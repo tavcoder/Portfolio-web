@@ -40,7 +40,7 @@
   {
     "id": "super-m",
     "name": "React E-commerce SPA",
-    "description": "Aplicación e-commerce con autenticación, carrito persistente y checkout simulado. El estado global se gestiona con Context API y el cacheo de datos remotos con TanStack Query.",
+    "description": "Aplicación e-commerce con autenticación, carrito persistente y checkout simulado. El estado global se gestiona con Context API y el cacheo de datos remotos con TanStack Query.Arquitectura CSS con variables custom properties para theming dinámico - 100% coverage dark mode sin duplicar código. Flow de checkout multi-step con validación y state management persistente. Sistema de filtros adaptativo con overlay modal animado para mobile - mejor UX que accordion colapsable",
     "stack": [
       "React",
       "JavaScript ES6+",
@@ -54,32 +54,23 @@
     "features": [
       {
         "title": "Notificaciones tipo toast",
-        "demo_gif": "assets/gifs/toast.mp4"
+        "demo_gif": "assets/img/SuperM-toast.webp"
       },
       {
         "title": "Filtros y ordenamiento",
-        "demo_gif": "assets/gifs/filtros.mp4"
+        "demo_gif": "assets/img/SuperM-filter.webp"
       },
       {
         "title": "Carrito persistente",
-        "demo_gif": "assets/gifs/carrito.mp4"
-      },
-      {
-        "title": "Autocompletado del formulario de envío",
-        "demo_gif": "assets/gifs/autocompletado.mp4"
+        "demo_gif": "assets/img/SuperM-checkout.webp"
       },
       {
         "title": "Checkout simulado",
-        "demo_gif": "assets/gifs/checkout.mp4"
-      },
-      {
-        "title": "Resumen del pedido",
-        "demo_gif": "assets/gifs/resumen.mp4"
+        "demo_gif": "assets/img/SuperM-shipping.webp"
       }
     ],
-    "images": [
-      "assets/superm1.png",
-      "assets/superm2.png"
+    "image": [
+      "assets/img/SuperM-landing.webp"
     ],
     "demo": "https://superm.vercel.app",
     "code": "https://github.com/taniaarteaga/superm"
